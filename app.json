@@ -2,6 +2,7 @@
   "name": "OpenPOS",
   "description": "An opensource POS system",
   "repository": "https://github.com/garymuff/POSproject",
+  "logo": "https://cdn.rawgit.com/heroku/node-js-getting-started/master/public/node.svg",
   "keywords": ["node", "express", "heroku"],
   "image": "heroku/nodejs"
 }
