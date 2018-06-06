@@ -1,0 +1,7 @@
+{
+  "name": "OpenPOS",
+  "description": "An opensource POS system",
+  "repository": "https://github.com/garymuff/POSproject",
+  "keywords": ["node", "express", "heroku"],
+  "image": "heroku/nodejs"
+}
