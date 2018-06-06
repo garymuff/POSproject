@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 
-app.get('/', (req, res) => res.send('Server up on running!'));
+app.get('/', (req, res) => res.send('Server up and running!'));
 
 app.all('/index', function (req, res) {
  	res.sendFile(__dirname + '/public/index.html');
@@ -9,4 +9,4 @@ app.all('/index', function (req, res) {
 
 app.use(express.static("public"));
 
-app.listen(1234, () => console.log('Example app listening on port 1234!'));
+app.listen(5000, () => console.log('App listening on port 5000!'));
