@@ -18,6 +18,41 @@ div.header {
 	text-align: left;
 }
 
+div.numberpadcontainer {
+	width: 100%;
+}
+
+div.numberpad {
+	width: 30%;
+	min-width: 315px;
+}
+
+div.buttoncontainer {
+	display: flex;
+  	justify-content: center;
+  	align-items: center; 
+	margin: auto;
+	width: 75px;
+	height: 75px;
+	float: left;
+	overflow: hidden;
+	font-size: 90%;
+
+}
+
+div.nprow {
+	width: 100%;
+	height: 80px;
+	overflow: hidden;
+	padding: 5px;
+}
+div.buttons{
+	margin: auto;
+    width: 35px;
+    text-align: center;
+}
+
+
 .logo {
     color: #3f8e02;
     font-family: 'Titan One', cursive;
@@ -47,7 +82,7 @@ div.header {
 
 div.poscontainer {
 	width: 90%; 
-	height: 90%; 
+	height: 100%%; 
 	margin-bottom: 10px; 
 	border-width: 1px; 
 	border-style: solid;
