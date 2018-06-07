@@ -18,25 +18,70 @@ div.header {
 	text-align: left;
 }
 
+#numdisplaycontainer {
+	display: flex;
+  	justify-content: center;
+  	align-items: center;
+	width: 50%;
+	height: 50px;
+	min-width: 350px;
+	margin-bottom: 25px;
+}
+
+div.numdisplaywrap { 
+	width: 350px;
+	height: 57px;
+	display: flex;
+  	justify-content: center;
+  	align-items: center;
+}
+
+#numberpaddisplay {
+	width: 90%;
+	text-align: center;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+
+}
+
 div.numberpadcontainer {
-	width: 100%;
+	width: 50%;
 }
 
 div.numberpad {
 	width: 30%;
-	min-width: 315px;
+	margin: auto;
+	min-width: 350px;
+	padding: 10px;
+	
+}
+
+#borderme {
+	border-color: #5A5A5A; 
+	border-radius: 7px;
+	border-width: 1px; 
+	border-style: solid;
+	box-shadow: -3px 3px 3px #8e8e8e; 
 }
 
 div.buttoncontainer {
 	display: flex;
   	justify-content: center;
   	align-items: center; 
-	margin: auto;
+	margin-left: 2px;
+	margin-right: 2px;
 	width: 75px;
 	height: 75px;
 	float: left;
 	overflow: hidden;
 	font-size: 90%;
+	padding: 5px;
+	border-width: 1px; 
+	border-style: solid; 
 
 }
 
@@ -84,14 +129,9 @@ div.poscontainer {
 	width: 90%; 
 	height: 100%%; 
 	margin-bottom: 10px; 
-	border-width: 1px; 
-	border-style: solid;
 	background-color: white; 
-	border-color: #5A5A5A; 
-	border-radius: 7px; 
 	margin-left: auto; 
 	margin-right: auto;
-	box-shadow: -3px 3px 3px #8e8e8e;
 }
 
 div.footer{
