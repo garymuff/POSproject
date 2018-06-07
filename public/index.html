@@ -27,11 +27,113 @@
 			</div>
 			<div class="dynamicreceipt">
 			</div>
-			<div class="invdisplay">
+			<div class="invdisplay" class="flex-container">
+				<head>
+				<meta name="viewport" content="width=device-width, initial-scale=1">
+				<style>
+				.flex-container{
+					display: flex;
+					flex-wrap: nowrap;
+				}
+				
+				* {
+					box-sizing: border-box;
+				}
+
+				#myInput {
+					width: 100%;
+					font-size: 14px;
+					padding: 5px 5px 5px 5px;
+					border: 1px solid #ddd;
+					margin-bottom: 8px;
+				}
+
+				#myTable {
+					border-collapse: collapse;
+					width: 100%;
+					border: 1px solid #ddd;
+					font-size: 16px;
+				}
+
+				#myTable th, #myTable td {
+					text-align: left;
+					padding: 8px;
+				}
+
+				#myTable tr {
+					border-bottom: 1px solid #ddd;
+				}
+
+				}
+				</style>
+				</head>
+				<body>
+
+				<h2>My Inventory</h2>
+				<input type="text" id="myInput" placeholder="Search for products..." title="Type in a product">
+
+				<table id="myTable">
+					<tr class="header">
+						<th style="width:30%;">Product Name</th>
+						<th style="width:25%;">SKU</th>
+						<th style="width:25%;">Price</th>
+						<th style="width:20%;">Count</th>
+					</tr>
+					<tr>
+						<td>Cat</td>
+						<td>1234567</td>
+						<td>$45.00</td>
+						<td>56</td>
+					</tr>
+					<tr>
+						<td>Dog</td>
+						<td>2345623</td>
+						<td>$50.00</td>
+						<td>20</td>
+					</tr>
+					<tr>
+						<td>Parrot</td>
+						<td>6523079</td>
+						<td>$30.50</td>
+						<td>12</td>
+					</tr>
+					<tr>
+						<td>Mouse</td>
+						<td>0486932</td>
+						<td>$10.99</td>
+						<td>184</td>
+					</tr>
+					<tr>
+						<td>Snake</td>
+						<td>4738292</td>
+						<td>$24.99</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td>Hamster</td>
+						<td>7485932</td>
+						<td>$15.49</td>
+						<td>98</td>
+					</tr>
+					<tr>
+						<td>Spider</td>
+						<td>2947183</td>
+						<td>$40.56</td>
+						<td>100</td>
+					</tr>
+					<tr>
+						<td>Ferret</td>
+						<td>2938884</td>
+						<td>$100.00</td>
+						<td>53</td>
+					</tr>
+				</table>
+				</div>
+				</body>
 			</div>
 		</div>
-		<div id="footer">
+		<!-- <div id="footer">
 		Team Silicon | Last Modified June 5, 2018
-		</div>
+		</div> -->
 	</body>
 </html>
