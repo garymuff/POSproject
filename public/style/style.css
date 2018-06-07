@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css?family=Titan+One');
+
+div.header {
+	width: auto; 
+	margin-left: 20px; 
+	margin-right: auto;
+	text-align: left;
+}
+
+.logo {
+    color: #3f8e02;
+    font-family: 'Titan One', cursive;
+    font-size: 42px; 
+}
+
+.logo a:link {
+	text-decoration: none;
+	color: #000000;
+}
+
+.logo a:visited {
+	text-decoration: none;
+	color: #000000;
+}
+
+.logo a:active {
+	text-decoration: none;
+	color: #000000;
+}
+
+.logo a:hover {
+	text-decoration: none;
+	color: #000000;
+}
+
+div.poscontainer {
+	width: 968px; 
+	height: 20px; 
+	margin-bottom: 100px; 
+	border-width: 1px; 
+	border-style: solid; 
+	border-color: #5A5A5A; 
+	border-radius: 7px; 
+	margin-left: auto; 
+	margin-right: auto;
+	box-shadow: -3px 3px 3px #8e8e8e;
+}
+
+div.footer{
+	margin-left: 45px;
+	margin-bottom: 10px;
+}
+
+.flex-container{
+	display: flex;
+	flex-wrap: nowrap;
+}
+				
+* {
+	box-sizing: border-box;
+}
+
+#myInput {
+	width: 100%;
+	font-size: 14px;
+	padding: 5px 5px 5px 5px;
+	border: 1px solid #ddd;
+	margin-bottom: 8px;
+}
+
+#myTable {
+	border-collapse: collapse;
+	width: 100%;
+	border: 1px solid #ddd;
+	font-size: 16px;
+}
+
+#myTable th, #myTable td {
+	text-align: left;
+	padding: 8px;
+}
+
+#myTable tr {
+	border-bottom: 1px solid #ddd;
+}
