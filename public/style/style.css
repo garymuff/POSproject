@@ -64,3 +64,36 @@ div.footer{
 	margin-left: 45px;
 	margin-bottom: 10px;
 }
+
+.flex-container{
+	display: flex;
+	flex-wrap: nowrap;
+}
+				
+* {
+	box-sizing: border-box;
+}
+
+#myInput {
+	width: 100%;
+	font-size: 14px;
+	padding: 5px 5px 5px 5px;
+	border: 1px solid #ddd;
+	margin-bottom: 8px;
+}
+
+#myTable {
+	border-collapse: collapse;
+	width: 100%;
+	border: 1px solid #ddd;
+	font-size: 16px;
+}
+
+#myTable th, #myTable td {
+	text-align: left;
+	padding: 8px;
+}
+
+#myTable tr {
+	border-bottom: 1px solid #ddd;
+}
