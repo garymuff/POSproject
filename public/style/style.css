@@ -56,6 +56,11 @@ div.menucontainer{
 	margin-top: 25px;
 }
 
+div.numcontainer {
+	width: 50%;
+	float: left;
+}
+
 div.numdisplaywrap { 
 	width: 350px;
 	height: 57px;
@@ -158,8 +163,7 @@ div.poscontainer {
 	height: 100%%; 
 	margin-bottom: 10px; 
 	background-color: white; 
-	margin-left: auto; 
-	margin-right: auto;
+	margin:auto;
 }
 
 div.footer{
@@ -199,4 +203,25 @@ div.footer{
 
 #myTable tr {
 	border-bottom: 1px solid #ddd;
+}
+
+div.dynamicreceipt {
+	width:50%;
+	height: 500px;
+	float: right;
+}
+
+div.invdisplay {
+	width: 100%;
+}
+
+@media only screen and (max-width: 768px) {
+	div.dynamicreceipt {
+		width: 100%;
+		height: 500px;
+	}
+
+	div.invdisplay {
+		width: 60%;
+	}
 }
