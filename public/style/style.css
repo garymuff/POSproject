@@ -1,5 +1,16 @@
 @import url('https://fonts.googleapis.com/css?family=Titan+One');
 
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  color: black;
+  background-color: white;
+  font-size: x-large;
+}
+
 div.header {
 	width: auto; 
 	margin-left: 20px; 
@@ -10,7 +21,8 @@ div.header {
 .logo {
     color: #3f8e02;
     font-family: 'Titan One', cursive;
-    font-size: 42px; 
+    font-size: larger;
+    text-align: center; 
 }
 
 .logo a:link {
@@ -34,11 +46,12 @@ div.header {
 }
 
 div.poscontainer {
-	width: 968px; 
-	height: 20px; 
-	margin-bottom: 100px; 
+	width: 90%; 
+	height: 90%; 
+	margin-bottom: 10px; 
 	border-width: 1px; 
-	border-style: solid; 
+	border-style: solid;
+	background-color: white; 
 	border-color: #5A5A5A; 
 	border-radius: 7px; 
 	margin-left: auto; 
@@ -47,6 +60,7 @@ div.poscontainer {
 }
 
 div.footer{
+	text-align: center;
 	margin-left: 45px;
 	margin-bottom: 10px;
 }
