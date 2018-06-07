@@ -18,6 +18,8 @@
   "homepage": "https://github.com/garymuff/POSproject#readme",
   "dependencies": {
     "express": "^4.16.3",
-    "npm": "^6.1.0"
+    "npm": "^6.1.0",
+    "request": "^2.87.0",
+    "tape": "^4.9.0"
   }
 }
