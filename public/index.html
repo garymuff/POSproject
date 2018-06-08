@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="./style/style.css">
+		<title>OpenPOS</title>
+	</head>
+	<body>
+		<div class="header">
+			<h1 class="logo">
+				<a class="logo" href="#">OpenPOS</a>
+			</h1>
+		</div>
+		<!-- Beginning of Menu Bar Container - Gary --> 
+		<div class="menucontainer" id="borderme">
+			<div id="menuwrapper">
+				<div class="link">
+					<a class="menulinks" href="#">Home</a>
+				</div>
+				<div class="link">
+					<a class="menulinks" href="#">Inventory</a>
+				</div>
+				<div class="link">
+					<a class="menulinks" href="#">Settings</a>
+				</div>
+			</div>
+		</div>
+		<!-- End of Menu Bar Container - Gary --> 
+		<div class="poscontainer">
+			<div class="numcontainer">
+				<div id="numdisplaycontainer">
+					<div class="numdisplaywrap" id="borderme">
+						<input type="text" id="numberpaddisplay" placeholder="$0.00"readonly>
+					</div>
+				</div>
+				<!-- Beginning of NumberPad Container - Gary --> 
+				<div class="numberpadcontainer">
+					<div class="toolbox">
+					</div>
+					<!-- Beginning of NumberPad - Gary --> 
+					<div class="numberpad" id="borderme">
+						<div class="nprow"> 
+							<span class="npbuttons" role="button" tabindex="0">
+								<div class="buttoncontainer">7</div>
+							</span>  
+							<span class="npbuttons" role="button" tabindex="0">
+								<div class="buttoncontainer">8</div>
+							</span> 
+							<span class="npbuttons" role="button" tabindex="0">
+								<div class="buttoncontainer">9</div>
+							</span> 
+							<span class="npbuttons" role="button" tabindex="0">
+								<div class="buttoncontainer">+</div>
+							</span> 
+						</div> 
+						<div class="nprow"> 
+							<span class="npbuttons" role="button" tabindex="0">
+								<div class="buttoncontainer">4</div>
+							</span> 
+							<span class="npbuttons" role="button" tabindex="0">
+								<div class="buttoncontainer">5</div>
+							</span> 
+							<span class="npbuttons" role="button" tabindex="0">
+								<div class="buttoncontainer">6</div>
+							</span> 
+							<span class="npbuttons" role="button" tabindex="0">
+								<div class="buttoncontainer">-</div>
+							</span> 
+						</div> 
+						<div class="nprow"> 
+							<span class="npbuttons" role="button" tabindex="0">
+								<div class="buttoncontainer">1</div>
+							</span> 
+							<span class="npbuttons" role="button" tabindex="0">
+								<div class="buttoncontainer">2</div>
+							</span>  
+							<span class="npbuttons" role="button" tabindex="0">
+								<div class="buttoncontainer">3</div>
+							</span> 
+							<span class="npbuttons" role="button" tabindex="0">
+								<div class="buttoncontainer">C</div>
+							</span> 
+						</div> 
+						<div class="nprow"> 
+							<span class="npbuttons" role="button" tabindex="0">
+								<div class="buttoncontainer">0</div>
+							</span> 
+							<span class="npbuttons" role="button" tabindex="0">
+								<div class="buttoncontainer">00</div>
+							</span> 
+							<span class="npbuttons" role="button" tabindex="0">
+								<div class="buttoncontainer">.</div>
+							</span> 
+							<span class="npbuttons" role="button" tabindex="0">
+								<div class="buttoncontainer">Total</div>
+							</span> 
+						</div> 
+					</div>
+					<!-- End of NumberPad --> 
+				</div>
+				<!-- End of NumberPad Container - Gary --> 
+			</div>
+			<div class="dynamicreceipt">
+				<h2>Receipt</h2>
+				<table id="myTable">
+					<tr class="header">
+						<th style="width:20%;">Product Name</th>
+						<th style="width:20%;">SKU</th>
+						<th style="width:20%;">Price</th>
+						<th style="width:20%;">Count</th>
+						<th style="width:20%;">Subtotal</th>
+					</tr>
+					<tr>
+						<td>Cat</td>
+						<td>1234567</td>
+						<td>$45.00</td>
+						<td>10</td>
+						<td>$450.00</td>
+					</tr>
+					<tr>
+						<td>Dog</td>
+						<td>2345623</td>
+						<td>$50.00</td>
+						<td>10</td>
+						<td>$500.00</td>
+					</tr>
+					<tr>
+						<td>Total</td>
+						<td>-</td>
+						<td>-</td>
+						<td>20</td>
+						<td>$950.00</td>
+					</tr>
+				</table>
+			</div>
+			<div class="invdisplay" class="flex-container">
+				<h2>My Inventory</h2>
+				<input type="text" id="myInput" placeholder="Search for products..."title="Type in a product"/>
+
+				<table id="myTable">
+					<tr class="header">
+						<th style="width:30%;">Product Name</th>
+						<th style="width:25%;">SKU</th>
+						<th style="width:25%;">Price</th>
+						<th style="width:20%;">Count</th>
+					</tr>
+					<tr>
+						<td>Cat</td>
+						<td>1234567</td>
+						<td>$45.00</td>
+						<td>56</td>
+					</tr>
+					<tr>
+						<td>Dog</td>
+						<td>2345623</td>
+						<td>$50.00</td>
+						<td>20</td>
+					</tr>
+					<tr>
+						<td>Parrot</td>
+						<td>6523079</td>
+						<td>$30.50</td>
+						<td>12</td>
+					</tr>
+					<tr>
+						<td>Mouse</td>
+						<td>0486932</td>
+						<td>$10.99</td>
+						<td>184</td>
+					</tr>
+					<tr>
+						<td>Snake</td>
+						<td>4738292</td>
+						<td>$24.99</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td>Hamster</td>
+						<td>7485932</td>
+						<td>$15.49</td>
+						<td>98</td>
+					</tr>
+					<tr>
+						<td>Spider</td>
+						<td>2947183</td>
+						<td>$40.56</td>
+						<td>100</td>
+					</tr>
+					<tr>
+						<td>Ferret</td>
+						<td>2938884</td>
+						<td>$100.00</td>
+						<td>53</td>
+					</tr>
+				</table>
+				</div>
+				</body>
+			</div>
+		</div>
+		<div class="footer">
+		Team Silicon | Last Modified June 5, 2018
+		</div>
+	</body>
+</html>

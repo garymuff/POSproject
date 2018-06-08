@@ -1,0 +1,25 @@
+{
+  "name": "posproject",
+  "version": "1.0.0",
+  "description": "A point of sale system",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/garymuff/POSproject.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/garymuff/POSproject/issues"
+  },
+  "homepage": "https://github.com/garymuff/POSproject#readme",
+  "dependencies": {
+    "express": "^4.16.3",
+    "npm": "^6.1.0",
+    "request": "^2.87.0",
+    "tape": "^4.9.0"
+  }
+}

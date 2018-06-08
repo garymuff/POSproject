@@ -1,3 +1,3 @@
 # POSproject
 
-Please refer to the wiki for information like onboarding and product manual.
+Please refer to the [wiki](https://github.com/garymuff/POSproject/wiki) for information like onboarding and product manual.
