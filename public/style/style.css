@@ -205,6 +205,19 @@ div.footer{
 	border-bottom: 1px solid #ddd;
 }
 
+.logo {
+	text-align: center;
+}
+
+.login-container {
+	position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+}
+
 div.dynamicreceipt {
 	width:50%;
 	height: 500px;
