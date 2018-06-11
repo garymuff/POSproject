@@ -12,7 +12,7 @@ test('Server Health Test', (t) => {
   // Wait until the server is ready
   child.stdout.on('data', _ => {
     // Make a request to our app
-    request('http://127.0.0.1:1234', (error, response, body) => {
+    request('http://127.0.0.1:1234/health', (error, response, body) => {
       // stop the server
       child.kill();
 
