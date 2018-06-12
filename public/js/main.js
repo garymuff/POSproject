@@ -48,3 +48,9 @@ window.onload = function(){
 		submit.value = "";
 	};
 };
+
+function ismaxlength(input) {
+	if (input.length < 8){
+
+	}
+}
