@@ -7,27 +7,22 @@
 	</head>
 	<body>
 		<div class="header">
-			<h1 class="logo">
-				<a class="logo" href="#">OpenPOS</a>
-			</h1>
+			<a href="/"><img id="logo" src="./img/core/logo.png"></div></a>
 		</div>
 		<!-- Beginning of Menu Bar Container - Gary --> 
 		<div class="menucontainer" id="borderme">
 			<div id="menuwrapper">
 				<div class="link">
-					<a class="menulinks" href="#">Home</a>
+					<a class="menulinks" href="./">Home</a>
 				</div>
 				<div class="link">
 					<a class="menulinks" href="#">Inventory</a>
-				</div>
-				<div class="link">
-					<a class="menulinks" href="#">Settings</a>
 				</div>
 			</div>
 		</div>
 		<!-- End of Menu Bar Container - Gary --> 
 		<div class="poscontainer">
-			<div class="numcontainer">
+			<div class="itemcontainer">
 				<div id="numdisplaycontainer">
 					<div class="numdisplaywrap" id="borderme">
 						<input type="text" id="numberpaddisplay" placeholder="$0.00"readonly>
@@ -40,60 +35,28 @@
 					<!-- Beginning of NumberPad - Gary --> 
 					<div class="numberpad" id="borderme">
 						<div class="nprow"> 
-							<span class="npbuttons" role="button" tabindex="0">
-								<div class="buttoncontainer">7</div>
-							</span>  
-							<span class="npbuttons" role="button" tabindex="0">
-								<div class="buttoncontainer">8</div>
-							</span> 
-							<span class="npbuttons" role="button" tabindex="0">
-								<div class="buttoncontainer">9</div>
-							</span> 
-							<span class="npbuttons" role="button" tabindex="0">
-								<div class="buttoncontainer">+</div>
-							</span> 
+							<div class="buttoncontainer">7</div>
+							<div class="buttoncontainer">8</div>
+							<div class="buttoncontainer">9</div>
+							<div class="buttoncontainer">+</div>
 						</div> 
 						<div class="nprow"> 
-							<span class="npbuttons" role="button" tabindex="0">
-								<div class="buttoncontainer">4</div>
-							</span> 
-							<span class="npbuttons" role="button" tabindex="0">
-								<div class="buttoncontainer">5</div>
-							</span> 
-							<span class="npbuttons" role="button" tabindex="0">
-								<div class="buttoncontainer">6</div>
-							</span> 
-							<span class="npbuttons" role="button" tabindex="0">
-								<div class="buttoncontainer">-</div>
-							</span> 
+							<div class="buttoncontainer">4</div>
+							<div class="buttoncontainer">5</div>
+							<div class="buttoncontainer">6</div>
+							<div class="buttoncontainer">-</div>
 						</div> 
 						<div class="nprow"> 
-							<span class="npbuttons" role="button" tabindex="0">
-								<div class="buttoncontainer">1</div>
-							</span> 
-							<span class="npbuttons" role="button" tabindex="0">
-								<div class="buttoncontainer">2</div>
-							</span>  
-							<span class="npbuttons" role="button" tabindex="0">
-								<div class="buttoncontainer">3</div>
-							</span> 
-							<span class="npbuttons" role="button" tabindex="0">
-								<div class="buttoncontainer">C</div>
-							</span> 
+							<div class="buttoncontainer">1</div>
+							<div class="buttoncontainer">2</div>
+							<div class="buttoncontainer">3</div>
+							<div class="buttoncontainer">C</div>
 						</div> 
 						<div class="nprow"> 
-							<span class="npbuttons" role="button" tabindex="0">
-								<div class="buttoncontainer">0</div>
-							</span> 
-							<span class="npbuttons" role="button" tabindex="0">
-								<div class="buttoncontainer">00</div>
-							</span> 
-							<span class="npbuttons" role="button" tabindex="0">
-								<div class="buttoncontainer">.</div>
-							</span> 
-							<span class="npbuttons" role="button" tabindex="0">
-								<div class="buttoncontainer">Total</div>
-							</span> 
+							<div class="buttoncontainer">0</div>
+							<div class="buttoncontainer">00</div>
+							<div class="buttoncontainer">.</div>
+							<div class="buttoncontainer">Total</div>
 						</div> 
 					</div>
 					<!-- End of NumberPad --> 
@@ -101,37 +64,6 @@
 				<!-- End of NumberPad Container - Gary --> 
 			</div>
 			<div class="dynamicreceipt">
-				<h2>Receipt</h2>
-				<table id="myTable">
-					<tr class="header">
-						<th style="width:20%;">Product Name</th>
-						<th style="width:20%;">SKU</th>
-						<th style="width:20%;">Price</th>
-						<th style="width:20%;">Count</th>
-						<th style="width:20%;">Subtotal</th>
-					</tr>
-					<tr>
-						<td>Cat</td>
-						<td>1234567</td>
-						<td>$45.00</td>
-						<td>10</td>
-						<td>$450.00</td>
-					</tr>
-					<tr>
-						<td>Dog</td>
-						<td>2345623</td>
-						<td>$50.00</td>
-						<td>10</td>
-						<td>$500.00</td>
-					</tr>
-					<tr>
-						<td>Total</td>
-						<td>-</td>
-						<td>-</td>
-						<td>20</td>
-						<td>$950.00</td>
-					</tr>
-				</table>
 			</div>
 		</div>
 	</body>

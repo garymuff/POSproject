@@ -1,39 +1,32 @@
-@import url('https://fonts.googleapis.com/css?family=Titan+One');
-
-html,
-body {
+html, body {
   height: 100%;
   width: 100%;
   margin: 0;
   padding: 0;
   color: black;
-  background-color: white;
-  font-size: x-large;
+  background-image: url('../img/core/background.jpg');
 }
 
 div.header {
 	width: auto; 
 	margin-left: 20px; 
 	margin-right: auto;
-	text-align: left;
+	background: linear-gradient(to bottom, rgba(0, 0, 0, 1),rgba(20, 12, 8, .65));
 }
 
-div.link {
-	float: left;
-	width: 150px;
-	text-align: center;
+#logo{
+	width: 25%;
+	height: auto;
 }
 
 div.menucontainer{
 	width: 90%;
 	min-width: 350px; 
-	max-width: 650px;
 	height: 40px; 
 	margin-bottom: 10px; 
 	background-color: white; 
 	margin-left: auto; 
 	margin-right: auto;
-
 }
 
 #menuwrapper {
@@ -44,6 +37,29 @@ div.menucontainer{
   	text-algin: center;
   	margin-top: 3px;
   }
+
+div.link {
+	float: left;
+	width: 150px;
+	text-align: center;
+}
+
+div.menulinks{
+
+}
+
+div.poscontainer {
+	width: 90%; 
+	height: 100%%; 
+	margin-bottom: 10px; 
+	background-color: white; 
+	margin:auto;
+}
+
+div.itemcontainer {
+	width: 50%;
+	float: left;
+}
 
 #numdisplaycontainer {
 	display: flex;
@@ -56,17 +72,20 @@ div.menucontainer{
 	margin-top: 25px;
 }
 
-div.numcontainer {
-	width: 50%;
-	float: left;
-}
-
 div.numdisplaywrap { 
 	width: 350px;
 	height: 57px;
 	display: flex;
   	justify-content: center;
   	align-items: center;
+}
+
+#borderme {
+	border-color: #5A5A5A; 
+	border-radius: 7px;
+	border-width: 1px; 
+	border-style: solid;
+	box-shadow: -3px 3px 3px #8e8e8e; 
 }
 
 #numberpaddisplay {
@@ -78,7 +97,6 @@ div.numdisplaywrap {
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-
 }
 
 div.numberpadcontainer {
@@ -91,14 +109,6 @@ div.numberpad {
 	min-width: 350px;
 	padding: 10px;
 	
-}
-
-#borderme {
-	border-color: #5A5A5A; 
-	border-radius: 7px;
-	border-width: 1px; 
-	border-style: solid;
-	box-shadow: -3px 3px 3px #8e8e8e; 
 }
 
 div.buttoncontainer {
@@ -115,7 +125,6 @@ div.buttoncontainer {
 	padding: 5px;
 	border-width: 1px; 
 	border-style: solid; 
-
 }
 
 div.nprow {
@@ -131,40 +140,6 @@ div.buttons{
 }
 
 
-.logo {
-    color: #3f8e02;
-    font-family: 'Titan One', cursive;
-    font-size: larger;
-    text-align: center; 
-}
-
-.logo a:link {
-	text-decoration: none;
-	color: #000000;
-}
-
-.logo a:visited {
-	text-decoration: none;
-	color: #000000;
-}
-
-.logo a:active {
-	text-decoration: none;
-	color: #000000;
-}
-
-.logo a:hover {
-	text-decoration: none;
-	color: #000000;
-}
-
-div.poscontainer {
-	width: 90%; 
-	height: 100%%; 
-	margin-bottom: 10px; 
-	background-color: white; 
-	margin:auto;
-}
 
 div.footer{
 	text-align: center;
@@ -203,19 +178,6 @@ div.footer{
 
 #myTable tr {
 	border-bottom: 1px solid #ddd;
-}
-
-.logo {
-	text-align: center;
-}
-
-.login-container {
-	position: absolute;
-    left: 0;
-    top: 50%;
-    width: 100%;
-    text-align: center;
-    font-size: 18px;
 }
 
 div.dynamicreceipt {
