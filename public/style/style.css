@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+
 html, body {
   height: 100%;
   width: 100%;
@@ -5,6 +7,7 @@ html, body {
   padding: 0;
   color: black;
   background-image: url('../img/core/background.jpg');
+  font-family: 'Oswald', sans-serif;
 }
 
 div.header {
@@ -94,28 +97,47 @@ div.numdisplaywrap {
 	display: flex;
   	justify-content: center;
   	align-items: center;
+
 }
 
 #boxdesign{
-	border-color: gray; 
+	border-color: #404040; 
 	border-width: 3px; 
 	border-style: solid;
 	background-color: #cfb887;
+	border-radius: 4px;
 }
 
 #numberpaddisplay {
-	width: 90%;
+	width: 98%;
 	text-align: center;
-    padding: 12px 20px;
-    margin: 8px 0;
+    padding: 5px 5px;
     display: inline-block;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
+    font-size: 140%;
+	font-family: 'Oswald', sans-serif;
 }
 
 div.numberpadcontainer {
 	width: 50%;
+	font-family: 'Oswald', sans-serif;
+	font-size: 150%;
+}
+
+#del {
+	color: #cc0000;
+	font-size: 150%;
+}
+
+#enter {
+	color: #009933;
+	font-size: 150%;
+}
+
+#del:hover, #enter:hover {
+	color:grey;
 }
 
 div.numberpad {
@@ -129,8 +151,7 @@ div.buttoncontainer {
 	display: flex;
   	justify-content: center;
   	align-items: center; 
-	margin-left: 2px;
-	margin-right: 2px;
+	margin: 2px;
 	width: 75px;
 	height: 75px;
 	float: left;
@@ -138,14 +159,27 @@ div.buttoncontainer {
 	font-size: 90%;
 	border-width: 1px; 
 	border-radius: 40px;
-	border-style: solid; 
+	border-style: solid;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	cursor:default; 
+	color: #404040;
+}
+
+div.buttoncontainer:hover {
+	box-shadow: 0 4px 8px 0 rgba(54, 81, 94, 0.2), 0 6px 20px 0 rgba(54, 81, 94, 0.19);
+	color: grey;
+}
+
+div.buttoncontainer:active {
+	background-color: #77653f;
+	border-color: #000000;
+	box-shadow: none;
 }
 
 div.nprow {
 	width: 100%;
 	height: 80px;
-	overflow: hidden;
-	padding: 5px;
+	margin: 5px;
 }
 div.buttons{
 	margin: auto;
