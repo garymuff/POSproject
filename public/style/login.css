@@ -1,0 +1,51 @@
+
+
+html,
+body{
+	text-align: center;
+}
+
+.logo {
+
+}
+
+.login-container {
+	background-color: #CEB888;
+	padding: 16px;
+	border: 3px solid gray;
+	position: center;
+	margin-left: auto;
+	margin-right: auto;
+    top: 50%;
+    width: 50%;
+   }
+
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-style: normal;
+}
+
+input:placeholder-shown {
+	font-style: italic;
+}
+
+button {
+    background-color: gray;
+    color: white;
+    padding: 14px 20px;
+    margin: 16px 0;
+    border: none;
+    cursor: pointer;
+    width: 50%;
+    font-size: 16px;
+}
+
+button:hover {
+	opacity: 0.8;
+}
