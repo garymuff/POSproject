@@ -22,7 +22,18 @@ div.header {
 	height: auto;
 }
 
+div.poscontainer {
+	width: 90%; 
+	margin-bottom: 10px; 
+	margin:auto;
+}
+
 @media only screen and (max-width: 600px) {
+	div.poscontainer {
+		width: 331.5px; 
+		margin-bottom: 10px; 
+		margin:auto;
+	}
 		div.header {
 		width: 262px; 
 		margin-left: auto; 
@@ -37,23 +48,20 @@ div.header {
 }
 
 div.menucontainer{
-	width: 100%;
-	min-width: 337.5px; 
+	min-width: 331.5px; 
 	height: 40px; 
 	margin-bottom: 10px; 
-	background-color: white; 
 	margin-left: auto; 
 	margin-right: auto;
 }
 
 #menuwrapper {
-	display: flex;
-  	justify-content: center;
-  	align-items: center;
-  	width: 90%
-  	min-width: 337.5px; 
-  	text-algin: center;
-  	margin-top: 3px;
+  	min-width: 331.5px; 
+  	text-align: center;
+  	vertical-align: middle;
+  	line-height: 40px;
+  	margin-left: auto; 
+	margin-right: auto;
   }
 
 div.link {
@@ -64,12 +72,6 @@ div.link {
 
 div.menulinks{
 
-}
-
-div.poscontainer {
-	width: 90%; 
-	margin-bottom: 10px; 
-	margin:auto;
 }
 
 div.itemcontainer {
@@ -85,7 +87,7 @@ div.numberpadcontainer {
 }
 
 div.numdisplaywrap { 
-	width: 337.5px;
+	width: 331.5px;
 	height: 57px;
 	margin-bottom: 10px;
 	display: flex;
