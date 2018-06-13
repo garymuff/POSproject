@@ -227,12 +227,41 @@ div.drlabel {
 
 div.ledger {
 	width: 95%;
-	height: 380px;
+	height: 365px;
 	background-color: white;
 	margin:auto;
 	overflow-y: scroll;
 }
 
+div.itemheader{
+	width: 90%;
+	margin-left: 10px;
+	margin-top: -10px;
+}
+
+div.sbs {
+	float: left;
+}
+
+div.SKU {
+	width: 15%;
+	text-align: center;
+}
+
+div.qty {
+	width: 10%;
+	text-align: center;
+}
+
+div.name{
+	width: 50%;
+	margin-left: 10px;
+}
+div.price{
+	width: 20%;
+	text-align: right;
+	float: right;
+}
 @media only screen and (max-width: 768px) {
 	div.poscontainer {
 		width: 331.5px; 

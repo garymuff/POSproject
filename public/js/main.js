@@ -65,7 +65,9 @@ window.onload = function(){
 	};
 	document.getElementById("enter").onclick = function() {
 		var submit = document.getElementById("numberpaddisplay");
-		submit.value = "";
+		if (ismaxlength(submit) == true){
+			document.getElementById("ledger").innerHTML += "<div class=\"item\"><div class=\"SKU sbs\">"+submit.value+"</div><div class=\"qty sbs\">1</div><div class=\"name sbs\">test</div><div class=\"price\">$0.00&nbsp;</div></div>";
+		}
 	};
 
 	function ismaxlength(input) {
