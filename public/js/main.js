@@ -70,7 +70,7 @@ window.onload = function(){
 
 	function ismaxlength(input) {
 		input = input.value
-		if (input.length < 8){
+		if (input.length < 6){
 			return false;
 		} else{
 			return true;

@@ -213,6 +213,7 @@ div.dynamicreceiptcontainer {
 }
 
 div.dynamicreceipt {
+	max-width: 450px;
 	min-width: 331.5px; 
 	height: 438px;
 	margin: auto;
