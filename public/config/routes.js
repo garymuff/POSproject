@@ -1,0 +1,1 @@
+app.post('/login', passport.authenticate('local'), users.login)
