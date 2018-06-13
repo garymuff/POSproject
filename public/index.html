@@ -5,9 +5,12 @@
 		<link rel="stylesheet" type="text/css" href="./style/style.css">
 		<title>OpenPOS</title>
 		<script type="text/javascript" src="./js/main.js"></script>
+		<script type="text/javascript" src="./js/receipt.js"></script>
 	</head>
 	<body>
 		<div class="header">
+			<!-- Image is property of Shahira Jewelry Design, placement is for demo purposes only!
+				Reference: https://www.sahirajewelrydesign.com/ --> 
 			<a href="/"><img id="logo" src="./img/core/logo.png"></div></a>
 		</div>
 
@@ -28,44 +31,60 @@
 					<!-- Beginning of NumberPad Container - Gary --> 
 					<div class="numberpadcontainer">
 						<div class="numdisplaywrap" id="boxdesign">
-							<input type="text" id="numberpaddisplay" placeholder="Enter SKU" maxlength="8" readonly>
+							<input type="text" id="numberpaddisplay" placeholder="Enter SKU" maxlength="6" readonly>
 						</div>
 						<!-- Beginning of NumberPad - Gary --> 
-						<div class="numberpad" id="boxdesign">
-							<div class="nprow"> 
-								<div class="buttoncontainer" id="seven">7</div>
-								<div class="buttoncontainer" id="eight">8</div>
-								<div class="buttoncontainer" id="nine">9</div>
-							</div> 
-							<div class="nprow"> 
-								<div class="buttoncontainer" id="four">4</div>
-								<div class="buttoncontainer" id="five">5</div>
-								<div class="buttoncontainer" id="six">6</div>
-							</div> 
-							<div class="nprow"> 
-								<div class="buttoncontainer" id="one">1</div>
-								<div class="buttoncontainer" id="two">2</div>
-								<div class="buttoncontainer" id="three">3</div>
-							</div> 
-							<div class="nprow"> 
-								<div class="buttoncontainer" id="del">&cross;</div>
-								<div class="buttoncontainer" id="zero">0</div>
-								<div class="buttoncontainer" id="enter">&check;</div>
-							</div> 
-							<!-- End of NumberPad -->
-						</div>
-						<!-- Beginning of Toolbox -->  
-						<div class="toolbox" id="boxdesign">
-							<div class="tblabel">Tools</div>
-							<div class="toolbuttoncontainer active" id="SKU">SKU</div>
-<!-- 							<div class="toolbuttoncontainer" id="discount">%</div>
-							<div class="toolbuttoncontainer" id="manualitem">M</div> -->
+						<div class="nptbwrap">
+							<div class="numberpad" id="boxdesign">
+								<div class="nprow"> 
+									<div class="buttoncontainer" id="seven">7</div>
+									<div class="buttoncontainer" id="eight">8</div>
+									<div class="buttoncontainer" id="nine">9</div>
+								</div> 
+								<div class="nprow"> 
+									<div class="buttoncontainer" id="four">4</div>
+									<div class="buttoncontainer" id="five">5</div>
+									<div class="buttoncontainer" id="six">6</div>
+								</div> 
+								<div class="nprow"> 
+									<div class="buttoncontainer" id="one">1</div>
+									<div class="buttoncontainer" id="two">2</div>
+									<div class="buttoncontainer" id="three">3</div>
+								</div> 
+								<div class="nprow"> 
+									<div class="buttoncontainer" id="del">&cross;</div>
+									<div class="buttoncontainer" id="zero">0</div>
+									<div class="buttoncontainer" id="enter">&check;</div>
+								</div> 
+								<!-- End of NumberPad -->
+							</div>
+							<!-- Beginning of Toolbox -->  
+							<div class="toolbox" id="boxdesign">
+								<div class="tblabel">Tools</div>
+								<div class="toolbuttoncontainer active" id="SKU">SKU</div>
+	<!-- 							<div class="toolbuttoncontainer" id="discount">%</div>
+								<div class="toolbuttoncontainer" id="manualitem">M</div> -->
+							</div>
 						</div>
 					</div>
 					<!-- End of NumberPad Container - Gary --> 
 				</div>
-				<div class="dynamicreceipt">
+				<div class="dynamicreceiptcontainer">
+					<div class="dynamicreceipt"  id="boxdesign">
+						<div class="drlabel">Receipt</div>
+						<hr>
+						<div class="itemheader">
+							<div class="SKU sbs">SKU</div>
+							<div class="qty sbs">QTY</div>
+							<div class="name sbs">Name</div>
+							<div class="price" id="pheader">Price</div>
+						</div>
+						<div class="ledger" id="ledger">
+
+						</div>
+					</div>
 				</div>
+			</div>
 		</div>
 	</body>
 </html>
