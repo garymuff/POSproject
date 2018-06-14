@@ -15,18 +15,16 @@ app.listen(port , () => console.log('App listening on port ' + port));
 // Setup passport
 const passport = require('passport');
 app.use(passport.initialize());
-app.use(passport.session());
-
-app.get('/success', (req, res) => res.sendFile(__dirname + '/public/index.html'));
+app.get('/success', (req, res) => {
+	const message = req._parsedOriginalUrl.query;
+	if(message === "authorized"){
+		res.sendFile(__dirname + '/public/index.html');
+	} else {
+		res.send("unauthorized");
+	}
+});
 app.get('/error', (req, res) => res.sendFile(__dirname + '/public/login.html'));
 
-passport.serializeUser(function(user, done) {
-  done(null, true);
-});
-
-passport.deserializeUser(function(user, done) {
-  done(null, true);
-});
 // Authenticate with passport
 const LocalStrategy = require('passport-local').Strategy;
 
@@ -48,4 +46,4 @@ passport.use(new LocalStrategy(
 
 app.post('/',
   passport.authenticate('local', 
-  	{ failureRedirect: '/error', successRedirect: '/success' }));
+  	{ failureRedirect: '/error', successRedirect: '/success?authorized', session: false }));
