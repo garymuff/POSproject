@@ -6,11 +6,12 @@ const client = new Client({
   connectionString: connectionString,
 });
 
+client.connect();
+
 async function query(sql) {
-    await client.connect();
-    client.query(sql)
-  		  .then(res => console.log(res.rows[0]))
-  		  .catch(e => console.error(e.stack))
+    const res = await client.query(sql);
+  	console.log(res.rows[0]);
+  	return res;
 };
 
 module.exports = {query};
