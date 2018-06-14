@@ -1,22 +1,51 @@
-@import url('https://fonts.googleapis.com/css?family=Titan+One');
+@import url('https://fonts.googleapis.com/css?family=Oswald');
 
-html,
-body {
+html, body {
   height: 100%;
   width: 100%;
   margin: 0;
   padding: 0;
   color: black;
-  background-color: white;
-  font-size: x-large;
+  background-image: url('../img/core/background.jpg');
+  font-family: 'Oswald', sans-serif;
 }
 
 div.header {
-	width: auto; 
-	margin-left: 20px; 
-	margin-right: auto;
-	text-align: left;
+	width: 100%; 
+	background: linear-gradient(to bottom, rgba(0, 0, 0, 1),rgba(20, 12, 8, .65));
 }
+
+#logo{
+	padding-left: 20px;
+	width: 25%;
+	min-width: 262px;
+	height: auto;
+}
+
+div.poscontainer {
+	width: 90%; 
+	margin-bottom: 10px; 
+	margin:auto;
+}
+
+
+
+div.menucontainer{
+	min-width: 331.5px; 
+	height: 40px; 
+	margin-bottom: 10px; 
+	margin-left: auto; 
+	margin-right: auto;
+}
+
+#menuwrapper {
+  	min-width: 331.5px; 
+  	text-align: center;
+  	vertical-align: middle;
+  	line-height: 40px;
+  	margin-left: auto; 
+	margin-right: auto;
+  }
 
 div.link {
 	float: left;
@@ -24,105 +53,113 @@ div.link {
 	text-align: center;
 }
 
-div.menucontainer{
-	width: 90%;
-	min-width: 350px; 
-	max-width: 650px;
-	height: 40px; 
-	margin-bottom: 10px; 
-	background-color: white; 
-	margin-left: auto; 
-	margin-right: auto;
+div.menulinks{
 
 }
 
-#menuwrapper {
-	display: flex;
-  	justify-content: center;
-  	align-items: center;
-  	width: 90%
-  	text-algin: center;
-  	margin-top: 3px;
-  }
+div.itemcontainer {
+	width: 49%;
+	float: left;
+}
 
-#numdisplaycontainer {
-	display: flex;
-  	justify-content: center;
-  	align-items: center;
-	width: 50%;
-	height: 50px;
-	min-width: 350px;
+div.numberpadcontainer {
+	width: 100%;
+	height: 438px;
+	min-width: 337.5px;
 	margin-bottom: 25px;
 	margin-top: 25px;
 }
 
-div.numcontainer {
-	width: 50%;
-	float: left;
-}
-
 div.numdisplaywrap { 
-	width: 350px;
+	width: 331.5px;
 	height: 57px;
+	margin-bottom: 10px;
 	display: flex;
   	justify-content: center;
   	align-items: center;
+  	margin-left: auto;
+	margin-right: auto;
+
+}
+
+#boxdesign{
+	border-color: #404040; 
+	border-width: 3px; 
+	border-style: solid;
+	background-color: #cfb887;
+	border-radius: 4px;
+}
+
+div.nptbwrap {
+	width: 337.5px;
+	margin: auto;
 }
 
 #numberpaddisplay {
-	width: 90%;
+	width: 98%;
 	text-align: center;
-    padding: 12px 20px;
-    margin: 8px 0;
+    padding: 5px 5px;
     display: inline-block;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-
+    font-size: 140%;
+	font-family: 'Oswald', sans-serif;
 }
 
-div.numberpadcontainer {
-	width: 50%;
+#del {
+	color: #cc0000;
+	font-size: 150%;
+}
+
+#enter {
+	color: #009933;
+	font-size: 150%;
+}
+
+#del:hover, #enter:hover {
+	color:grey;
 }
 
 div.numberpad {
-	width: 30%;
-	margin: auto;
-	min-width: 350px;
 	padding: 10px;
-	
-}
-
-#borderme {
-	border-color: #5A5A5A; 
-	border-radius: 7px;
-	border-width: 1px; 
-	border-style: solid;
-	box-shadow: -3px 3px 3px #8e8e8e; 
+    width: 254px;
+    float: left;
+    font-family: 'Oswald', sans-serif;
+	font-size: 150%;
 }
 
 div.buttoncontainer {
-	display: flex;
-  	justify-content: center;
-  	align-items: center; 
-	margin-left: 2px;
-	margin-right: 2px;
+    line-height: 75px;
+	text-align: center;
+	vertical-align: middle;
+	margin: 2px;
 	width: 75px;
 	height: 75px;
 	float: left;
-	overflow: hidden;
-	font-size: 90%;
-	padding: 5px;
 	border-width: 1px; 
-	border-style: solid; 
+	border-radius: 40px;
+	border-style: solid;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	cursor:default; 
+	color: #404040;
+}
 
+div.toolbuttoncontainer:hover, div.buttoncontainer:hover {
+	box-shadow: 0 4px 8px 0 rgba(54, 81, 94, 0.2), 0 6px 20px 0 rgba(54, 81, 94, 0.19);
+	color: grey;
+}
+
+.active, div.toolbuttoncontainer:active, div.buttoncontainer:active {
+	background-color: #77653f;
+	border-color: #000000;
+	box-shadow: none;
 }
 
 div.nprow {
 	width: 100%;
 	height: 80px;
-	overflow: hidden;
-	padding: 5px;
+	margin: 5px;
 }
 div.buttons{
 	margin: auto;
@@ -130,41 +167,36 @@ div.buttons{
     text-align: center;
 }
 
-
-.logo {
-    color: #3f8e02;
-    font-family: 'Titan One', cursive;
-    font-size: larger;
-    text-align: center; 
+div.toolbox {
+	width: 46.5px;
+	margin-left: 5px;
+	float: left;
 }
 
-.logo a:link {
-	text-decoration: none;
-	color: #000000;
+div.toolbuttoncontainer {
+	width: 40.5px;
+	height: 40.5px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 10px;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 40.5px;
+	border-color: #404040; 
+	border-width: 1px; 
+	border-style: solid;
+	border-radius: 40px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	cursor: default; 
 }
 
-.logo a:visited {
-	text-decoration: none;
-	color: #000000;
+div.tblabel{
+	width: 100%;
+	text-align: center;
+	margin-bottom: 10px;
 }
 
-.logo a:active {
-	text-decoration: none;
-	color: #000000;
-}
 
-.logo a:hover {
-	text-decoration: none;
-	color: #000000;
-}
-
-div.poscontainer {
-	width: 90%; 
-	height: 100%%; 
-	margin-bottom: 10px; 
-	background-color: white; 
-	margin:auto;
-}
 
 div.footer{
 	text-align: center;
@@ -172,56 +204,88 @@ div.footer{
 	margin-bottom: 10px;
 }
 
-.flex-container{
-	display: flex;
-	flex-wrap: nowrap;
-}
-				
-* {
-	box-sizing: border-box;
-}
-
-#myInput {
-	width: 100%;
-	font-size: 14px;
-	padding: 5px 5px 5px 5px;
-	border: 1px solid #ddd;
-	margin-bottom: 8px;
-}
-
-#myTable {
-	border-collapse: collapse;
-	width: 100%;
-	border: 1px solid #ddd;
-	font-size: 16px;
-}
-
-#myTable th, #myTable td {
-	text-align: left;
-	padding: 8px;
-}
-
-#myTable tr {
-	border-bottom: 1px solid #ddd;
+div.dynamicreceiptcontainer {
+	width: 49%;
+	height: 50px;
+	float:right;
+	margin-bottom: 25px;
+    margin-top: 25px;
 }
 
 div.dynamicreceipt {
-	width:50%;
-	height: 500px;
+	max-width: 450px;
+	min-width: 331.5px; 
+	height: 438px;
+	margin: auto;
+}
+
+div.drlabel {
+	text-align: center;
+	margin-top: 6px;
+	margin-bottom: 2px;
+}
+
+div.ledger {
+	width: 95%;
+	height: 365px;
+	background-color: white;
+	margin:auto;
+	overflow-y: scroll;
+}
+
+div.itemheader{
+	width: 90%;
+	margin-left: 10px;
+	margin-top: -10px;
+}
+
+div.sbs {
+	float: left;
+}
+
+div.SKU {
+	width: 15%;
+	text-align: center;
+}
+
+div.qty {
+	width: 10%;
+	text-align: center;
+}
+
+div.name{
+	width: 50%;
+	margin-left: 10px;
+}
+div.price{
+	width: 20%;
+	text-align: right;
 	float: right;
 }
-
-div.invdisplay {
-	width: 100%;
-}
-
 @media only screen and (max-width: 768px) {
-	div.dynamicreceipt {
-		width: 100%;
-		height: 500px;
+	div.poscontainer {
+		width: 331.5px; 
+		margin-bottom: 10px; 
+		margin:auto;
 	}
-
-	div.invdisplay {
-		width: 60%;
+	div.header {
+		width: 262px; 
+		margin-left: auto; 
+		margin-right: auto;
+		background: linear-gradient(to bottom, rgba(0, 0, 0, 1),rgba(20, 12, 8, .65));
+	}
+	#logo{
+		width: 25%;
+		min-width: 262px;
+		height: auto;
+	}
+	div.itemcontainer {
+		float: none;
+	}
+	div.dynamicreceiptcontainer {
+		width: 100%;
+		height: 444px;
+		float: none;
+		margin-bottom: 25px;
 	}
 }
