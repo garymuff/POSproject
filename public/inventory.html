@@ -3,8 +3,9 @@
 <head><meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="./style/inventory.css">
 	<title>OpenPOS - Inventory</title>
+	<script type="text/javascript" src="./js/inventory.js"></script>
 </head>
-<body style="background-image: url('./img/login/login-background.jpg')">
+<body style="background-image: url('./img/core/background.jpg')">
 	<h2 style="color: #CEB888; text-align: center;">My Inventory</h2>
 	<div class="categorybtns">
 		<button class="btn">Show All</button>
@@ -15,34 +16,94 @@
 	</div>
 
 	<div class="inventory">
+	
+		<button class="filterbtn necklace" id="necklace1" style="background-image: url('./img/inventory/necklace.png')">
+			Necklace 1
+		</button>
+		<button class="filterbtn necklace" id="necklace2" style="background-image: url('./img/inventory/comingsoon.jpg')">
+			Necklace 2
+		</button>
+		<button class="filterbtn necklace" id="necklace3" style="background-image: url('./img/inventory/comingsoon.jpg')">
+			Necklace 3
+		</button>
+		<button class="filterbtn necklace" id="necklace4" style="background-image: url('./img/inventory/comingsoon.jpg')">
+			Necklace 4
+		</button>
+		<button class="filterbtn necklace" id="necklace5" style="background-image: url('./img/inventory/comingsoon.jpg')">
+			Necklace 5
+		</button>
 		
-		<a target="_blank" href="./img/inventory/necklace.png">
-			<img src="./img/inventory/necklace.png" alt="necklace" width="200" height="200";>
-		</a>
+		<button class="filterbtn bracelet" id="bracelet1" style="background-image: url('./img/inventory/bracelet.jpg')">
+			Bracelet 1
+		</button>
+		<button class="filterbtn bracelet" id="bracelet2" style="background-image: url('./img/inventory/comingsoon.jpg')">
+			Bracelet 2
+		</button>
+		<button class="filterbtn bracelet" id="bracelet3" style="background-image: url('./img/inventory/comingsoon.jpg')">
+			Bracelet 3
+		</button>
+		<button class="filterbtn bracelet" id="bracelet4" style="background-image: url('./img/inventory/comingsoon.jpg')">
+			Bracelet 4
+		</button>
+		<button class="filterbtn bracelet" id="bracelet5" style="background-image: url('./img/inventory/comingsoon.jpg')">
+			Bracelet 5
+		</button>
+		
+		<button class="filterbtn ring" id="ring1" style="background-image: url('./img/inventory/ring.jpg')">
+			Ring 1
+		</button>
+		<button class="filterbtn ring" id="ring2" style="background-image: url('./img/inventory/comingsoon.jpg')">
+			Ring 2
+		</button>
+		<button class="filterbtn ring" id="ring3" style="background-image: url('./img/inventory/comingsoon.jpg')">
+			Ring 3
+		</button>
+		<button class="filterbtn ring" id="ring4" style="background-image: url('./img/inventory/comingsoon.jpg')">
+			Ring 4
+		</button>
+		<button class="filterbtn ring" id="ring5" style="background-image: url('./img/inventory/comingsoon.jpg')">
+			Ring 5
+		</button>
+		
+		<button class="filterbtn other" id="other1" style="background-image: url('./img/inventory/comingsoon.jpg')">
+			Other 1
+		</button>
+		<button class="filterbtn other" id="other2" style="background-image: url('./img/inventory/comingsoon.jpg')">
+			Other 2
+		</button>
+		<button class="filterbtn other" id="other3" style="background-image: url('./img/inventory/comingsoon.jpg')">
+			Other 3
+		</button>
+		<button class="filterbtn other" id="other4" style="background-image: url('./img/inventory/comingsoon.jpg')">
+			Other 4
+		</button>
+		<button class="filterbtn other" id="other5" style="background-image: url('./img/inventory/comingsoon.jpg')">
+			Other 5
+		</button>
+		
+	</div>
 
-		<button class="filterbtn necklace">Necklace 2</button>
-		<button class="filterbtn necklace">Necklace 3</button>
-		<button class="filterbtn necklace">Necklace 4</button>
-		<button class="filterbtn necklace">Necklace 5</button>
-		
-		<button class="filterbtn bracelet">Bracelet 1</button>
-		<button class="filterbtn bracelet">Bracelet 2</button>
-		<button class="filterbtn bracelet">Bracelet 3</button>
-		<button class="filterbtn bracelet">Bracelet 4</button>
-		<button class="filterbtn bracelet">Bracelet 5</button>
-		
-		<button class="filterbtn ring">Ring 1</button>
-		<button class="filterbtn ring">Ring 2</button>
-		<button class="filterbtn ring">Ring 3</button>
-		<button class="filterbtn ring">Ring 4</button>
-		<button class="filterbtn ring">Ring 5</button>
-		
-		<button class="filterbtn other">Other 1</button>
-		<button class="filterbtn other">Other 2</button>
-		<button class="filterbtn other">Other 3</button>
-		<button class="filterbtn other">Other 4</button>
-		<button class="filterbtn other">Other 5</button>
-		
+	<!--The Modal-->
+	<div id="myModal" class="modal" style="display: none;">
+		<!--Modal Content-->
+		<div class="modal-content">
+			<div class="modal-header">
+				<span class="close">&times;</span>
+				<h2>Jewelry</h2>
+			</div>
+			
+			<div class="modal-body">
+				<p>Price: $119.99 
+					<br>In Stock: 20 
+					<br>Sold: 48 
+				</p>
+			</div>
+
+			<div class="modal-footer">
+				<h4>SKU: 12345678</h4>
+			</div>
+			
+		</div>
 	</div>
 
 </body>
