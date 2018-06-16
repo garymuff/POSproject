@@ -16,7 +16,7 @@
 
 		<div class="poscontainer">
 					<!-- Beginning of Menu Bar Container - Gary --> 
-			<div class="menucontainer" id="boxdesign">
+			<div class="menucontainer boxdesign">
 				<div id="menuwrapper">
 					<div class="link">
 						<a class="menulinks" href="./">Home</a>
@@ -27,15 +27,18 @@
 				</div>
 			</div>
 			<!-- End of Menu Bar Container - Gary --> 
-				<div class="itemcontainer">
+				<div class="selectioncontainer">
 					<!-- Beginning of NumberPad Container - Gary --> 
 					<div class="numberpadcontainer">
-						<div class="numdisplaywrap" id="boxdesign">
+						<div class="numdisplaywrap boxdesign">
 							<input type="text" id="numberpaddisplay" placeholder="Enter SKU" maxlength="6" readonly>
+							<div class="bscontainer" id="backspace">
+								<img id="bsimg" src="./img/core/icons/bs.png">
+							</div>
 						</div>
 						<!-- Beginning of NumberPad - Gary --> 
 						<div class="nptbwrap">
-							<div class="numberpad" id="boxdesign">
+							<div class="numberpad boxdesign">
 								<div class="nprow"> 
 									<div class="buttoncontainer" id="seven">7</div>
 									<div class="buttoncontainer" id="eight">8</div>
@@ -59,7 +62,7 @@
 								<!-- End of NumberPad -->
 							</div>
 							<!-- Beginning of Toolbox -->  
-							<div class="toolbox" id="boxdesign">
+							<div class="toolbox boxdesign">
 								<div class="tblabel">Tools</div>
 								<div class="toolbuttoncontainer active" id="SKU">SKU</div>
 	<!-- 							<div class="toolbuttoncontainer" id="discount">%</div>
@@ -70,14 +73,14 @@
 					<!-- End of NumberPad Container - Gary --> 
 				</div>
 				<div class="dynamicreceiptcontainer">
-					<div class="dynamicreceipt"  id="boxdesign">
+					<div class="dynamicreceiptwrap boxdesign">
 						<div class="drlabel">Receipt</div>
 						<hr>
-						<div class="itemheader">
-							<div class="SKU sbs">SKU</div>
-							<div class="qty sbs">QTY</div>
-							<div class="name sbs">Name</div>
-							<div class="price" id="pheader">Price</div>
+						<div class="itemrowlabels">
+							<div class="SKU labelleft">SKU</div>
+							<div class="qty labelleft">QTY</div>
+							<div class="name labelleft">Name</div>
+							<div class="price">Price</div>
 						</div>
 						<div class="ledger" id="ledger">
 
