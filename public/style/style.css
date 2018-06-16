@@ -250,7 +250,7 @@ div.drlabel {
 }
 
 /*DIV for labels for each item in row in receipt container*/
-div.itemrowlabels
+div.itemrowlabels {
 	width: 90%;
 	margin-left: 10px;
 	margin-top: -10px;
