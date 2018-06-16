@@ -6,6 +6,7 @@
 		<title>OpenPOS</title>
 		<script type="text/javascript" src="./js/main.js"></script>
 		<script type="text/javascript" src="./js/receipt.js"></script>
+		<script type="text/javascript" src="./js/jquery-3.3.1.min.js"></script>
 	</head>
 	<body>
 		<div class="header">
@@ -31,6 +32,11 @@
 					<!-- Beginning of NumberPad Container - Gary --> 
 					<div class="numberpadcontainer">
 						<div class="numdisplaywrap boxdesign">
+							<!-- numpad display error div -->
+							<div id="npderror">
+								Error
+							</div>
+							<!-- end - numpad display error div -->
 							<input type="text" id="numberpaddisplay" placeholder="Enter SKU" maxlength="6" readonly>
 							<div class="bscontainer" id="backspace">
 								<img id="bsimg" src="./img/core/icons/bs.png">

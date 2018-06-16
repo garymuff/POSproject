@@ -1,3 +1,7 @@
+
+//made variable to globally change SKU length
+var SKUlength = 6;
+
 window.onload = function(){ 
 
 
@@ -105,6 +109,9 @@ window.onload = function(){
 		var submit = document.getElementById("numberpaddisplay");
 		if (ismaxlength(submit) == true){
 			document.getElementById("ledger").innerHTML += "<div class=\"item\"><div class=\"SKU labelleft\">"+submit.value+"</div><div class=\"qty labelleft\">1</div><div class=\"name labelleft\">test</div><div class=\"price\">$0.00&nbsp;</div></div>";
+		} else{
+			document.getElementById("npderror").innerHTML = "Error: Enter " + SKUlength + " Digit SKU";
+			document.getElementById("npderror").style.display = "inline";
 		}
 		submit.value = "";
 		//run the backspace display function to show/hide backspace
