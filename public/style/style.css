@@ -11,51 +11,12 @@ html, body {
   background-image: url('../img/core/background.jpg');
   font-family: 'Oswald', sans-serif;
 }
-/*Container for the header with graident behind logo for better visual appeal*/
-div.header {
-	width: 100%; 
-	background: linear-gradient(to bottom, rgba(0, 0, 0, 1),rgba(20, 12, 8, .65));
-}
-
-/*Logo height/width settings*/
-#logo{
-	padding-left: 20px;
-	width: 25%;
-	min-width: 262px;
-	height: auto;
-}
 
 /*DIV class for point of sale container*/
 div.poscontainer {
 	width: 90%; 
 	margin-bottom: 10px; 
 	margin:auto;
-}
-
-/*DIV class for MENU link container*/
-div.menucontainer{
-	min-width: 331.5px; 
-	height: 40px; 
-	margin-bottom: 10px; 
-	margin-left: auto; 
-	margin-right: auto;
-}
-
-/*DIV wrapper for better alignmen of menu links*/
-#menuwrapper {
-  	min-width: 331.5px; 
-  	text-align: center;
-  	vertical-align: middle;
-  	line-height: 40px;
-  	margin-left: auto; 
-	margin-right: auto;
-  }
-
-/*DIV class for each link*/
-div.link {
-	float: left;
-	width: 150px;
-	text-align: center;
 }
 
 /*DIV class for container holding the numpad and/or other divs in this section*/
@@ -70,7 +31,6 @@ div.numberpadcontainer {
 	height: 438px;
 	min-width: 337.5px;
 	margin-bottom: 25px;
-	margin-top: 25px;
 }
 
 /*DIV Wrapper for the input box displaying the SKU*/
@@ -247,7 +207,6 @@ div.dynamicreceiptcontainer {
 	height: 50px;
 	float:right;
 	margin-bottom: 25px;
-    margin-top: 25px;
 }
 
 /*div for dynamic receipt wrapper*/
@@ -317,17 +276,6 @@ div.price{
 		width: 331.5px; 
 		margin-bottom: 10px; 
 		margin:auto;
-	}
-	div.header {
-		width: 262px; 
-		margin-left: auto; 
-		margin-right: auto;
-		background: linear-gradient(to bottom, rgba(0, 0, 0, 1),rgba(20, 12, 8, .65));
-	}
-	#logo{
-		width: 25%;
-		min-width: 262px;
-		height: auto;
 	}
 	div.itemcontainer {
 		float: none;
