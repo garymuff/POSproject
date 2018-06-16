@@ -1,4 +1,5 @@
 window.onload = function(){ 
+	// Begin code for button click
 	document.getElementById("zero").onclick = function() {
 		var add = document.getElementById("numberpaddisplay");
 		if (ismaxlength(add) == false){
@@ -68,8 +69,9 @@ window.onload = function(){
 		if (ismaxlength(submit) == true){
 			document.getElementById("ledger").innerHTML += "<div class=\"item\"><div class=\"SKU sbs\">"+submit.value+"</div><div class=\"qty sbs\">1</div><div class=\"name sbs\">test</div><div class=\"price\">$0.00&nbsp;</div></div>";
 		}
+		submit.value = "";
 	};
-
+	//function to check for max length of sixe digits
 	function ismaxlength(input) {
 		input = input.value
 		if (input.length < 6){
