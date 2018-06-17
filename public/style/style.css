@@ -14,7 +14,8 @@ html, body {
 
 /*DIV class for point of sale container*/
 div.poscontainer {
-	width: 90%; 
+	width: 90%;
+	height: 400px; 
 	margin-bottom: 10px; 
 	margin:auto;
 }
