@@ -4,6 +4,7 @@ html,
 body{
 	text-align: center;
     background-image: url('../img/core/background.jpg');
+    height: 100%;
 }
 
 .logo {
