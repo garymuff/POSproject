@@ -1,0 +1,103 @@
+/*Fonts imported from Google Webfont API*/
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+
+/*Container for the header with graident behind logo for better visual appeal*/
+div.header {
+	width: 100%; 
+	height: 135px;
+	background: linear-gradient(to bottom, rgba(0, 0, 0, 1),rgba(20, 12, 8, .65));
+}
+
+div.headerwrapper {
+	width: 90%;
+	height: 140px;
+	margin: 0 auto;
+}
+
+div.logowrapper {
+	display: flex;
+  	justify-content: center;
+  	align-items: center;
+	width: 33%;
+	height: 120px;
+	float: left;
+}
+
+/*Logo height/width settings*/
+#logo{
+	margin-right: auto;
+	margin-left: auto;
+	width: 100%;
+	height: auto;
+	max-width: 310px;
+	height: auto;
+	float:left;
+}
+
+/*DIV class for MENU link container*/
+div.menucontainer{
+	width: 67%;
+	height: 60px;
+	margin-top: 34.5px; 
+	float:left;
+}
+
+/*DIV wrapper for better alignmen of menu links*/
+div.menuwrapper {
+	width: 85%;
+	height: 60px;
+  	text-align: center;
+  	vertical-align: middle;
+  	line-height: 92px;
+  	margin-left: auto; 
+	margin-right: auto;
+  }
+
+/*DIV class for each link*/
+div.link {
+	float: left;
+	width: 25%;
+	text-align: center;
+}
+
+.menulinks {
+	width: 45px;
+	height: auto;
+}
+
+/*Special style settings for smaller screens*/
+@media only screen and (max-width: 768px) {
+	div.header {
+		width: 100%; 
+		margin-left: auto; 
+		margin-right: auto;
+		background: linear-gradient(to bottom, rgba(0, 0, 0, 1),rgba(20, 12, 8, .65));
+	}
+	div.headerwrapper {
+		height:200px;
+		margin: 0 auto;
+	}
+	div.logowrapper {
+		width: 331.5px;
+		float: none;
+		margin-right: auto;
+		margin-left: auto;
+	}
+	#logo{
+		width: 100%;
+		height: auto;
+		float: none;
+	}
+	div.menuwrapper {
+		width: 100%;
+	}
+	div.menucontainer{
+		width: 331.5px;
+		height: 60px;
+		margin-top: 15px; 
+		margin-left: auto; 
+		margin-right: auto;
+		float: none;
+
+	}
+}

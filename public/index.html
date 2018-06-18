@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="./style/header.css">
 		<link rel="stylesheet" type="text/css" href="./style/style.css">
 		<title>OpenPOS</title>
 		<script type="text/javascript" src="./js/main.js"></script>
@@ -10,74 +11,84 @@
 	</head>
 	<body>
 		<div class="header">
+			<div class="headerwrapper">
 			<!-- Image is property of Shahira Jewelry Design, placement is for demo purposes only!
-				Reference: https://www.sahirajewelrydesign.com/ --> 
-			<a href="/"><img id="logo" src="./img/core/logo.png"></div></a>
-		</div>
-
-		<div class="poscontainer">
-					<!-- Beginning of Menu Bar Container - Gary --> 
-			<div class="menucontainer boxdesign">
-				<div id="menuwrapper">
-					<div class="link">
-						<a class="menulinks" href="./">Home</a>
-					</div>
-					<div class="link">
-						<a class="menulinks" href="./inventory.html">Inventory</a>
+					Reference: https://www.sahirajewelrydesign.com/ --> 
+				<div class="logowrapper">
+					<a href="/"><img id="logo" src="./img/core/logo.png"></a>
+				</div>
+			<!-- Beginning of Menu Bar Container - Gary --> 
+				<div class="menucontainer">
+					<div class="menuwrapper boxdesign">
+						<div class="link">
+							<a class="" href="./"><img class="menulinks" alt="Home" src="./img/core/icons/home.png"></a>
+						</div>
+						<div class="link">
+							<a class="" href="./inventory.html"><img class="menulinks" alt="Inventory" src="./img/core/icons/inventory.png"></a>
+						</div>
+						<div class="link">
+							<a class="" href="./inventory.html"><img class="menulinks" alt="Orders" src="./img/core/icons/drawer.png"></a>
+						</div>
+						<div class="link">
+							<a class="" href="./inventory.html"><img class="menulinks" alt="Log Out" src="./img/core/icons/exit.png"></a>
+						</div>
 					</div>
 				</div>
+				<!-- End of Menu Bar Container - Gary --> 
 			</div>
-			<!-- End of Menu Bar Container - Gary --> 
-				<div class="selectioncontainer">
-					<!-- Beginning of NumberPad Container - Gary --> 
-					<div class="numberpadcontainer">
-						<div class="numdisplaywrap boxdesign">
-							<!-- numpad display error div -->
-							<div id="npderror">
-								Error
-							</div>
-							<!-- end - numpad display error div -->
-							<input type="text" id="numberpaddisplay" placeholder="Enter SKU" maxlength="6" readonly>
-							<div class="bscontainer" id="backspace">
-								<img id="bsimg" src="./img/core/icons/bs.png">
-							</div>
+		</div>
+		<div class="poscontainer">
+			<div class="selectioncontainer">
+				<!-- Beginning of NumberPad Container - Gary --> 
+				<div class="numberpadcontainer">
+					<div class="numdisplaywrap boxdesign">
+						<!-- numpad display error div -->
+						<div id="npderror">
+							Error
 						</div>
-						<!-- Beginning of NumberPad - Gary --> 
-						<div class="nptbwrap">
-							<div class="numberpad boxdesign">
-								<div class="nprow"> 
-									<div class="buttoncontainer disabletextselect" id="seven">7</div>
-									<div class=" buttoncontainer disabletextselect" id="eight">8</div>
-									<div class=" buttoncontainer disabletextselect" id="nine">9</div>
-								</div> 
-								<div class="nprow"> 
-									<div class=" buttoncontainer disabletextselect" id="four">4</div>
-									<div class=" buttoncontainer disabletextselect" id="five">5</div>
-									<div class=" buttoncontainer disabletextselect" id="six">6</div>
-								</div> 
-								<div class="nprow"> 
-									<div class=" buttoncontainer disabletextselect" id="one">1</div>
-									<div class=" buttoncontainer disabletextselect" id="two">2</div>
-									<div class=" buttoncontainer disabletextselect" id="three">3</div>
-								</div> 
-								<div class="nprow"> 
-									<div class=" buttoncontainer disabletextselect" id="del">&cross;</div>
-									<div class=" buttoncontainer disabletextselect" id="zero">0</div>
-									<div class=" buttoncontainer disabletextselect" id="enter">&check;</div>
-								</div> 
-								<!-- End of NumberPad -->
-							</div>
-							<!-- Beginning of Toolbox -->  
-							<div class="toolbox boxdesign">
-								<div class="tblabel">Tools</div>
-								<div class="toolbuttoncontainer active" id="SKU">SKU</div>
-	<!-- 							<div class="toolbuttoncontainer" id="discount">%</div>
-								<div class="toolbuttoncontainer" id="manualitem">M</div> -->
-							</div>
+						<!-- end - numpad display error div -->
+						<input type="text" id="numberpaddisplay" placeholder="Enter SKU" maxlength="6" readonly>
+						<div class="bscontainer" id="backspace">
+							<img id="bsimg" src="./img/core/icons/bs.png">
 						</div>
 					</div>
-					<!-- End of NumberPad Container - Gary --> 
+					<!-- Beginning of NumberPad - Gary --> 
+					<div class="nptbwrap">
+						<div class="numberpad boxdesign">
+							<div class="nprow"> 
+								<div class="buttoncontainer disabletextselect" id="seven">7</div>
+								<div class=" buttoncontainer disabletextselect" id="eight">8</div>
+								<div class=" buttoncontainer disabletextselect" id="nine">9</div>
+							</div> 
+							<div class="nprow"> 
+								<div class=" buttoncontainer disabletextselect" id="four">4</div>
+								<div class=" buttoncontainer disabletextselect" id="five">5</div>
+								<div class=" buttoncontainer disabletextselect" id="six">6</div>
+							</div> 
+							<div class="nprow"> 
+								<div class=" buttoncontainer disabletextselect" id="one">1</div>
+								<div class=" buttoncontainer disabletextselect" id="two">2</div>
+								<div class=" buttoncontainer disabletextselect" id="three">3</div>
+							</div> 
+							<div class="nprow"> 
+								<div class=" buttoncontainer disabletextselect" id="del">&cross;</div>
+								<div class=" buttoncontainer disabletextselect" id="zero">0</div>
+								<div class=" buttoncontainer disabletextselect" id="enter">&check;</div>
+							</div> 
+							<!-- End of NumberPad -->
+						</div>
+						<!-- Beginning of Toolbox -->  
+						<div class="toolbox boxdesign">
+							<div class="tblabel">Tools</div>
+							<div class="toolbuttoncontainer active" id="SKU">SKU</div>
+<!-- 							<div class="toolbuttoncontainer" id="discount">%</div>
+							<div class="toolbuttoncontainer" id="manualitem">M</div> -->
+						</div>
+					</div>
 				</div>
+			<!-- End of NumberPad Container - Gary --> 
+			</div>
+		<!-- End of selection container -->
 				<div class="dynamicreceiptcontainer">
 					<div class="dynamicreceiptwrap boxdesign">
 						<div class="drlabel">Receipt</div>
@@ -94,6 +105,5 @@
 					</div>
 				</div>
 			</div>
-		</div>
 	</body>
 </html>
