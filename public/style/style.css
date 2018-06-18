@@ -109,13 +109,11 @@ div.bscontainer {
 
 /*DELETE ID tag*/
 #del {
-	color: #ea0000;
 	font-size: 150%;
 }
 
 /*Enter ID tag*/
 #enter {
-	color: #00b83d;
 	font-size: 150%;
 }
 
@@ -150,6 +148,22 @@ div.buttoncontainer {
 	cursor:default; 
 	color: #404040;
 	background: radial-gradient(circle, rgba(255,241,209,1) 4%, rgba(255,239,202,1) 22%, rgba(244,223,180,1) 96%, rgba(235,219,185,1) 99%);
+}
+
+div.enter{
+	color: #00b83d;
+}
+
+div.del{
+	color: #ea0000;
+}
+
+/*DIV for disabling a button*/
+div.disabledbutton {
+	background: rgba(159, 159, 159, 0.5);
+	color: gray;
+	border: none;
+	box-shadow: 0 4px 8px 0 rgba(54, 81, 94, 0.2), 0 6px 20px 0 rgba(54, 81, 94, 0.19);
 }
 
 /*Special effects for hover for toolbox and buttoncontainer*/
@@ -297,4 +311,9 @@ div.price{
     -webkit-user-select: none; /* Safari */
        -moz-user-select: none; /* Firefox */
         -ms-user-select: none; /* IE support */
+}
+
+/*DIV class to disable clicks*/
+.disableclick {
+	 pointer-events: none;
 }

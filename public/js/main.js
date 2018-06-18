@@ -147,7 +147,11 @@ function bsdiplay() {
 	input = document.getElementById("numberpaddisplay").value
 	if (input.length == 0){
 		document.getElementById("backspace").style.display = "none";
+		$("#enter").addClass("disabledbutton disableclick");
+		$("#del").addClass("disabledbutton disableclick");
 	} else{
 		document.getElementById("backspace").style.display = "inline";
+		$("#enter").removeClass("disabledbutton disableclick");
+		$("#del").removeClass("disabledbutton disableclick");
 	}
 };
