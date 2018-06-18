@@ -80,7 +80,7 @@ div.nptbwrap {
 
 /*ID for the numberpad display container*/
 #numberpaddisplay {
-	width: 98%;
+	width: 96%;
 	text-align: center;
     padding: 5px 5px;
     display: inline-block;
@@ -137,7 +137,8 @@ div.buttoncontainer {
 	text-align: center;
 	vertical-align: middle;
 	border-color: rgb(232, 213, 165);
-	margin: 2px;
+	margin-top: 5px;
+	margin-bottom: 5px;
 	width: 75px;
 	height: 75px;
 	float: left;
@@ -148,6 +149,10 @@ div.buttoncontainer {
 	cursor:default; 
 	color: #404040;
 	background: radial-gradient(circle, rgba(255,241,209,1) 4%, rgba(255,239,202,1) 22%, rgba(244,223,180,1) 96%, rgba(235,219,185,1) 99%);
+}
+
+div.buttonmargin {
+	margin-right: 10px
 }
 
 div.enter{
@@ -183,7 +188,7 @@ div.toolbuttoncontainer:hover, div.buttoncontainer:hover {
 div.nprow {
 	width: 100%;
 	height: 80px;
-	margin: 5px;
+	margin-left: 1.7px;
 }
 
 /*DIV for tool box*/
