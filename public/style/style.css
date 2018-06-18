@@ -68,7 +68,7 @@ div.boxdesign{
 	border-color: #404040; 
 	border-width: 3px; 
 	border-style: solid;
-	border-radius: 4px;
+	border-radius: 15px;
 	background: radial-gradient(circle, rgb(241, 213, 159) 30%, rgb(255, 231, 175) 54%, rgb(255, 228, 171) 57%, rgb(243, 220, 169) 86%, rgb(222, 200, 155) 100%);
 }
 
@@ -109,13 +109,13 @@ div.bscontainer {
 
 /*DELETE ID tag*/
 #del {
-	color: #cc0000;
+	color: #ea0000;
 	font-size: 150%;
 }
 
 /*Enter ID tag*/
 #enter {
-	color: #009933;
+	color: #00b83d;
 	font-size: 150%;
 }
 
@@ -159,10 +159,10 @@ div.toolbuttoncontainer:hover, div.buttoncontainer:hover {
 }
 
 /*Special effects for active for toolbox and buttoncontainer*/
-.active, div.toolbuttoncontainer:active, div.buttoncontainer:active {
-	background-color: #77653f;
-	border-color: #000000;
+.active, div.toolbuttoncontainer:active, div.buttoncontainer:active, #enter:active, #del:active {
+	background: rgba(119, 110, 86, 0.5);
 	box-shadow: none;
+	color: gray;
 }
 
 /*Numberpad row style settings*/
