@@ -148,10 +148,12 @@ function bsdiplay() {
 	if (input.length == 0){
 		document.getElementById("backspace").style.display = "none";
 		$("#enter").addClass("disabledbutton disableclick");
+		$("#zero").addClass("zerofix");
 		$("#del").addClass("disabledbutton disableclick");
 	} else{
 		document.getElementById("backspace").style.display = "inline";
-		$("#enter").removeClass("disabledbutton disableclick");
+		$("#enter").removeClass("disabledbutton zerofix disableclick");
+		$("#zero").removeClass("zerofix");
 		$("#del").removeClass("disabledbutton disableclick");
 	}
 };

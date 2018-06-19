@@ -85,9 +85,13 @@
 							</div>
 							<div class="qtybox boxdesign">
 								<div class="tblabel">QTY</div>
-								<div class="" id="qtymore">&oplus;</div>
-								<div class="" id="qtyless">&ominus;</div>
+								<div class="smallbuttoncontainer" id="qtymore">&plus;</div>
+								<div class="qtyinput">
+									<input type="text" class="disabletextselect" id="qtyinput" value="1" maxlength="2" readonly>
+								</div>
+								<div class="smallbuttoncontainer disabledbutton" id="qtyless">&minus;</div>
 							</div>
+							<!-- End of Toolbox  -->
 						</div>
 					</div>
 				</div>
@@ -105,7 +109,7 @@
 							<div class="price">Price</div>
 						</div>
 						<div class="ledger" id="ledger">
-
+							<!-- items are added here dynamically -->
 						</div>
 					</div>
 				</div>
