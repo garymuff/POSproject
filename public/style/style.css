@@ -191,11 +191,16 @@ div.nprow {
 	margin-left: 1.7px;
 }
 
+div.toolboxcontainer {
+	width: 52.5px;
+	margin-left: 5px;
+	float: left;
+}
+
 /*DIV for tool box*/
 div.toolbox {
 	width: 46.5px;
-	margin-left: 5px;
-	float: left;
+	margin-bottom: 5px;
 }
 
 /*tool button container for each button in the tool box*/
@@ -220,7 +225,7 @@ div.toolbuttoncontainer {
 div.tblabel{
 	width: 100%;
 	text-align: center;
-	margin-bottom: 10px;
+	margin-bottom: 5px;
 }
 
 /*Container for the dynamix receipt*/
