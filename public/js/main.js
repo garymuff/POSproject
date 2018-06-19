@@ -108,6 +108,7 @@ window.onload = function(){
 	document.getElementById("enter").onclick = function() {
 		var submit = document.getElementById("numberpaddisplay");
 		if (ismaxlength(submit) == true){
+			isSkuInStock(submit.value);
 			document.getElementById("ledger").innerHTML += "<div class=\"item\"><div class=\"SKU labelleft\">"+submit.value+"</div><div class=\"qty labelleft\">1</div><div class=\"name labelleft\">test</div><div class=\"price\">$0.00&nbsp;</div></div>";
 			submit.value = "";
 		} else{
@@ -122,6 +123,13 @@ window.onload = function(){
 
 	
 };
+
+//function to check if sku exists in the db
+function isSkuInStock(sku){
+	$.get("/query", function(sku) {
+		
+	});
+}
 
 //function to check for max length of sixe digits
 function ismaxlength(input) {

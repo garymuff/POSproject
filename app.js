@@ -24,6 +24,7 @@ app.get('/success', (req, res) => {
 	}
 });
 app.get('/error', (req, res) => res.sendFile(__dirname + '/public/login.html'));
+app.get('/query', (req, res) => console.log(req));
 
 // Authenticate with passport
 const LocalStrategy = require('passport-local').Strategy;
