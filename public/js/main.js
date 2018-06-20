@@ -120,6 +120,32 @@ window.onload = function(){
 	};
 	//End code for numpad button click
 
+
+	//Begin javascript for checkout popup
+
+	document.getElementById('checkout').onclick = function() {
+		modal.style.display = "block";
+	}
+
+	//Get modal
+	var modal = document.getElementById('checkoutModal');
+	
+	//Get span element to close modal
+	var span = document.getElementsByClassName("close")[0];
+	
+	//When user clicks x, close modal
+	span.onclick = function() {
+		modal.style.display = "none";
+	}
+
+	//When user clicks outside modal, close modal
+	window.onclick = function(event) {
+		if(event.target == modal) {
+			modal.style.display = "none";
+		}
+	}
+
+	//End code for checkout popup
 	
 };
 

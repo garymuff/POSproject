@@ -315,6 +315,43 @@ div.price{
     font-size: 16px;
 }
 
+.paymentcontainer {
+	
+}
+
+/*Cash Button*/
+.cashbutton {
+	border-radius: 0.25em;
+	/*background-color: #228B22; */
+	background-image:  url('../img/inventory/fire.jpg');
+	width: 48%;
+	margin: 2px;
+    color: red;
+    padding: 14px 20px;
+    text-align: center;
+    display: inline-block;
+    border: 1px solid gray;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/*Card Button*/
+.cardbutton {
+	border-radius: 0.25em;
+	background-color: #2A6BAC;
+	background-image:  url('../img/inventory/fire.jpg');
+	float: right;
+	width: 48%;
+	margin: 2px;
+    color: red;
+    padding: 14px 20px;
+    text-align: center;
+    display: inline-block;
+    border: 1px solid gray;
+    cursor: pointer;
+    font-size: 16px;
+}
+
 /*Checkout Modal*/
 .checkoutmodal {
 	display: none;
@@ -332,7 +369,7 @@ div.price{
 
 .co-modal-content {
 	position: relative;
-	background-color: #C19972;
+	background-color: rgb(222, 200, 155);
 	margin: auto;
 	padding: 0;
 	border: 1px solid #ccc;
