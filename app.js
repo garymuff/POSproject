@@ -24,7 +24,13 @@ app.get('/success', (req, res) => {
 	}
 });
 app.get('/error', (req, res) => res.sendFile(__dirname + '/public/login.html'));
-app.get('/query', (req, res) => console.log(req));
+app.post('/query', async (req, res) => {
+	const sku = req.body.sku;
+	const sql = "SELECT sku, name, price, quantity FROM inventory WHERE sku =\'"+ sku +"\';" 
+	const query = await db.query(sql);
+	console.log(query.rows[0]);
+	res.send(query.rows[0]);
+});
 
 // Authenticate with passport
 const LocalStrategy = require('passport-local').Strategy;

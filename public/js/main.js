@@ -105,12 +105,20 @@ window.onload = function(){
 		//run the backspace display function to show/hide backspace
 		bsdiplay();
 	};
-	document.getElementById("enter").onclick = function() {
-		var submit = document.getElementById("numberpaddisplay");
-		if (ismaxlength(submit) == true){
-			isSkuInStock(submit.value);
-			document.getElementById("ledger").innerHTML += "<div class=\"item\"><div class=\"SKU labelleft\">"+submit.value+"</div><div class=\"qty labelleft\">1</div><div class=\"name labelleft\">test</div><div class=\"price\">$0.00&nbsp;</div></div>";
-			submit.value = "";
+	document.getElementById("enter").onclick = async function() {
+		var display = document.getElementById("numberpaddisplay");
+		if (ismaxlength(display)){
+			const item = await getSkuFromDatabase(display.value);
+			console.log(item);
+			if(item !== ''){
+				document.getElementById("ledger").innerHTML += "<div class=\"item\"><div class=\"SKU labelleft\">"+item.sku+"</div><div class=\"qty labelleft\">1</div><div class=\"name labelleft\">"+item.name+"</div><div class=\"price\">"+item.price+"&nbsp;</div></div>";
+				clearDisplay(display);
+			} else {
+				document.getElementById("npderror").innerHTML = "SKU out of stock";
+				document.getElementById("npderror").style.display = "inline";
+				$("#npderror").fadeOut(1500);
+				clearDisplay(display);
+			}
 		} else{
 			document.getElementById("npderror").innerHTML = "Error: Enter " + SKUlength + " Digit SKU";
 			document.getElementById("npderror").style.display = "inline";
@@ -125,15 +133,25 @@ window.onload = function(){
 };
 
 //function to check if sku exists in the db
-function isSkuInStock(sku){
-	$.get("/query", function(sku) {
-		
-	});
+async function getSkuFromDatabase(sku){
+	const response = await $.post("/query", {sku: sku})
+	.done(function(msg){ 
+		return msg;
+	}).fail(function(xhr, status, error) {
+    	alert("Server error");
+    });
+
+    return response;
+}
+
+//function to clear numpad
+function clearDisplay(numpad){
+	numpad.value = "";
 }
 
 //function to check for max length of sixe digits
 function ismaxlength(input) {
-	input = input.value
+	input = input.value;
 	if (input.length < 6){
 		return false;
 	} else{
@@ -143,7 +161,7 @@ function ismaxlength(input) {
 
 //function to check if input is empty
 function isEmpty(input) {
-	input = input.value
+	input = input.value;
 	if (input.length != 0){
 		return false;
 	} else{
