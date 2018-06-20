@@ -5,7 +5,9 @@ var SKUlength = 6;
 window.onload = function(){ 
 
 
-
+	//Load cart from cookie if it exists
+	var cart = getCart();
+	restoreCart();
 	//run the backspace display function to show/hide backspace
 	bsdiplay();
 	//Backspace button functionality
@@ -113,6 +115,8 @@ window.onload = function(){
 			if(item !== ''){
 				document.getElementById("ledger").innerHTML += "<div class=\"item\"><div class=\"SKU labelleft\">"+item.sku+"</div><div class=\"qty labelleft\">1</div><div class=\"name labelleft\">"+item.name+"</div><div class=\"price\">"+item.price+"&nbsp;</div></div>";
 				clearDisplay(display);
+				cart.push(item);
+				saveToCookie(cart);
 			} else {
 				document.getElementById("npderror").innerHTML = "SKU out of stock";
 				document.getElementById("npderror").style.display = "inline";
@@ -133,6 +137,7 @@ window.onload = function(){
 	//Begin javascript for checkout popup
 
 	document.getElementById('checkout').onclick = function() {
+		clearCart();
 		modal.style.display = "block";
 	}
 
@@ -207,3 +212,36 @@ function bsdiplay() {
 		$("#del").removeClass("disabledbutton disableclick");
 	}
 };
+
+function addItemToCart(item){
+	document.getElementById("ledger").innerHTML += "<div class=\"item\"><div class=\"SKU labelleft\">"+item.sku+"</div><div class=\"qty labelleft\">1</div><div class=\"name labelleft\">"+item.name+"</div><div class=\"price\">"+item.price+"&nbsp;</div></div>";
+};
+
+// Restore cart from cookie
+function restoreCart(){
+	if($.cookie('cart') !== undefined){
+		var cookie = JSON.parse($.cookie('cart'));
+		for(var i=0; i<cookie.length; i++){
+			addItemToCart(cookie[i]);
+		}
+	}
+};
+
+// Save cart to cookie
+function saveToCookie(cart){
+	$.cookie('cart', JSON.stringify(cart));
+}
+
+// Clear cart from cookie
+function clearCart(){
+	$.removeCookie('cart');
+}
+
+// Get cart from cookie
+function getCart(){
+	if($.cookie('cart') !== undefined){
+		return JSON.parse($.cookie('cart'));
+	} else {
+		return [];
+	}
+}
