@@ -252,6 +252,11 @@ function qtybuttoncheck() {
 
 };
 
+// Updates total everytime you submit an item
+function updateTotal(){
+	
+}
+// Gets quantity from quantity ticker thingy
 function getQuantity(){
 	return document.getElementById("qtyinput").value;
 }
