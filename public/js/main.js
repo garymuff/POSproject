@@ -257,7 +257,7 @@ function qtybuttoncheck() {
 function getTotal(cart){
 	var total = 0;
 	for(var i=0; i<cart.length; i++){
-		total+=parseFloat(cart[i].price);
+		total+=parseFloat(cart[i].price * cart[i].quantity);
 	}
 	console.log(total);
 	return total;
