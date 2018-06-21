@@ -274,7 +274,7 @@ function getQuantity(){
 }
 
 function addItemToCart(item){
-	document.getElementById("ledger").innerHTML += "<div class=\"item\"><div class=\"SKU labelleft\">"+item.sku+"</div><div class=\"qty labelleft\">"+item.quantity+"</div><div class=\"name labelleft\">"+item.name+"</div><div class=\"price\">"+item.price * item.quantity +"&nbsp;</div></div>";
+	document.getElementById("ledger").innerHTML += "<div class=\"item\"><div class=\"SKU labelleft\">"+item.sku+"</div><div class=\"qty labelleft\">"+item.quantity+"</div><div class=\"name labelleft\">"+item.name+"</div><div class=\"price\">"+ '$' + (item.price * item.quantity) +"&nbsp;</div></div>";
 };
 
 // Restore cart from cookie
