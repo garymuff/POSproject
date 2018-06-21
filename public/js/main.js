@@ -106,6 +106,7 @@ window.onload = function(){
 		del.value = "";
 		//run the backspace display function to show/hide backspace
 		bsdiplay();
+		qtyReset();
 	};
 	document.getElementById("enter").onclick = async function() {
 		var display = document.getElementById("numberpaddisplay");
@@ -130,6 +131,7 @@ window.onload = function(){
 		}
 		//run the backspace display function to show/hide backspace
 		bsdiplay();
+		qtyReset();
 	};
 	//End code for numpad button click
 
@@ -280,4 +282,11 @@ function getCart(){
 	} else {
 		return [];
 	}
+}
+
+// Reset the QTY input
+
+function qtyReset() {
+	document.getElementById("qtyinput").value = "1";
+	qtybuttoncheck();
 }
