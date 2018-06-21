@@ -114,10 +114,12 @@ window.onload = function(){
 			const item = await getSkuFromDatabase(display.value);
 			console.log(item);
 			if(item !== ''){
-				document.getElementById("ledger").innerHTML += "<div class=\"item\"><div class=\"SKU labelleft\">"+item.sku+"</div><div class=\"qty labelleft\">1</div><div class=\"name labelleft\">"+item.name+"</div><div class=\"price\">"+item.price+"&nbsp;</div></div>";
+				item.quantity = getQuantity();
+				addItemToCart(item);
 				clearDisplay(display);
 				cart.push(item);
 				saveToCookie(cart);
+				updateTotal('totalvalue');
 			} else {
 				document.getElementById("npderror").innerHTML = "SKU out of stock";
 				document.getElementById("npderror").style.display = "inline";
@@ -158,8 +160,9 @@ window.onload = function(){
 	//Begin javascript for checkout popup
 
 	document.getElementById('checkout').onclick = function() {
-		clearCart();
+		updateTotal('modaltotalvalue');
 		modal.style.display = "block";
+		clearCart();
 	}
 
 	//Get modal
@@ -251,18 +254,38 @@ function qtybuttoncheck() {
 
 };
 
+// Gets total price from cart
+function getTotal(cart){
+	var total = 0;
+	for(var i=0; i<cart.length; i++){
+		total+=parseFloat(cart[i].price * cart[i].quantity);
+	}
+	console.log(total);
+	return total;
+}
+// Updates total everytime you submit an item
+function updateTotal(element){
+	var cart = getCart();
+	var total = getTotal(cart);
+	console.log(element + " " + total);
+	document.getElementById(element).innerHTML = '$' + total.toFixed(2);
+}
+// Gets quantity from quantity ticker thingy
+function getQuantity(){
+	return document.getElementById("qtyinput").value;
+}
+
 function addItemToCart(item){
-	document.getElementById("ledger").innerHTML += "<div class=\"item\"><div class=\"SKU labelleft\">"+item.sku+"</div><div class=\"qty labelleft\">1</div><div class=\"name labelleft\">"+item.name+"</div><div class=\"price\">"+item.price+"&nbsp;</div></div>";
+	document.getElementById("ledger").innerHTML += "<div class=\"item\"><div class=\"SKU labelleft\">"+item.sku+"</div><div class=\"qty labelleft\">"+item.quantity+"</div><div class=\"name labelleft\">"+item.name+"</div><div class=\"price\">"+ '$' + (item.price * item.quantity) +"&nbsp;</div></div>";
 };
 
 // Restore cart from cookie
 function restoreCart(){
-	if($.cookie('cart') !== undefined){
-		var cookie = JSON.parse($.cookie('cart'));
-		for(var i=0; i<cookie.length; i++){
-			addItemToCart(cookie[i]);
-		}
+	var cart = getCart();
+	for(var i=0; i<cart.length; i++){
+		addItemToCart(cart[i]);
 	}
+	updateTotal('totalvalue');
 };
 
 // Save cart to cookie
