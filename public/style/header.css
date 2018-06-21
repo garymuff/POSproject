@@ -41,12 +41,12 @@ div.menucontainer{
 	margin-top: 34.5px; 
 	margin-bottom: 15px;
 	float:left;
+	font-family: 'Oswald', sans-serif;
 }
 
 /*DIV wrapper for better alignmen of menu links*/
 div.menuwrapper {
-	/*width: 85%;*/
-	width: 165.75px;
+	width: 85%;
 	height: 70px;
   	margin-left: auto; 
 	margin-right: auto;
@@ -56,7 +56,7 @@ div.menuwrapper {
 div.link {
 	margin-top: 5px;
 	float: left;
-	/*width: 25%;*/
+/*	width: 25%;*/
 	width: 50%;
 	text-align: center;
 }
@@ -103,13 +103,12 @@ div.headerboxdesign{
 		float: none;
 	}
 	div.menuwrapper {
-		/*width: 100%;*/
+		width: 100%;
 	}
 
 
 	div.menucontainer{
-		/*width: 331.5px;*/
-		width: 165.75px;
+		width: 331.5px;
 		height: 70px;
 		margin-top: 15px; 
 		margin-left: auto; 
