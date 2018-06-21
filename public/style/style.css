@@ -292,6 +292,25 @@ div.price{
 	float: right;
 }
 
+<<<<<<< Updated upstream
+=======
+.totalfootercontainer {
+	position: relative;
+    width: 100%;
+    height: ;
+    background-color: transparent;
+}
+
+.totalfooter{
+	position: absolute;
+	bottom: 0px;
+	width: 100%;
+	background-color: 	#a9a9a9;
+	color: white;
+    text-align: center;
+}
+
+>>>>>>> Stashed changes
 .checkoutbuttoncontainer {
 	margin-top: 25px;
     height: 50px;
@@ -302,7 +321,7 @@ div.price{
 /*Checkout Button*/
 .checkoutbutton {
 	border-radius: 0.25em;
-	background-color: gray;
+	background: linear-gradient(to bottom, #d3d3d3 0%, #808080 100%);
 	width: 100%;
 	margin: auto;
     color: white;
@@ -322,11 +341,11 @@ div.price{
 /*Cash Button*/
 .cashbutton {
 	border-radius: 0.25em;
-	/*background-color: #228B22; */
-	background-image:  url('../img/inventory/fire.jpg');
+	background: linear-gradient(to top, #006600 0%, #00cc00 100%);
+	/*background-image:  url('../img/inventory/fire.jpg');*/
 	width: 48%;
 	margin: 2px;
-    color: red;
+    color: white;
     padding: 14px 20px;
     text-align: center;
     display: inline-block;
@@ -338,12 +357,12 @@ div.price{
 /*Card Button*/
 .cardbutton {
 	border-radius: 0.25em;
-	background-color: #2A6BAC;
-	background-image:  url('../img/inventory/fire.jpg');
+	background: linear-gradient(to top, #0000ff 0%, #3399ff 100%);
+	/*background-image:  url('../img/inventory/fire.jpg');*/
 	float: right;
 	width: 48%;
 	margin: 2px;
-    color: red;
+    color: white;
     padding: 14px 20px;
     text-align: center;
     display: inline-block;
