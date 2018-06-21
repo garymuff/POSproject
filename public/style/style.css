@@ -337,9 +337,23 @@ div.price{
 	position: absolute;
 	bottom: 0px;
 	width: 100%;
-	background-color: #a9a9a9;
-	color: white;
-    text-align: center;
+	background: radial-gradient(circle, rgba(255,241,209,1) 4%, rgba(255,239,202,1) 22%, rgba(244,223,180,1) 96%, rgba(235,219,185,1) 99%);
+	color: black;
+	margin: auto;
+}
+
+.totallabel{
+	font-size: x-large;
+	text-align: left;
+	float: left;
+	margin: 10px;
+}
+
+.totalvalue{
+	font-size: x-large;
+	text-align: right;
+	float: right;
+	margin: 10px;
 }
 
 .checkoutbuttoncontainer {
@@ -352,8 +366,7 @@ div.price{
 /*Checkout Button*/
 .checkoutbutton {
 	border-radius: 0.25em;
-	background: linear-gradient(to bottom, #d3d3d3 0%, #808080 100%);
-	width: 100%;
+	background: linear-gradient(to bottom, #d3d3d3 0%, #808080 100%);	width: 100%;
 	margin: auto;
     color: white;
     padding: 14px 20px;
@@ -373,7 +386,6 @@ div.price{
 .cashbutton {
 	border-radius: 0.25em;
 	background: linear-gradient(to top, #006600 0%, #00cc00 100%);
-	/*background-image:  url('../img/inventory/fire.jpg');*/
 	width: 48%;
 	margin: 2px;
     color: white;
@@ -388,8 +400,8 @@ div.price{
 /*Card Button*/
 .cardbutton {
 	border-radius: 0.25em;
-	background: linear-gradient(to top, #0000ff 0%, #3399ff 100%);
-	/*background-image:  url('../img/inventory/fire.jpg');*/
+	/*background: linear-gradient(to top, #0000ff 0%, #3399ff 100%);*/
+	background-color: #404040;
 	float: right;
 	width: 48%;
 	margin: 2px;
@@ -398,7 +410,7 @@ div.price{
     text-align: center;
     display: inline-block;
     border: 1px solid gray;
-    cursor: pointer;
+    cursor: not-allowed;
     font-size: 16px;
 }
 
@@ -433,7 +445,20 @@ div.price{
 }
 
 .co-modal-body {
-	padding: 2px 16px;
+	width: 100%;
+	margin: auto;
+}
+
+.modaltotallabel{
+	margin-left: 10px;
+	font-size: x-large;
+	text-align: left;
+}
+
+.modaltotalvalue{
+	margin-right: 10px;
+	font-size: x-large;
+	text-align: right;
 }
 
 .co-modal-footer {
