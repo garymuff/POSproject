@@ -38,7 +38,7 @@ input:placeholder-shown {
 }
 
 button {
-    background-color: gray;
+    background: linear-gradient(to bottom, #d3d3d3 0%, #808080 100%);
     color: white;
     padding: 14px 20px;
     margin: 16px 0;

@@ -366,8 +366,7 @@ div.price{
 /*Checkout Button*/
 .checkoutbutton {
 	border-radius: 0.25em;
-	background-color: gray;
-	width: 100%;
+	background: linear-gradient(to bottom, #d3d3d3 0%, #808080 100%);	width: 100%;
 	margin: auto;
     color: white;
     padding: 14px 20px;
@@ -386,11 +385,10 @@ div.price{
 /*Cash Button*/
 .cashbutton {
 	border-radius: 0.25em;
-	/*background-color: #228B22; */
-	background-image:  url('../img/inventory/fire.jpg');
+	background: linear-gradient(to top, #006600 0%, #00cc00 100%);
 	width: 48%;
 	margin: 2px;
-    color: red;
+    color: white;
     padding: 14px 20px;
     text-align: center;
     display: inline-block;
@@ -402,12 +400,11 @@ div.price{
 /*Card Button*/
 .cardbutton {
 	border-radius: 0.25em;
-	background-color: #2A6BAC;
-	background-image:  url('../img/inventory/fire.jpg');
+	background: linear-gradient(to top, #0000ff 0%, #3399ff 100%);
 	float: right;
 	width: 48%;
 	margin: 2px;
-    color: red;
+    color: white;
     padding: 14px 20px;
     text-align: center;
     display: inline-block;
