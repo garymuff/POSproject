@@ -119,6 +119,7 @@ window.onload = function(){
 				clearDisplay(display);
 				cart.push(item);
 				saveToCookie(cart);
+				updateTotal();
 			} else {
 				document.getElementById("npderror").innerHTML = "SKU out of stock";
 				document.getElementById("npderror").style.display = "inline";
@@ -252,9 +253,20 @@ function qtybuttoncheck() {
 
 };
 
+// Gets total price from cart
+function getTotal(cart){
+	var total = 0;
+	for(var i=0; i<cart.length; i++){
+		total+=parseFloat(cart[i].price);
+	}
+	console.log(total);
+	return total;
+}
 // Updates total everytime you submit an item
 function updateTotal(){
-	
+	var cart = getCart();
+	var total = getTotal(cart);
+	document.getElementById("totalvalue").innerHTML = '$' + total.toFixed(2);
 }
 // Gets quantity from quantity ticker thingy
 function getQuantity(){
@@ -267,12 +279,11 @@ function addItemToCart(item){
 
 // Restore cart from cookie
 function restoreCart(){
-	if($.cookie('cart') !== undefined){
-		var cookie = JSON.parse($.cookie('cart'));
-		for(var i=0; i<cookie.length; i++){
-			addItemToCart(cookie[i]);
-		}
+	var cart = getCart();
+	for(var i=0; i<cart.length; i++){
+		addItemToCart(cart[i]);
 	}
+	updateTotal();
 };
 
 // Save cart to cookie
