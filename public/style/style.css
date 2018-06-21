@@ -326,6 +326,22 @@ div.price{
 	float: right;
 }
 
+.totalfootercontainer {
+	position: relative;
+    width: 100%;
+    height: ;
+    background-color: transparent;
+}
+
+.totalfooter{
+	position: absolute;
+	bottom: 0px;
+	width: 100%;
+	background-color: gray;
+	color: white;
+    text-align: center;
+}
+
 .checkoutbuttoncontainer {
 	margin-top: 25px;
     height: 50px;
