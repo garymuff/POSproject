@@ -9,6 +9,12 @@ body {
 	background-image: url('../img/core/background.jpg');
 	font-family: 'Oswald', sans-serif;
 }
+div.inventorycontainer {
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
 
 .center {
 	height: 200px;
@@ -85,4 +91,12 @@ body {
 	font-weight: bold;
 	cursor: pointer;
 }
+/*Special style settings for smaller screens*/
+@media only screen and (max-width: 768px) {
+	div.inventorycontainer {
+		padding-top: 75px;
+		width: 412px;
+	}
 
+
+}
