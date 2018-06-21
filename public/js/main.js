@@ -159,10 +159,20 @@ window.onload = function(){
 
 	//Begin javascript for checkout popup
 
-	document.getElementById('checkout').onclick = function() {
+	document.getElementById('checkoutbutton').onclick = function() {
 		updateTotal('modaltotalvalue');
 		modal.style.display = "block";
+		$("#cashbutton").removeClass("disablebutton");
+		$("#cashbutton").addClass("cashbutton");
+		document.getElementById('modaltotallabel').innerHTML = "Total: ";
+
+	}
+
+	document.getElementById('cashbutton').onclick = function() {
 		clearCart();
+		cart = getCart();
+		restoreCart();
+		paymentSuccessful();
 	}
 
 	//Get modal
@@ -197,6 +207,14 @@ async function getSkuFromDatabase(sku){
     });
 
     return response;
+}
+
+//function to display payment successfull message
+function paymentSuccessful(){
+	document.getElementById('modaltotallabel').innerHTML = "Payment Successful!";
+	document.getElementById('modaltotalvalue').innerHTML = '';
+	$("#cashbutton").removeClass("cashbutton");
+	$("#cashbutton").addClass("disablebutton");
 }
 
 //function to clear numpad
@@ -276,14 +294,16 @@ function getQuantity(){
 }
 
 function addItemToCart(item){
-	document.getElementById("ledger").innerHTML += "<div class=\"item\"><div class=\"SKU labelleft\">"+item.sku+"</div><div class=\"qty labelleft\">"+item.quantity+"</div><div class=\"name labelleft\">"+item.name+"</div><div class=\"price\">"+ '$' + (item.price * item.quantity) +"&nbsp;</div></div>";
+	document.getElementById("ledger").innerHTML += "<div class=\"item\"><div class=\"SKU labelleft\">"+item.sku+"</div><div class=\"qty labelleft\">"+item.quantity+"</div><div class=\"name labelleft\">"+item.name+"</div><div class=\"price\">"+ '$' + (item.price * item.quantity).toFixed(2) +"&nbsp;</div></div>";
+	$("#checkoutbutton").removeClass("disablebutton");
+	$("#checkoutbutton").addClass("checkoutbutton");
 };
 
 // Restore cart from cookie
 function restoreCart(){
-	var cart = getCart();
-	for(var i=0; i<cart.length; i++){
-		addItemToCart(cart[i]);
+	var cookie = getCart();
+	for(var i=0; i<cookie.length; i++){
+		addItemToCart(cookie[i]);
 	}
 	updateTotal('totalvalue');
 };
@@ -296,6 +316,9 @@ function saveToCookie(cart){
 // Clear cart from cookie
 function clearCart(){
 	$.removeCookie('cart');
+	document.getElementById("ledger").innerHTML = '';
+	$("#checkoutbutton").addClass("disablebutton");
+	$("#checkoutbutton").removeClass("checkoutbutton");
 }
 
 // Get cart from cookie

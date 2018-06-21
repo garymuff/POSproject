@@ -360,7 +360,6 @@ div.price{
 	margin-top: 25px;
     height: 50px;
 	text-align: center;
-
 }
 
 /*Checkout Button*/
@@ -400,8 +399,7 @@ div.price{
 /*Card Button*/
 .cardbutton {
 	border-radius: 0.25em;
-	/*background: linear-gradient(to top, #0000ff 0%, #3399ff 100%);*/
-	background-color: #404040;
+	background: linear-gradient(to top, #0000ff 0%, #3399ff 100%);
 	float: right;
 	width: 48%;
 	margin: 2px;
@@ -410,8 +408,12 @@ div.price{
     text-align: center;
     display: inline-block;
     border: 1px solid gray;
-    cursor: not-allowed;
+    cursor: pointer;
     font-size: 16px;
+}
+
+.disablebutton {
+    display: none;
 }
 
 /*Checkout Modal*/
