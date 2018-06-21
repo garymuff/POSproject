@@ -1,4 +1,6 @@
+/*Fonts imported from Google Webfont API*/
 @import url('https://fonts.googleapis.com/css?family=Oswald');
+
 
 html, body {
   height: 100%;
@@ -10,69 +12,33 @@ html, body {
   font-family: 'Oswald', sans-serif;
 }
 
-div.header {
-	width: 100%; 
-	background: linear-gradient(to bottom, rgba(0, 0, 0, 1),rgba(20, 12, 8, .65));
-}
-
-#logo{
-	padding-left: 20px;
-	width: 25%;
-	min-width: 262px;
-	height: auto;
-}
-
+/*DIV class for point of sale container*/
 div.poscontainer {
-	width: 90%; 
+	width: 90%;
+	height: 400px; 
 	margin-bottom: 10px; 
 	margin:auto;
 }
 
-
-
-div.menucontainer{
-	min-width: 331.5px; 
-	height: 40px; 
-	margin-bottom: 10px; 
-	margin-left: auto; 
-	margin-right: auto;
-}
-
-#menuwrapper {
-  	min-width: 331.5px; 
-  	text-align: center;
-  	vertical-align: middle;
-  	line-height: 40px;
-  	margin-left: auto; 
-	margin-right: auto;
-  }
-
-div.link {
-	float: left;
-	width: 150px;
-	text-align: center;
-}
-
-div.menulinks{
-
-}
-
-div.itemcontainer {
+/*DIV class for container holding the numpad and/or other divs in this section*/
+div.selectioncontainer {
 	width: 49%;
 	float: left;
 }
 
+/*DIV container for the num pad*/
 div.numberpadcontainer {
 	width: 100%;
 	height: 438px;
 	min-width: 337.5px;
 	margin-bottom: 25px;
-	margin-top: 25px;
 }
 
+/*DIV Wrapper for the input box displaying the SKU*/
 div.numdisplaywrap { 
 	width: 331.5px;
 	height: 57px;
+	position: relative;
 	margin-bottom: 10px;
 	display: flex;
   	justify-content: center;
@@ -82,24 +48,41 @@ div.numdisplaywrap {
 
 }
 
-#boxdesign{
+/*numberpad display error div*/
+#npderror {
+	display: none;
+	background-color:rgba(255, 0, 0, 0.75);
+	vertical-align: center;
+	line-height: 57px;
+	font-size: 175%;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	position: absolute;
+	z-index: 2;
+	color:white;
+}
+
+/*DIV class for outter box design*/
+div.boxdesign{
 	border-color: #404040; 
 	border-width: 3px; 
 	border-style: solid;
-	background-color: #cfb887;
-	border-radius: 4px;
+	border-radius: 0.25em;
+	background: radial-gradient(circle, rgb(241, 213, 159) 30%, rgb(255, 231, 175) 54%, rgb(255, 228, 171) 57%, rgb(243, 220, 169) 86%, rgb(222, 200, 155) 100%);
 }
 
+/*Numberpad Toolbox wrapper*/
 div.nptbwrap {
 	width: 337.5px;
 	margin: auto;
 }
 
+/*ID for the numberpad display container*/
 #numberpaddisplay {
-	width: 98%;
+	width: 96%;
 	text-align: center;
     padding: 5px 5px;
-    display: inline-block;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
@@ -107,20 +90,38 @@ div.nptbwrap {
 	font-family: 'Oswald', sans-serif;
 }
 
+/*DIV for backspace container*/
+div.bscontainer {
+	position: absolute;
+	width: 30px;
+	height: 23.75px;
+	top: 16.625px;
+	right: 15px;
+	z-index: 1;
+}
+
+/*Backspace IMG ID tag*/
+#bsimg {
+	width: 100%;
+	height: 100%;
+}
+
+/*DELETE ID tag*/
 #del {
-	color: #cc0000;
 	font-size: 150%;
 }
 
+/*Enter ID tag*/
 #enter {
-	color: #009933;
 	font-size: 150%;
 }
 
+/*Special effects for hover*/
 #del:hover, #enter:hover {
 	color:grey;
 }
 
+/*DIV for numberpad*/
 div.numberpad {
 	padding: 10px;
     width: 254px;
@@ -129,11 +130,14 @@ div.numberpad {
 	font-size: 150%;
 }
 
+/*DIV for button container for each button in number pad*/
 div.buttoncontainer {
     line-height: 75px;
 	text-align: center;
 	vertical-align: middle;
-	margin: 2px;
+	border-color: rgb(232, 213, 165);
+	margin-top: 5px;
+	margin-bottom: 5px;
 	width: 75px;
 	height: 75px;
 	float: left;
@@ -143,36 +147,55 @@ div.buttoncontainer {
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	cursor:default; 
 	color: #404040;
+	background: radial-gradient(circle, rgba(255,241,209,1) 4%, rgba(255,239,202,1) 22%, rgba(244,223,180,1) 96%, rgba(235,219,185,1) 99%);
 }
 
+div.buttonmargin {
+	margin-right: 10px
+}
+
+div.enter{
+	color: #00b83d;
+}
+
+div.del{
+	color: #ea0000;
+}
+
+/*Special effects for hover for toolbox and buttoncontainer*/
 div.toolbuttoncontainer:hover, div.buttoncontainer:hover {
 	box-shadow: 0 4px 8px 0 rgba(54, 81, 94, 0.2), 0 6px 20px 0 rgba(54, 81, 94, 0.19);
 	color: grey;
 }
 
-.active, div.toolbuttoncontainer:active, div.buttoncontainer:active {
-	background-color: #77653f;
-	border-color: #000000;
+/*Special effects for active for toolbox and buttoncontainer*/
+.active, div.smallbuttoncontainer:active, div.toolbuttoncontainer:active, div.buttoncontainer:active, #enter:active, #del:active {
+	background: rgba(119, 110, 86, 0.5);
 	box-shadow: none;
+	color: gray;
 }
 
+/*Numberpad row style settings*/
 div.nprow {
 	width: 100%;
 	height: 80px;
-	margin: 5px;
-}
-div.buttons{
-	margin: auto;
-    width: 35px;
-    text-align: center;
+	margin-left: 1.7px;
 }
 
-div.toolbox {
-	width: 46.5px;
+div.toolboxcontainer {
+	width: 52.5px;
 	margin-left: 5px;
 	float: left;
 }
 
+/*DIV for tool box*/
+div.toolbox {
+	width: 46.5px;
+	margin-bottom: 5px;
+	display: none;
+}
+
+/*tool button container for each button in the tool box*/
 div.toolbuttoncontainer {
 	width: 40.5px;
 	height: 40.5px;
@@ -190,41 +213,81 @@ div.toolbuttoncontainer {
 	cursor: default; 
 }
 
+/*tool button container for each QTY/small button*/
+div.smallbuttoncontainer {
+	width: 30.5px;
+	height: 30.5px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 10px;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 30.5px;
+	border-radius: 30px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	cursor: default; 
+	font-size: 40px;
+	background: radial-gradient(circle, rgba(255,241,209,1) 4%, rgba(255,239,202,1) 22%, rgba(244,223,180,1) 96%, rgba(235,219,185,1) 99%);
+}
+
+div.qtyinput{
+	width: 40px;
+	height: auto;
+	display: flex;
+  	justify-content: center;
+  	align-items: center;
+  	margin-left: auto;
+	margin-right: auto;
+	margin-top: -2px;
+	margin-bottom: 7px;
+
+}
+
+#qtyinput {
+	width: 100%;
+	text-align: center;
+	font-size: 25px;
+	border-radius: 15px;
+}
+
+/*DIV for tool button label*/
 div.tblabel{
 	width: 100%;
 	text-align: center;
-	margin-bottom: 10px;
+	margin-bottom: 5px;
 }
 
-
-
-div.footer{
-	text-align: center;
-	margin-left: 45px;
-	margin-bottom: 10px;
-}
-
+/*Container for the dynamix receipt*/
 div.dynamicreceiptcontainer {
 	width: 49%;
-	height: 50px;
+	height: auto;
 	float:right;
 	margin-bottom: 25px;
-    margin-top: 25px;
 }
 
-div.dynamicreceipt {
+/*div for dynamic receipt wrapper*/
+div.dynamicreceiptwrap {
 	max-width: 450px;
 	min-width: 331.5px; 
 	height: 438px;
 	margin: auto;
 }
 
+/*div for each dynamic receipt label*/
 div.drlabel {
 	text-align: center;
 	margin-top: 6px;
 	margin-bottom: 2px;
 }
 
+/*DIV for labels for each item in row in receipt container*/
+div.itemrowlabels {
+	width: 90%;
+	margin-left: 10px;
+	margin-top: -10px;
+}
+
+/*Container for the receipt to which item rows will be inserted*/
 div.ledger {
 	width: 95%;
 	height: 365px;
@@ -233,59 +296,231 @@ div.ledger {
 	overflow-y: scroll;
 }
 
-div.itemheader{
-	width: 90%;
-	margin-left: 10px;
-	margin-top: -10px;
-}
-
-div.sbs {
+/*DIV class to float labels left*/
+div.labelleft {
 	float: left;
 }
 
+/*SKU container*/
 div.SKU {
 	width: 15%;
 	text-align: center;
 }
 
+/*Quantity container*/
 div.qty {
 	width: 10%;
 	text-align: center;
 }
 
+/*Product name container*/
 div.name{
 	width: 50%;
 	margin-left: 10px;
 }
+
+/*Price div container in receipt*/
 div.price{
 	width: 20%;
 	text-align: right;
 	float: right;
 }
+
+.totalfootercontainer {
+	position: relative;
+    width: 100%;
+    height: ;
+    background-color: transparent;
+}
+
+.totalfooter{
+	position: absolute;
+	bottom: 0px;
+	width: 100%;
+	background: radial-gradient(circle, rgba(255,241,209,1) 4%, rgba(255,239,202,1) 22%, rgba(244,223,180,1) 96%, rgba(235,219,185,1) 99%);
+	color: black;
+	margin: auto;
+}
+
+.totallabel{
+	font-size: x-large;
+	text-align: left;
+	float: left;
+	margin: 10px;
+}
+
+.totalvalue{
+	font-size: x-large;
+	text-align: right;
+	float: right;
+	margin: 10px;
+}
+
+.checkoutbuttoncontainer {
+	margin-top: 25px;
+    height: 50px;
+	text-align: center;
+}
+
+/*Checkout Button*/
+.checkoutbutton {
+	border-radius: 0.25em;
+	background: linear-gradient(to bottom, #d3d3d3 0%, #808080 100%);	width: 100%;
+	margin: auto;
+    color: white;
+    padding: 14px 20px;
+    text-align: center;
+    display: inline-block;
+    border: none;
+    margin-right: 4px 2px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.paymentcontainer {
+	
+}
+
+/*Cash Button*/
+.cashbutton {
+	border-radius: 0.25em;
+	background: linear-gradient(to top, #006600 0%, #00cc00 100%);
+	width: 48%;
+	margin: 2px;
+    color: white;
+    padding: 14px 20px;
+    text-align: center;
+    display: inline-block;
+    border: 1px solid gray;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/*Card Button*/
+.cardbutton {
+	border-radius: 0.25em;
+	background: linear-gradient(to top, #0000ff 0%, #3399ff 100%);
+	float: right;
+	width: 48%;
+	margin: 2px;
+    color: white;
+    padding: 14px 20px;
+    text-align: center;
+    display: inline-block;
+    border: 1px solid gray;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.disablebutton {
+    display: none;
+}
+
+/*Checkout Modal*/
+.checkoutmodal {
+	display: none;
+	position: fixed;
+	z-index: 1;
+	padding-top: 200px;
+	left: 0;
+	top: 0;
+	overflow: auto;
+	width: 100%;
+	height: 100%;
+	background-color: rgb(0,0,0,0.4);
+}
+
+
+.co-modal-content {
+	position: relative;
+	background-color: rgb(222, 200, 155);
+	margin: auto;
+	padding: 0;
+	border: 1px solid #ccc;
+	width: 50%;
+}
+
+.co-modal-header {
+	padding: 2px 16px;
+	background-color: gray;
+	color: white;
+}
+
+.co-modal-body {
+	width: 100%;
+	margin: auto;
+}
+
+.modaltotallabel{
+	margin-left: 10px;
+	font-size: x-large;
+	text-align: left;
+}
+
+.modaltotalvalue{
+	margin-right: 10px;
+	font-size: x-large;
+	text-align: right;
+}
+
+.co-modal-footer {
+	padding: 2px 16px;
+	background-color: gray;
+	color: white;
+	float: bottom;
+}
+
+.close {
+	float: right;
+	font-size: 24px;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+button:hover {
+	opacity: 0.8;
+}
+
+/*Special style settings for smaller screens*/
 @media only screen and (max-width: 768px) {
 	div.poscontainer {
+		padding-top: 95px;
 		width: 331.5px; 
 		margin-bottom: 10px; 
 		margin:auto;
-	}
-	div.header {
-		width: 262px; 
-		margin-left: auto; 
-		margin-right: auto;
-		background: linear-gradient(to bottom, rgba(0, 0, 0, 1),rgba(20, 12, 8, .65));
-	}
-	#logo{
-		width: 25%;
-		min-width: 262px;
-		height: auto;
 	}
 	div.itemcontainer {
 		float: none;
 	}
 	div.dynamicreceiptcontainer {
 		width: 100%;
-		height: 444px;
-		float: none;
+		height: auto;
+		float: left;
 		margin-bottom: 25px;
 	}
+}
+
+/*Class to disable text selection*/
+.disabletextselect{
+	        user-select: none;
+    -webkit-user-select: none; /* Safari */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* IE support */
+}
+
+/*DIV class to disable clicks*/
+.disableclick {
+	 pointer-events: none;
+}
+
+/*DIV for disabling a button*/
+div.disabledbutton {
+	background: rgba(159, 159, 159, 0.5);
+	color: gray;
+	border: none;
+	box-shadow: 0 4px 8px 0 rgba(54, 81, 94, 0.2), 0 6px 20px 0 rgba(54, 81, 94, 0.19);
+}
+
+div.zerofix {
+	margin-left: 2px;
 }

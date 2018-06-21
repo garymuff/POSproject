@@ -1,9 +1,20 @@
 
 html,
 body {
-    margin-left: 55px;
-    margin-right: 45px;
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	color: black;
+	background-image: url('../img/core/background.jpg');
+	font-family: 'Oswald', sans-serif;
 }
+div.inventorycontainer {
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
 
 .center {
 	height: 200px;
@@ -11,7 +22,7 @@ body {
 }
 
 .btn {
-    background-color: #CEB888;
+    background-color: #C19972;
     border: none;
     color: white;
     padding: 12px 16px;
@@ -50,7 +61,7 @@ body {
 
 .modal-content {
 	position: relative;
-	background-color: #CEB888;
+	background-color: #C19972;
 	margin: auto;
 	padding: 0;
 	border: 1px solid #ccc;
@@ -80,4 +91,12 @@ body {
 	font-weight: bold;
 	cursor: pointer;
 }
+/*Special style settings for smaller screens*/
+@media only screen and (max-width: 768px) {
+	div.inventorycontainer {
+		padding-top: 75px;
+		width: 412px;
+	}
 
+
+}
