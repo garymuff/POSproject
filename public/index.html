@@ -8,6 +8,8 @@
 		<script type="text/javascript" src="./js/main.js"></script>
 		<script type="text/javascript" src="./js/receipt.js"></script>
 		<script type="text/javascript" src="./js/jquery-3.3.1.min.js"></script>
+		<script type="text/javascript" src="./js/jquery.cookie.js"></script>
+
 
 	</head>
 	<body>
@@ -78,12 +80,21 @@
 							</div> 
 							<!-- End of NumberPad -->
 						</div>
-						<!-- Beginning of Toolbox -->  
-						<div class="toolbox boxdesign">
-							<div class="tblabel">Tools</div>
-							<div class="toolbuttoncontainer active" id="SKU">SKU</div>
-<!-- 							<div class="toolbuttoncontainer" id="discount">%</div>
-							<div class="toolbuttoncontainer" id="manualitem">M</div> -->
+						<div class="toolboxcontainer">
+							<!-- Beginning of Toolbox -->  
+							<div class="toolbox boxdesign">
+								<div class="tblabel">Tools</div>
+								<div class="toolbuttoncontainer active" id="SKU">SKU</div>
+							</div>
+							<div class="qtybox boxdesign">
+								<div class="tblabel">QTY</div>
+								<div class="smallbuttoncontainer" id="qtymore">&plus;</div>
+								<div class="qtyinput">
+									<input type="text" class="disabletextselect" id="qtyinput" value="1" maxlength="2" readonly>
+								</div>
+								<div class="smallbuttoncontainer disabledbutton" id="qtyless">&minus;</div>
+							</div>
+							<!-- End of Toolbox  -->
 						</div>
 					</div>
 				</div>
@@ -101,8 +112,17 @@
 							<div class="price">Price</div>
 						</div>
 						<div class="ledger" id="ledger">
-
+							<!-- items are added here dynamically -->
 						</div>
+						<!-- Beginning of total -->
+						<div class="totalfootercontainer">
+							<div class="totalfooter">
+								<p>total = $0.00</p>
+							</div>
+						</div>
+						<!-- End of total -->
+
+
 						<!-- Beginning of Checkout Button -->
 					<div class="checkoutbuttoncontainer">
 						<button class="checkoutbutton" id="checkout" type="submit"> Checkout </button>
