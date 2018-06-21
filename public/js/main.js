@@ -119,7 +119,7 @@ window.onload = function(){
 				clearDisplay(display);
 				cart.push(item);
 				saveToCookie(cart);
-				updateTotal();
+				updateTotal('totalvalue');
 			} else {
 				document.getElementById("npderror").innerHTML = "SKU out of stock";
 				document.getElementById("npderror").style.display = "inline";
@@ -160,8 +160,9 @@ window.onload = function(){
 	//Begin javascript for checkout popup
 
 	document.getElementById('checkout').onclick = function() {
-		clearCart();
+		updateTotal('modaltotalvalue');
 		modal.style.display = "block";
+		clearCart();
 	}
 
 	//Get modal
@@ -263,10 +264,11 @@ function getTotal(cart){
 	return total;
 }
 // Updates total everytime you submit an item
-function updateTotal(){
+function updateTotal(element){
 	var cart = getCart();
 	var total = getTotal(cart);
-	document.getElementById("totalvalue").innerHTML = '$' + total.toFixed(2);
+	console.log(element + " " + total);
+	document.getElementById(element).innerHTML = '$' + total.toFixed(2);
 }
 // Gets quantity from quantity ticker thingy
 function getQuantity(){
@@ -283,7 +285,7 @@ function restoreCart(){
 	for(var i=0; i<cart.length; i++){
 		addItemToCart(cart[i]);
 	}
-	updateTotal();
+	updateTotal('totalvalue');
 };
 
 // Save cart to cookie

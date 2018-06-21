@@ -400,7 +400,8 @@ div.price{
 /*Card Button*/
 .cardbutton {
 	border-radius: 0.25em;
-	background: linear-gradient(to top, #0000ff 0%, #3399ff 100%);
+	/*background: linear-gradient(to top, #0000ff 0%, #3399ff 100%);*/
+	background-color: #404040;
 	float: right;
 	width: 48%;
 	margin: 2px;
@@ -409,7 +410,7 @@ div.price{
     text-align: center;
     display: inline-block;
     border: 1px solid gray;
-    cursor: pointer;
+    cursor: not-allowed;
     font-size: 16px;
 }
 
@@ -444,7 +445,20 @@ div.price{
 }
 
 .co-modal-body {
-	padding: 2px 16px;
+	width: 100%;
+	margin: auto;
+}
+
+.modaltotallabel{
+	margin-left: 10px;
+	font-size: x-large;
+	text-align: left;
+}
+
+.modaltotalvalue{
+	margin-right: 10px;
+	font-size: x-large;
+	text-align: right;
 }
 
 .co-modal-footer {
