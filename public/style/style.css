@@ -83,7 +83,6 @@ div.nptbwrap {
 	width: 96%;
 	text-align: center;
     padding: 5px 5px;
-    display: inline-block;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
@@ -97,7 +96,7 @@ div.bscontainer {
 	width: 30px;
 	height: 23.75px;
 	top: 16.625px;
-	right: 10px;
+	right: 15px;
 	z-index: 1;
 }
 
@@ -163,14 +162,6 @@ div.del{
 	color: #ea0000;
 }
 
-/*DIV for disabling a button*/
-div.disabledbutton {
-	background: rgba(159, 159, 159, 0.5);
-	color: gray;
-	border: none;
-	box-shadow: 0 4px 8px 0 rgba(54, 81, 94, 0.2), 0 6px 20px 0 rgba(54, 81, 94, 0.19);
-}
-
 /*Special effects for hover for toolbox and buttoncontainer*/
 div.toolbuttoncontainer:hover, div.buttoncontainer:hover {
 	box-shadow: 0 4px 8px 0 rgba(54, 81, 94, 0.2), 0 6px 20px 0 rgba(54, 81, 94, 0.19);
@@ -178,7 +169,7 @@ div.toolbuttoncontainer:hover, div.buttoncontainer:hover {
 }
 
 /*Special effects for active for toolbox and buttoncontainer*/
-.active, div.toolbuttoncontainer:active, div.buttoncontainer:active, #enter:active, #del:active {
+.active, div.smallbuttoncontainer:active, div.toolbuttoncontainer:active, div.buttoncontainer:active, #enter:active, #del:active {
 	background: rgba(119, 110, 86, 0.5);
 	box-shadow: none;
 	color: gray;
@@ -191,11 +182,17 @@ div.nprow {
 	margin-left: 1.7px;
 }
 
+div.toolboxcontainer {
+	width: 52.5px;
+	margin-left: 5px;
+	float: left;
+}
+
 /*DIV for tool box*/
 div.toolbox {
 	width: 46.5px;
-	margin-left: 5px;
-	float: left;
+	margin-bottom: 5px;
+	display: none;
 }
 
 /*tool button container for each button in the tool box*/
@@ -216,11 +213,48 @@ div.toolbuttoncontainer {
 	cursor: default; 
 }
 
+/*tool button container for each QTY/small button*/
+div.smallbuttoncontainer {
+	width: 30.5px;
+	height: 30.5px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 10px;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 30.5px;
+	border-radius: 30px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	cursor: default; 
+	font-size: 40px;
+	background: radial-gradient(circle, rgba(255,241,209,1) 4%, rgba(255,239,202,1) 22%, rgba(244,223,180,1) 96%, rgba(235,219,185,1) 99%);
+}
+
+div.qtyinput{
+	width: 40px;
+	height: auto;
+	display: flex;
+  	justify-content: center;
+  	align-items: center;
+  	margin-left: auto;
+	margin-right: auto;
+	margin-top: -2px;
+	margin-bottom: 7px;
+
+}
+
+#qtyinput {
+	width: 100%;
+	text-align: center;
+	font-size: 25px;
+	border-radius: 15px;
+}
+
 /*DIV for tool button label*/
 div.tblabel{
 	width: 100%;
 	text-align: center;
-	margin-bottom: 10px;
+	margin-bottom: 5px;
 }
 
 /*Container for the dynamix receipt*/
@@ -433,4 +467,16 @@ button:hover {
 /*DIV class to disable clicks*/
 .disableclick {
 	 pointer-events: none;
+}
+
+/*DIV for disabling a button*/
+div.disabledbutton {
+	background: rgba(159, 159, 159, 0.5);
+	color: gray;
+	border: none;
+	box-shadow: 0 4px 8px 0 rgba(54, 81, 94, 0.2), 0 6px 20px 0 rgba(54, 81, 94, 0.19);
+}
+
+div.zerofix {
+	margin-left: 2px;
 }
