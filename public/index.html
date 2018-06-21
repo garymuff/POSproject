@@ -2,12 +2,15 @@
 <html>
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" type="text/css" href="./style/header.css">
 		<link rel="stylesheet" type="text/css" href="./style/style.css">
+		<link rel="stylesheet" type="text/css" href="./style/header.css">
 		<title>OpenPOS</title>
 		<script type="text/javascript" src="./js/main.js"></script>
 		<script type="text/javascript" src="./js/receipt.js"></script>
 		<script type="text/javascript" src="./js/jquery-3.3.1.min.js"></script>
+		<script type="text/javascript" src="./js/jquery.cookie.js"></script>
+
+
 	</head>
 	<body>
 		<div class="header">
@@ -19,7 +22,7 @@
 				</div>
 			<!-- Beginning of Menu Bar Container - Gary --> 
 				<div class="menucontainer">
-					<div class="menuwrapper boxdesign">
+					<div class="menuwrapper headerboxdesign">
 						<div class="link">
 							<a class="" href="./"><img class="menulinks" alt="Home" src="./img/core/icons/home.png"></a>
 						</div>
@@ -111,8 +114,42 @@
 						<div class="ledger" id="ledger">
 							<!-- items are added here dynamically -->
 						</div>
+						<!-- Beginning of Checkout Button -->
+					<div class="checkoutbuttoncontainer">
+						<button class="checkoutbutton" id="checkout" type="submit"> Checkout </button>
 					</div>
-				</div>
+					<!-- End of Checkout Button -->	
+					</div>
+				</div>	
 			</div>
+
+			<!--The Modal-->
+	<div id="checkoutModal" class="checkoutmodal" style="display: none;">
+		<!--Modal Content-->
+		<div class="co-modal-content">
+			<div class="co-modal-header">
+				<span class="close">&times;</span>
+				<h2>Checkout</h2>
+			</div>
+			
+			<div class="co-modal-body">
+				<p>Total: $119.99 
+					<br>In Stock: 20 
+					<br>Sold: 48 
+				</p>
+			</div>
+
+			<div class="co-modal-footer">
+				<!-- Beginning of Payment Buttons -->
+				<div class="paymentcontainer">
+					<button class="cashbutton" id="checkout" type="submit" > Cash </button>
+					<button class="cardbutton" id="checkout" type="submit" > Credit/Debit </button>
+				</div>
+				<!-- End of Payment Buttons -->	
+			</div>
+			<!-- End of Modal Content -->
+		</div>
+		<!-- End of The Modal-->
+	</div>
 	</body>
 </html>
