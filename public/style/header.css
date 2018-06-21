@@ -37,32 +37,37 @@ div.logowrapper {
 /*DIV class for MENU link container*/
 div.menucontainer{
 	width: 67%;
-	height: 60px;
+	height: 70px;
 	margin-top: 34.5px; 
+	margin-bottom: 15px;
 	float:left;
+	font-family: 'Oswald', sans-serif;
 }
 
 /*DIV wrapper for better alignmen of menu links*/
 div.menuwrapper {
 	width: 85%;
-	height: 60px;
-  	text-align: center;
-  	vertical-align: middle;
-  	line-height: 92px;
+	height: 70px;
   	margin-left: auto; 
 	margin-right: auto;
   }
 
 /*DIV class for each link*/
 div.link {
+	margin-top: 5px;
 	float: left;
-	width: 25%;
+/*	width: 25%;*/
+	width: 50%;
 	text-align: center;
 }
 
 .menulinks {
 	width: 45px;
-	height: auto;
+}
+
+div.menulinktext {
+	margin-top: -6px;
+	font-size: 85%;
 }
 
 div.headerboxdesign{
@@ -104,11 +109,20 @@ div.headerboxdesign{
 
 	div.menucontainer{
 		width: 331.5px;
-		height: 60px;
+		height: 70px;
 		margin-top: 15px; 
 		margin-left: auto; 
 		margin-right: auto;
 		float: none;
 
 	}
+}
+
+
+#logoutlink {
+	display: none;
+}
+
+#orderslink {
+	display: none;
 }

@@ -1,8 +1,13 @@
 
 html,
 body {
-    margin-left: 55px;
-    margin-right: 45px;
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	color: black;
+	background-image: url('../img/core/background.jpg');
+	font-family: 'Oswald', sans-serif;
 }
 
 .center {
