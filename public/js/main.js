@@ -133,6 +133,25 @@ window.onload = function(){
 	};
 	//End code for numpad button click
 
+	//Begin code for QTY clicks
+	document.getElementById("qtymore").onclick = function() {
+		var qtyvalue = document.getElementById("qtyinput");
+		if(parseInt(qtyvalue.value) < 99){
+			qtyvalue.value = parseInt(qtyvalue.value) + 1;
+		}
+		//run the qty button function to enable/disable the button
+		qtybuttoncheck();
+	};
+
+	document.getElementById("qtyless").onclick = function() {
+		var qtyvalue = document.getElementById("qtyinput");
+		if(parseInt(qtyvalue.value) > 1){
+			qtyvalue.value = parseInt(qtyvalue.value) - 1;
+		}
+		//run the qty button function to enable/disable the button
+		qtybuttoncheck();
+	};
+
 
 	//Begin javascript for checkout popup
 
@@ -213,6 +232,21 @@ function bsdiplay() {
 		$("#zero").removeClass("zerofix");
 		$("#del").removeClass("disabledbutton disableclick");
 	}
+};
+
+function qtybuttoncheck() {
+	if(parseInt(document.getElementById("qtyinput").value) === 1 ){
+		$("#qtyless").addClass("disabledbutton disableclick");
+	}else{
+		$("#qtyless").removeClass("disabledbutton disableclick");
+	}
+
+	if(parseInt(document.getElementById("qtyinput").value) === 99 ){
+		$("#qtymore").addClass("disabledbutton disableclick");
+	}else{
+		$("#qtymore").removeClass("disabledbutton disableclick");
+	}
+
 };
 
 function addItemToCart(item){
