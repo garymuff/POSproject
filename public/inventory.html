@@ -2,12 +2,41 @@
 <html>
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="./style/header.css">
 	<link rel="stylesheet" type="text/css" href="./style/inventory.css">
 	<title>OpenPOS - Inventory</title>
 	<script type="text/javascript" src="./js/inventory.js"></script>
 </head>
 <body style="background-image: url('./img/core/background.jpg')">
-	<h2 style="color: #CEB888; text-align: center;">My Inventory</h2>
+	<div class="header">
+		<div class="headerwrapper">
+		<!-- Image is property of Shahira Jewelry Design, placement is for demo purposes only!
+			Reference: https://www.sahirajewelrydesign.com/ --> 
+			<div class="logowrapper">
+				<a href="/"><img id="logo" src="./img/core/logo.png"></a>
+			</div>
+		<!-- Beginning of Menu Bar Container - Gary --> 
+			<div class="menucontainer">
+				<div class="menuwrapper headerboxdesign">
+					<div class="link">
+						<a class="" href="./"><img class="menulinks" alt="Home" src="./img/core/icons/home.png"></a>
+					</div>
+					<div class="link">
+						<a class="" href="./inventory.html"><img class="menulinks" alt="Inventory" src="./img/core/	icons/inventory.png"></a>
+					</div>
+					<div class="link">
+						<a class="" href="./inventory.html"><img class="menulinks" alt="Orders" src="./img/core/icons/drawer.png"></a>
+					</div>
+					<div class="link">
+						<a class="" href="./inventory.html"><img class="menulinks" alt="Log Out" src="./img/core/icons/exit.png"></a>
+					</div>
+				</div>
+			</div>
+			<!-- End of Menu Bar Container - Gary --> 
+		</div>
+	</div>
+	
+	<h2 style="color: #C19972; text-align: left;">Inventory</h2>
 	<div class="categorybtns">
 		<button class="btn">Show All</button>
 		<button class="btn">Necklaces</button>
@@ -103,7 +132,6 @@
 			<div class="modal-footer">
 				<h4>SKU: 12345678</h4>
 			</div>
-			
 		</div>
 	</div>
 

@@ -65,6 +65,15 @@ div.link {
 	height: auto;
 }
 
+div.headerboxdesign{
+	border-color: #404040; 
+	border-width: 3px; 
+	border-style: solid;
+	border-radius: 15px;
+	background: radial-gradient(circle, rgb(241, 213, 159) 30%, rgb(255, 231, 175) 54%, rgb(255, 228, 171) 57%, rgb(243, 220, 169) 86%, rgb(222, 200, 155) 100%);
+}
+
+
 /*Special style settings for smaller screens*/
 @media only screen and (max-width: 768px) {
 	div.header {
@@ -91,6 +100,8 @@ div.link {
 	div.menuwrapper {
 		width: 100%;
 	}
+
+
 	div.menucontainer{
 		width: 331.5px;
 		height: 60px;
