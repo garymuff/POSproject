@@ -114,7 +114,8 @@ window.onload = function(){
 			const item = await getSkuFromDatabase(display.value);
 			console.log(item);
 			if(item !== ''){
-				document.getElementById("ledger").innerHTML += "<div class=\"item\"><div class=\"SKU labelleft\">"+item.sku+"</div><div class=\"qty labelleft\">1</div><div class=\"name labelleft\">"+item.name+"</div><div class=\"price\">"+item.price+"&nbsp;</div></div>";
+				item.quantity = getQuantity();
+				addItemToCart(item);
 				clearDisplay(display);
 				cart.push(item);
 				saveToCookie(cart);
@@ -251,8 +252,12 @@ function qtybuttoncheck() {
 
 };
 
+function getQuantity(){
+	return document.getElementById("qtyinput").value;
+}
+
 function addItemToCart(item){
-	document.getElementById("ledger").innerHTML += "<div class=\"item\"><div class=\"SKU labelleft\">"+item.sku+"</div><div class=\"qty labelleft\">1</div><div class=\"name labelleft\">"+item.name+"</div><div class=\"price\">"+item.price+"&nbsp;</div></div>";
+	document.getElementById("ledger").innerHTML += "<div class=\"item\"><div class=\"SKU labelleft\">"+item.sku+"</div><div class=\"qty labelleft\">"+item.quantity+"</div><div class=\"name labelleft\">"+item.name+"</div><div class=\"price\">"+item.price * item.quantity +"&nbsp;</div></div>";
 };
 
 // Restore cart from cookie
