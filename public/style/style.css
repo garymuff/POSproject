@@ -482,7 +482,7 @@ button:hover {
 /*Special style settings for smaller screens*/
 @media only screen and (max-width: 768px) {
 	div.poscontainer {
-		padding-top: 25px;
+		padding-top: 95px;
 		width: 331.5px; 
 		margin-bottom: 10px; 
 		margin:auto;

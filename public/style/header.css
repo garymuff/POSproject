@@ -4,7 +4,7 @@
 /*Container for the header with graident behind logo for better visual appeal*/
 div.header {
 	width: 100%; 
-	height: 205px;
+	height: 135px;
 	background: linear-gradient(to bottom, rgba(0, 0, 0, 1),rgba(20, 12, 8, .65));
 }
 
@@ -45,7 +45,8 @@ div.menucontainer{
 
 /*DIV wrapper for better alignmen of menu links*/
 div.menuwrapper {
-	width: 85%;
+	/*width: 85%;*/
+	width: 165.75px;
 	height: 70px;
   	margin-left: auto; 
 	margin-right: auto;
@@ -55,7 +56,8 @@ div.menuwrapper {
 div.link {
 	margin-top: 5px;
 	float: left;
-	width: 25%;
+	/*width: 25%;*/
+	width: 50%;
 	text-align: center;
 }
 
@@ -101,12 +103,13 @@ div.headerboxdesign{
 		float: none;
 	}
 	div.menuwrapper {
-		width: 100%;
+		/*width: 100%;*/
 	}
 
 
 	div.menucontainer{
-		width: 331.5px;
+		/*width: 331.5px;*/
+		width: 165.75px;
 		height: 70px;
 		margin-top: 15px; 
 		margin-left: auto; 
@@ -114,4 +117,13 @@ div.headerboxdesign{
 		float: none;
 
 	}
+}
+
+
+#logoutlink {
+	display: none;
+}
+
+#orderslink {
+	display: none;
 }
