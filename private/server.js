@@ -1,15 +1,16 @@
-// Setup Express
+// Get dependencies
 const express = require('express');
-const app = express();
-// Get database
 const db = require('./config/db')
-db.query("SELECT * from users");
 const bodyParser = require('body-parser');
+
+const app = express();
+
 app.use(bodyParser.urlencoded({ extended: true }));
-
-app.get('/', (req, res) => res.sendFile(__dirname + '/public/login.html'));
-
 app.use(express.static('public'));
+
+app.get('/', (req, res) => res.sendFile('login.html'));
+app.get('/health', (req,res) => res.send("Status: 200"))
+
 const port = process.env.PORT || 1234;
 app.listen(port , () => console.log('App listening on port ' + port));
 // Setup passport
