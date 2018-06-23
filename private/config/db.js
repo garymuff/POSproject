@@ -13,8 +13,13 @@ pool.on('error', function (err) {
 
 async function query(sql) {
     const client = await pool.connect();
-    const res = await client.query(sql);
-  	console.log(res.rows[0]);
+    const res = await client.query(sql, (err, res) => {
+    	if(err){
+    		console.log("Query error.");
+    	} else {
+    		console.log(res.rows[0]);
+    	}
+    });
   	return res;
 };
 
