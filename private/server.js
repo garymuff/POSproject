@@ -1,18 +1,22 @@
 // Get dependencies
 const express = require('express');
-const db = require('./config/db')
+const db = require('./config/db');
 const bodyParser = require('body-parser');
+// Get routes
+const health = require('./routes/health');
 
 const app = express();
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
+app.use('/', index);
+app.use('/health', health);
 
 app.get('/', (req, res) => res.sendFile('login.html'));
-app.get('/health', (req,res) => res.send("Status: 200"))
 
 const port = process.env.PORT || 1234;
 app.listen(port , () => console.log('App listening on port ' + port));
+
 // Setup passport
 const passport = require('passport');
 app.use(passport.initialize());
