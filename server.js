@@ -2,7 +2,7 @@
 const express = require('express');
 const app = express();
 // Get database
-const db = require('./config/db')
+const db = require('./public/config/db')
 db.query("SELECT * from users");
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: true }));
