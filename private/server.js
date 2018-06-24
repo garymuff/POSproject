@@ -34,12 +34,16 @@ server.all('/', (req, res) => {
     res.redirect('/home');
   }
 });
-
+// Login
 server.get('/login', (req, res) => {res.sendFile(path.resolve('../public/login.html'))});
 server.post('/login',
   passport.authenticate('local', 
     { failureRedirect: '/login', successRedirect: '/', session: true }));
-
+// Logout
+server.get('/logout', (req, res) =>{
+    req.logout();
+    res.redirect('/');
+});
 // Serve static content
 server.use(express.static(path.resolve('../public')));
 // Listen to traffic
