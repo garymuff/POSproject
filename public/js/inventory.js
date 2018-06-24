@@ -1,6 +1,7 @@
 window.onload = async function(){
 	const inventory = await getInventoryFromDatabase();
-	if(inventory !== ''){
+	console.log(inventory);
+	if(inventory.length !== 0){
 		for(var i = 0; i < inventory.length; i++){
 			const item = inventory[i];
 			const sku = item.sku;
@@ -11,8 +12,8 @@ window.onload = async function(){
 			});
 		}
 	} else {
-
-		//implement empty inventory error
+		//no inventory found error
+		alert("No Inventroy Available");
 
 	} 
 
