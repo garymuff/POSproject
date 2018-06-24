@@ -5,6 +5,9 @@
 	<link rel="stylesheet" type="text/css" href="./style/header.css">
 	<link rel="stylesheet" type="text/css" href="./style/inventory.css">
 	<title>OpenPOS - Inventory</title>
+	<script type="text/javascript" src="./js/lib/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="./js/lib/jquery.cookie.js"></script>
+	<script type="text/javascript" src="./js/db_helper.js"></script>
 	<script type="text/javascript" src="./js/inventory.js"></script>
 </head>
 <body style="background-image: url('./img/core/background.jpg')">
@@ -54,75 +57,10 @@
 			<button class="btn">Necklaces</button>
 			<button class="btn">Bracelets</button>
 			<button class="btn">Rings</button>
-			<button class="btn">Other</button>
 		</div>
 
-		<div class="inventory">
-		
-			<button class="filterbtn necklace" id="necklace1" style="background-image: url('./img/inventory/necklace.png')">
-				Necklace 1
-			</button>
-			<button class="filterbtn necklace" id="necklace2" style="background-image: url('./img/inventory/comingsoon.jpg')">
-				Necklace 2
-			</button>
-			<button class="filterbtn necklace" id="necklace3" style="background-image: url('./img/inventory/comingsoon.jpg')">
-				Necklace 3
-			</button>
-			<button class="filterbtn necklace" id="necklace4" style="background-image: url('./img/inventory/comingsoon.jpg')">
-				Necklace 4
-			</button>
-			<button class="filterbtn necklace" id="necklace5" style="background-image: url('./img/inventory/comingsoon.jpg')">
-				Necklace 5
-			</button>
-			
-			<button class="filterbtn bracelet" id="bracelet1" style="background-image: url('./img/inventory/bracelet.jpg')">
-				Bracelet 1
-			</button>
-			<button class="filterbtn bracelet" id="bracelet2" style="background-image: url('./img/inventory/comingsoon.jpg')">
-				Bracelet 2
-			</button>
-			<button class="filterbtn bracelet" id="bracelet3" style="background-image: url('./img/inventory/comingsoon.jpg')">
-				Bracelet 3
-			</button>
-			<button class="filterbtn bracelet" id="bracelet4" style="background-image: url('./img/inventory/comingsoon.jpg')">
-				Bracelet 4
-			</button>
-			<button class="filterbtn bracelet" id="bracelet5" style="background-image: url('./img/inventory/comingsoon.jpg')">
-				Bracelet 5
-			</button>
-			
-			<button class="filterbtn ring" id="ring1" style="background-image: url('./img/inventory/ring.jpg')">
-				Ring 1
-			</button>
-			<button class="filterbtn ring" id="ring2" style="background-image: url('./img/inventory/comingsoon.jpg')">
-				Ring 2
-			</button>
-			<button class="filterbtn ring" id="ring3" style="background-image: url('./img/inventory/comingsoon.jpg')">
-				Ring 3
-			</button>
-			<button class="filterbtn ring" id="ring4" style="background-image: url('./img/inventory/comingsoon.jpg')">
-				Ring 4
-			</button>
-			<button class="filterbtn ring" id="ring5" style="background-image: url('./img/inventory/comingsoon.jpg')">
-				Ring 5
-			</button>
-			
-			<button class="filterbtn other" id="other1" style="background-image: url('./img/inventory/comingsoon.jpg')">
-				Other 1
-			</button>
-			<button class="filterbtn other" id="other2" style="background-image: url('./img/inventory/comingsoon.jpg')">
-				Other 2
-			</button>
-			<button class="filterbtn other" id="other3" style="background-image: url('./img/inventory/comingsoon.jpg')">
-				Other 3
-			</button>
-			<button class="filterbtn other" id="other4" style="background-image: url('./img/inventory/comingsoon.jpg')">
-				Other 4
-			</button>
-			<button class="filterbtn other" id="other5" style="background-image: url('./img/inventory/comingsoon.jpg')">
-				Other 5
-			</button>
-			
+		<div class="inventory" id="inventorylist">
+			<!-- items are dynamically added to this DIV -->
 		</div>
 	</div>
 	<!--The Modal-->
@@ -131,15 +69,15 @@
 			<div class="modal-content">
 				<div class="modal-header">
 					<span class="close">&times;</span>
-					<h2>Jewelry</h2>
+					<h2 id="productName">Jewelry</h2>
 				</div>
-				<div class="modal-body">
+				<div class="modal-body" id="priceAndQTY">
 					<p>Price: $99.99 
-						<br>In Stock: 20 
+						<br>Quantity: 20 
 					</p>
 				</div>
 				<div class="modal-footer">
-					<h4>SKU: 111111</h4>
+					<h4 id="productSKU">SKU: 111111</h4>
 				</div>
 			</div>
 		</div>
