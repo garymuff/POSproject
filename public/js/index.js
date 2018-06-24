@@ -196,18 +196,6 @@ window.onload = function(){
 	
 };
 
-//function to check if sku exists in the db
-async function getSkuFromDatabase(sku){
-	const response = await $.post("/query", {sku: sku})
-	.done(function(msg){ 
-		return msg;
-	}).fail(function(xhr, status, error) {
-    	alert("Server error");
-    });
-
-    return response;
-}
-
 //function to display payment successfull message
 function paymentSuccessful(){
 	document.getElementById('modaltotallabel').innerHTML = "Payment Successful!";
