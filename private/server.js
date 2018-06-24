@@ -37,7 +37,7 @@ server.get('/', (req, res) => {
 // Login
 server.get('/login', (req, res) => {
   req.logout();
-  res.sendFile(path.resolve('../public/login.html'))
+  res.sendFile(path.join(__dirname, '../public/login.html'))
 });
 server.post('/login',
   passport.authenticate('local', 
@@ -48,7 +48,7 @@ server.get('/logout', (req, res) =>{
     res.redirect('/');
 });
 // Serve static content
-server.use(express.static(path.resolve('../public')));
+server.use(express.static(path.join(__dirname, '../public')));
 // Listen to traffic
 const port = process.env.PORT || 1234;
 server.listen(port , () => console.log('App listening on port ' + port));
