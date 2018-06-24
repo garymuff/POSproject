@@ -171,8 +171,14 @@ window.onload = function(){
 		clearCart();
 		cart = getCart();
 		restoreCart();
-		paymentSuccessful();
+		// paymentSuccessful();
+		cashPayment();
 	}
+
+	document.getElementById('enterbuttonid').onclick = function() {
+		enterButton();
+	}
+
 
 	//Get modal
 	var modal = document.getElementById('checkoutModal');
@@ -214,6 +220,20 @@ function paymentSuccessful(){
 	document.getElementById('modaltotalvalue').innerHTML = '';
 	$("#cashbutton").removeClass("cashbutton");
 	$("#cashbutton").addClass("disablebutton");
+}
+
+function cashPayment(){
+    document.getElementById('modaltotallabel').innerHTML = "Total Paid:";
+    document.getElementById('modaltotalvalue').innerHTML = '';
+    document.getElementById("cashpaymentid").style.display= "block";
+    $("#cashbutton").removeClass("cashbutton");
+    $("#cashbutton").addClass("disablebutton");
+}
+
+function enterButton(){
+	document.getElementById("cashpaymentid").style.display= "none";
+    $("#enterbutton").removeClass("enterbutton");
+    $("#enterbutton").addClass("disablebutton");
 }
 
 //function to clear numpad
@@ -287,6 +307,7 @@ function updateTotal(element){
 	console.log(element + " " + total);
 	document.getElementById(element).innerHTML = '$' + total.toFixed(2);
 }
+
 // Gets quantity from quantity ticker thingy
 function getQuantity(){
 	return document.getElementById("qtyinput").value;
