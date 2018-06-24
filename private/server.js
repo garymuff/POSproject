@@ -25,17 +25,20 @@ server.use('/health', health);
 server.use('/home', home);
 server.use('/query', query);
 // GET
-server.all('/', (req, res) => {
+server.get('/', (req, res) => {
   const user = req.user;
-  console.log("user: " + user);
   if(!user){
+    console.log("Access Denied. Redirecting...")
     res.redirect('/login');
   } else {
     res.redirect('/home');
   }
 });
 // Login
-server.get('/login', (req, res) => {res.sendFile(path.resolve('../public/login.html'))});
+server.get('/login', (req, res) => {
+  req.logout();
+  res.sendFile(path.resolve('../public/login.html'))
+});
 server.post('/login',
   passport.authenticate('local', 
     { failureRedirect: '/login', successRedirect: '/', session: true }));

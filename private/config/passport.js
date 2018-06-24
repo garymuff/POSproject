@@ -6,7 +6,7 @@ function passportConfig(pool) {
     this.localStrategy = function(username, password, cb) {
         console.log("Authenticating....");
         console.log("Username from input: " + username);
-        console.log("Password from input: " + password);
+        console.log("Password from input: ********");
         self.pool.connect((err, client, release) => {
             if (err) {
                 console.log('Error acquiring client', err.stack);
