@@ -1,56 +1,47 @@
-// Setup Express
+// Get dependencies
 const express = require('express');
-const app = express();
-// Get database
-const db = require('./config/db')
-db.query("SELECT * from users");
+const db = require('./config/db');
+const session = require('express-session');
 const bodyParser = require('body-parser');
-app.use(bodyParser.urlencoded({ extended: true }));
-
-app.get('/', (req, res) => res.sendFile(__dirname + '/public/login.html'));
-
-app.use(express.static('public'));
-const port = process.env.PORT || 1234;
-app.listen(port , () => console.log('App listening on port ' + port));
-// Setup passport
 const passport = require('passport');
-app.use(passport.initialize());
-app.get('/success', (req, res) => {
-	const message = req._parsedOriginalUrl.query;
-	if(message === "authorized"){
-		res.sendFile(__dirname + '/public/index.html');
-	} else {
-		res.send("unauthorized");
-	}
-});
-app.get('/error', (req, res) => res.sendFile(__dirname + '/public/login.html'));
-app.post('/query', async (req, res) => {
-	const sku = req.body.sku;
-	const sql = "SELECT sku, name, price, quantity FROM inventory WHERE sku =\'"+ sku +"\';" 
-	const query = await db.query(sql);
-	console.log(query.rows[0]);
-	res.send(query.rows[0]);
-});
-
-// Authenticate with passport
+const passportConfig = require('./config/passport')(db.pool);
 const LocalStrategy = require('passport-local').Strategy;
-
-passport.use(new LocalStrategy(
-  async function(username, password, done) {
-      console.log("Authenticating...");
-      const query = await db.query("SELECT username, password FROM users;");
-      const auth = query.rows[0];
-      
-      if(auth.username === username){
-      	if(auth.password == password){
-      		return done(null, true);
-      	}
-      	return done(null, false);
-      }
-      return done(null, false);
+const path = require('path');
+// Config passport
+passport.use(new LocalStrategy(passportConfig.localStrategy));
+passport.serializeUser(passportConfig.serializeUser);
+passport.deserializeUser(passportConfig.deserializeUser);
+// Get routes
+const health = require('./routes/health');
+const home = require('./routes/home');
+const query = require('./routes/query');
+// Bind routes
+const server = express();
+server.use(session({ secret: 'keyboard cat', resave: false, saveUninitialized: false }));
+server.use(bodyParser.urlencoded({ extended: true }));
+server.use(passport.initialize());
+server.use(passport.session());
+server.use('/health', health);
+server.use('/home', home);
+server.use('/query', query);
+// GET
+server.all('/', (req, res) => {
+  const user = req.user;
+  console.log("user: " + user);
+  if(!user){
+    res.redirect('/login');
+  } else {
+    res.redirect('/home');
   }
-));
+});
 
-app.post('/',
+server.get('/login', (req, res) => {res.sendFile(path.resolve('../public/login.html'))});
+server.post('/login',
   passport.authenticate('local', 
-  	{ failureRedirect: '/error', successRedirect: '/success?authorized', session: false }));
+    { failureRedirect: '/login', successRedirect: '/', session: true }));
+
+// Serve static content
+server.use(express.static(path.resolve('../public')));
+// Listen to traffic
+const port = process.env.PORT || 1234;
+server.listen(port , () => console.log('App listening on port ' + port));

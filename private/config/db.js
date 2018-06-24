@@ -1,17 +1,26 @@
-// Database
-const { Client } = require('pg');
+// Dependencies
+const { Pool } = require('pg');
+// Setup connection string
 const connectionString = process.env.DATABASE_URL || 
 	"postgres://admin:SuperPass@localhost/db";
-const client = new Client({
+const pool = new Pool({
   connectionString: connectionString,
-});
-
-client.connect();
+})
+// Detect errors
+pool.on('error', function (err) {
+  console.log('idle client error', err.message, err.stack);
+})
 
 async function query(sql) {
-    const res = await client.query(sql);
-  	console.log(res.rows[0]);
+    const client = await pool.connect();
+    const res = await client.query(sql, (err, res) => {
+    	if(err){
+    		console.log("Query error.");
+    	} else {
+    		console.log(res.rows[0]);
+    	}
+    });
   	return res;
 };
 
-module.exports = {query};
+module.exports = {pool, query};
