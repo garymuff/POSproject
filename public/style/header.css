@@ -46,6 +46,9 @@ div.menucontainer{
 
 /*DIV wrapper for better alignmen of menu links*/
 div.menuwrapper {
+	display: flex;
+  	justify-content: center;
+  	align-items: center;
 	width: 85%;
 	height: 70px;
   	margin-left: auto; 
@@ -116,11 +119,6 @@ div.headerboxdesign{
 		float: none;
 
 	}
-}
-
-
-#logoutlink {
-	display: none;
 }
 
 #orderslink {

@@ -112,7 +112,6 @@ window.onload = function(){
 		var display = document.getElementById("numberpaddisplay");
 		if (ismaxlength(display)){
 			const item = await getSkuFromDatabase(display.value);
-			console.log(item);
 			if(item !== ''){
 				item.quantity = getQuantity();
 				addItemToCart(item);
