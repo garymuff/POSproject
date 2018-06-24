@@ -12,18 +12,24 @@ passport.use(new LocalStrategy(passportConfig.localStrategy));
 passport.serializeUser(passportConfig.serializeUser);
 passport.deserializeUser(passportConfig.deserializeUser);
 // Get routes
-const health = require('./routes/health');
 const home = require('./routes/home');
+const inventory = require('./routes/inventory');
 const query = require('./routes/query');
+const health = require('./routes/health');
 // Bind routes
 const server = express();
+server.use(function(req, res, next) {
+  res.set('Cache-Control', 'no-cache, private, no-store, must-revalidate, max-stale=0, post-check=0, pre-check=0');
+  next();
+});
 server.use(session({ secret: 'keyboard cat', resave: false, saveUninitialized: false }));
 server.use(bodyParser.urlencoded({ extended: true }));
 server.use(passport.initialize());
 server.use(passport.session());
-server.use('/health', health);
 server.use('/home', home);
+server.use('/inventory', inventory);
 server.use('/query', query);
+server.use('/health', health);
 // GET
 server.get('/', (req, res) => {
   const user = req.user;
