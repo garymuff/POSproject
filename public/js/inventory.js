@@ -13,7 +13,7 @@ window.onload = async function(){
 		}
 	} else {
 		//no inventory found error
-		alert("No Inventroy Available");
+		document.getElementById('inventorylist').innerHTML = `<div>Inventory Contains no items<br><img class="emptyInventory" src="../img/core/outofstock.PNG"></div>`;
 
 	} 
 

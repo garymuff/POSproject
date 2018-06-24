@@ -90,10 +90,18 @@ div.inventorycontainer {
 	font-weight: bold;
 	cursor: pointer;
 }
+
+.emptyInventory {
+		width: 100%;
+		margin-bottom: 50px;
+}
 /*Special style settings for smaller screens*/
 @media only screen and (max-width: 768px) {
 	div.inventorycontainer {
 		padding-top: 75px;
+		width: 412px;
+	}
+	.emptyInventory {
 		width: 412px;
 	}
 
