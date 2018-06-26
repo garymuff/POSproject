@@ -168,15 +168,16 @@ window.onload = function(){
 	}
 
 	document.getElementById('cashbutton').onclick = function() {
-		clearCart();
-		cart = getCart();
-		restoreCart();
 		// paymentSuccessful();
 		cashPayment();
 	}
 
 	document.getElementById('enterbuttonid').onclick = function() {
 		enterButton();
+		clearCart();
+		cart = getCart();
+		restoreCart();
+
 	}
 
 
@@ -189,12 +190,16 @@ window.onload = function(){
 	//When user clicks x, close modal
 	span.onclick = function() {
 		modal.style.display = "none";
+		document.getElementById("cashpaymentid").style.display= "none";
+		document.getElementById('cashtextid').value = '';
 	}
 
 	//When user clicks outside modal, close modal
 	window.onclick = function(event) {
 		if(event.target == modal) {
 			modal.style.display = "none";
+			document.getElementById("cashpaymentid").style.display= "none";
+			document.getElementById('cashtextid').value = '';
 		}
 	}
 
@@ -231,7 +236,11 @@ function cashPayment(){
 }
 
 function enterButton(){
+	document.getElementById('modaltotallabel').innerHTML = "Change Due:";
+	returnTotal('modaltotalvalue');
+
 	document.getElementById("cashpaymentid").style.display= "none";
+	document.getElementById('cashtextid').value = '';
     $("#enterbutton").removeClass("enterbutton");
     $("#enterbutton").addClass("disablebutton");
 }
@@ -306,6 +315,18 @@ function updateTotal(element){
 	var total = getTotal(cart);
 	console.log(element + " " + total);
 	document.getElementById(element).innerHTML = '$' + total.toFixed(2);
+}
+
+function returnTotal(element){
+	var paidamt = document.getElementById("cashtextid").value;
+	console.log("paidamt = " + paidamt);
+	var cart = getCart();
+	console.log("cart = " + cart);
+	var total = getTotal(cart);
+	console.log("total = " + total);
+	console.log(element + " " + total);
+	var changedue = paidamt - total;
+	document.getElementById(element).innerHTML = '$' + changedue.toFixed(2);
 }
 
 // Gets quantity from quantity ticker thingy
