@@ -172,6 +172,10 @@ window.onload = function(){
 		cashPayment();
 	}
 
+	document.getElementById('cashtextid').onclick = function () {
+		
+	}
+
 	document.getElementById('enterbuttonid').onclick = function() {
 		enterButton();
 		clearCart();
@@ -179,7 +183,6 @@ window.onload = function(){
 		restoreCart();
 
 	}
-
 
 	//Get modal
 	var modal = document.getElementById('checkoutModal');
@@ -219,7 +222,7 @@ async function getSkuFromDatabase(sku){
     return response;
 }
 
-//function to display payment successfull message
+//function to display payment successful message
 function paymentSuccessful(){
 	document.getElementById('modaltotallabel').innerHTML = "Payment Successful!";
 	document.getElementById('modaltotalvalue').innerHTML = '';
@@ -227,20 +230,22 @@ function paymentSuccessful(){
 	$("#cashbutton").addClass("disablebutton");
 }
 
+//function to display textbox for total paid from customer
 function cashPayment(){
     document.getElementById('modaltotallabel').innerHTML = "Total Paid:";
     document.getElementById('modaltotalvalue').innerHTML = '';
+
     document.getElementById("cashpaymentid").style.display= "block";
     $("#cashbutton").removeClass("cashbutton");
     $("#cashbutton").addClass("disablebutton");
 }
 
+//function to display "change due" amount
 function enterButton(){
 	document.getElementById('modaltotallabel').innerHTML = "Change Due:";
 	returnTotal('modaltotalvalue');
-
 	document.getElementById("cashpaymentid").style.display= "none";
-	document.getElementById('cashtextid').value = '';
+	document.getElementById('cashtextid').value = '$' + '';
     $("#enterbutton").removeClass("enterbutton");
     $("#enterbutton").addClass("disablebutton");
 }
@@ -317,13 +322,14 @@ function updateTotal(element){
 	document.getElementById(element).innerHTML = '$' + total.toFixed(2);
 }
 
+// Calculates change due
 function returnTotal(element){
 	var paidamt = document.getElementById("cashtextid").value;
-	console.log("paidamt = " + paidamt);
+	// console.log("paidamt = " + paidamt);
 	var cart = getCart();
-	console.log("cart = " + cart);
+	// console.log("cart = " + cart);
 	var total = getTotal(cart);
-	console.log("total = " + total);
+	// console.log("total = " + total);
 	console.log(element + " " + total);
 	var changedue = paidamt - total;
 	document.getElementById(element).innerHTML = '$' + changedue.toFixed(2);
