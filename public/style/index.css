@@ -481,7 +481,7 @@ button:hover {
 	opacity: 0.8;
 }
 
-input[type=cashtext] {
+input[type=number] {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
