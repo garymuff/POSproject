@@ -19,16 +19,17 @@ body{
     margin-bottom: 20px;
     top: 50%;
     width: 50%;
+    border-radius: 0.25em;
 }
 
 .errormsg {
     color: white;
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;;
+    /*text-shadow: -1px 0 gray, 0 1px gray, 1px 0 gray, 0 -1px gray;*/
 }
 
 .login-container {
 	/*background-color: #C19972;*/
-    background: linear-gradient(to bottom, #fff1d1 0%, #ebdbb9 100%);
+    background: linear-gradient(to bottom, #ffcc99 0%, #c19972 100%);
 	padding: 16px;
 	border: 3px solid gray;
 	position: center;
@@ -36,6 +37,7 @@ body{
 	margin-right: auto;
     top: 50%;
     width: 50%;
+    border-radius: 0.25em;
    }
 
 input[type=text], input[type=password] {
