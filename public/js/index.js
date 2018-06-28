@@ -176,14 +176,6 @@ window.onload = function(){
 		
 	}
 
-	document.getElementById('enterbuttonid').onclick = function() {
-		enterButton();
-		clearCart();
-		cart = getCart();
-		restoreCart();
-
-	}
-
 	//Get modal
 	var modal = document.getElementById('checkoutModal');
 	
@@ -220,6 +212,13 @@ async function getSkuFromDatabase(sku){
     });
 
     return response;
+}
+
+function checkout(){
+	enterButton();
+	clearCart();
+	cart = getCart();
+	restoreCart();
 }
 
 //function to display payment successful message
