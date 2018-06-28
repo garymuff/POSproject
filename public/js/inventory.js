@@ -38,9 +38,24 @@ window.onload = async function(){
 		}
 	}
 }
-
+// Function to update values of the modal from the item attributes
 function updateModal(item) {
 	document.getElementById('productName').innerHTML = item.name;
 	document.getElementById('priceAndQTY').innerHTML = `<p>Price: $${item.price}<br>Quantity: ${item.quantity}</p>`;
 	document.getElementById('productSKU').innerHTML = `SKU: ${item.sku}`;
+}
+
+//function to add item to database
+function addItem(){
+
+	const item = {
+		sku: document.getElementById('skufield').value,
+		name: document.getElementById('namefield').value,
+		category: document.getElementById('categoryfield').value,
+		price: document.getElementById('pricefield').value,
+		quantity: document.getElementById('quantityfield').value,
+	}
+
+	addItemToDatabase(item);
+
 }

@@ -13,7 +13,7 @@
 <body style="background-image: url('./img/core/background.jpg')">
 	<div class="header">
 		<div class="headerwrapper">
-		<!-- Image is property of Shahira Jewelry Design, placement is for demo purposes only!
+		<!-- Image is property of Sahira Jewelry Design, placement is for demo purposes only!
 			Reference: https://www.sahirajewelrydesign.com/ --> 
 			<div class="logowrapper">
 				<a href="/"><img id="logo" src="./img/core/logo.png"></a>
@@ -49,6 +49,17 @@
 				</div>
 			<!-- End of Menu Bar Container - Gary --> 
 		</div>
+	</div>
+	<!-- Container for adding items to inventory -->
+	<div class="additemcontainer">
+		<form onsubmit="addItem(); return false">
+			<input type="text" id="skufield" minLength="6" maxlength="6" placeholder="SKU" pattern="\d*"  required> <br>
+			<input type="text" id="namefield" placeholder="Name" pattern="^[A-Za-z -]+$" required> <br>
+			<input type="text" id="categoryfield" placeholder="Category" required> <br>
+			<input type="number" id="pricefield" step="0.01" min="1" name="price" placeholder="Price" required> <br>
+			<input type="number" id="quantityfield" min="1" name="quantity" placeholder="Quantity" required> <br>
+			<button>FIRE</button>
+		</form>
 	</div>
 	<div class="inventorycontainer">
 		<h2 style="color: #C19972; text-align: left;">Inventory</h2>

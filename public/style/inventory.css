@@ -15,9 +15,30 @@ div.inventorycontainer {
 	margin-right: auto;
 }
 
-.center {
-	height: 200px;
-	width: 200px;
+.additemcontainer {
+	background-color: #C19972;
+	padding: 16px;
+	border: 3px solid gray;
+	position: center;
+	margin-left: auto;
+	margin-right: auto;
+    top: 50%;
+    width: 50%;
+}
+
+input[type=text],  input[type=number]{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-style: normal;
+}
+
+input:placeholder-shown {
+	font-style: italic;
 }
 
 .btn {
