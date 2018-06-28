@@ -159,21 +159,23 @@ window.onload = function(){
 	//Begin javascript for checkout popup
 
 	document.getElementById('checkoutbutton').onclick = function() {
-		updateTotal('modaltotalvalue');
-		modal.style.display = "block";
+		// updateTotal('modaltotalvalue');
+		// modal.style.display = "block";
+		$("#checkoutbutton").removeClass("checkoutbutton");
+		$("#checkoutbutton").addClass("disablebutton");
 		$("#cashbutton").removeClass("disablebutton");
 		$("#cashbutton").addClass("cashbutton");
-		document.getElementById('modaltotallabel').innerHTML = "Total: ";
+		$("#cardbutton").removeClass("disablebutton");
+		$("#cardbutton").addClass("cardbutton");
+		// document.getElementById().style.display = "block";
+		// document.getElementById('modaltotallabel').innerHTML = "Total: ";
 
 	}
 
 	document.getElementById('cashbutton').onclick = function() {
 		// paymentSuccessful();
 		cashPayment();
-	}
-
-	document.getElementById('cashtextid').onclick = function () {
-		
+		checkout();
 	}
 
 	//Get modal
@@ -237,6 +239,8 @@ function cashPayment(){
     document.getElementById("cashpaymentid").style.display= "block";
     $("#cashbutton").removeClass("cashbutton");
     $("#cashbutton").addClass("disablebutton");
+    $("#cardbutton").removeClass("cardbutton");
+    $("#cardbutton").addClass("disablebutton");
 }
 
 //function to display "change due" amount
