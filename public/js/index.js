@@ -168,12 +168,10 @@ window.onload = function(){
 	}
 
 	document.getElementById('cashbutton').onclick = function() {
-		// paymentSuccessful();
-		cashPayment();
-	}
-
-	document.getElementById('cashtextid').onclick = function () {
-		
+		clearCart();
+		cart = getCart();
+		restoreCart();
+		paymentSuccessful();
 	}
 
 	//Get modal
@@ -185,16 +183,12 @@ window.onload = function(){
 	//When user clicks x, close modal
 	span.onclick = function() {
 		modal.style.display = "none";
-		document.getElementById("cashpaymentid").style.display= "none";
-		document.getElementById('cashtextid').value = '';
 	}
 
 	//When user clicks outside modal, close modal
 	window.onclick = function(event) {
 		if(event.target == modal) {
 			modal.style.display = "none";
-			document.getElementById("cashpaymentid").style.display= "none";
-			document.getElementById('cashtextid').value = '';
 		}
 	}
 
@@ -202,51 +196,12 @@ window.onload = function(){
 	
 };
 
-//function to check if sku exists in the db
-async function getSkuFromDatabase(sku){
-	const response = await $.post("/query", {sku: sku})
-	.done(function(msg){ 
-		return msg;
-	}).fail(function(xhr, status, error) {
-    	alert("Server error");
-    });
-
-    return response;
-}
-
-function checkout(){
-	enterButton();
-	clearCart();
-	cart = getCart();
-	restoreCart();
-}
-
-//function to display payment successful message
+//function to display payment successfull message
 function paymentSuccessful(){
 	document.getElementById('modaltotallabel').innerHTML = "Payment Successful!";
 	document.getElementById('modaltotalvalue').innerHTML = '';
 	$("#cashbutton").removeClass("cashbutton");
 	$("#cashbutton").addClass("disablebutton");
-}
-
-//function to display textbox for total paid from customer
-function cashPayment(){
-    document.getElementById('modaltotallabel').innerHTML = "Total Paid:";
-    document.getElementById('modaltotalvalue').innerHTML = '';
-
-    document.getElementById("cashpaymentid").style.display= "block";
-    $("#cashbutton").removeClass("cashbutton");
-    $("#cashbutton").addClass("disablebutton");
-}
-
-//function to display "change due" amount
-function enterButton(){
-	document.getElementById('modaltotallabel').innerHTML = "Change Due:";
-	returnTotal('modaltotalvalue');
-	document.getElementById("cashpaymentid").style.display= "none";
-	document.getElementById('cashtextid').value = '$' + '';
-    $("#enterbutton").removeClass("enterbutton");
-    $("#enterbutton").addClass("disablebutton");
 }
 
 //function to clear numpad
@@ -320,20 +275,6 @@ function updateTotal(element){
 	console.log(element + " " + total);
 	document.getElementById(element).innerHTML = '$' + total.toFixed(2);
 }
-
-// Calculates change due
-function returnTotal(element){
-	var paidamt = document.getElementById("cashtextid").value;
-	// console.log("paidamt = " + paidamt);
-	var cart = getCart();
-	// console.log("cart = " + cart);
-	var total = getTotal(cart);
-	// console.log("total = " + total);
-	console.log(element + " " + total);
-	var changedue = paidamt - total;
-	document.getElementById(element).innerHTML = '$' + changedue.toFixed(2);
-}
-
 // Gets quantity from quantity ticker thingy
 function getQuantity(){
 	return document.getElementById("qtyinput").value;
