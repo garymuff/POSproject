@@ -1,21 +1,6 @@
 window.onload = async function(){
-	const inventory = await getInventoryFromDatabase();
-	console.log(inventory);
-	if(inventory.length !== 0){
-		for(var i = 0; i < inventory.length; i++){
-			const item = inventory[i];
-			const sku = item.sku;
-			document.getElementById('inventorylist').innerHTML += `<button class=\"itembtn" id="${sku}"></button>`;
-			$(document).on('click',`#${sku}`,function(){
-			 	updateModal(item);
-				document.getElementById('myModal').style.display = "block";
-			});
-		}
-	} else {
-		//no inventory found error
-		document.getElementById('inventorylist').innerHTML = `<div>Inventory Contains no items<br><img class="emptyInventory" src="../img/core/outofstock.PNG"></div>`;
 
-	} 
+	refreshInventory();
 
 //Get modal
 	var modal = document.getElementById('myModal');
@@ -45,6 +30,26 @@ function updateModal(item) {
 	document.getElementById('productSKU').innerHTML = `SKU: ${item.sku}`;
 }
 
+async function refreshInventory(){
+	const inventory = await getInventoryFromDatabase();
+	console.log(inventory);
+	document.getElementById('inventorylist').innerHTML = ``;
+	if(inventory.length !== 0){
+		for(var i = 0; i < inventory.length; i++){
+			const item = inventory[i];
+			const sku = item.sku;
+			document.getElementById('inventorylist').innerHTML += `<button class=\"itembtn" id="${sku}"></button>`;
+			$(document).on('click',`#${sku}`,function(){
+			 	updateModal(item);
+				document.getElementById('myModal').style.display = "block";
+			});
+		}
+	} else {
+		//no inventory found error
+		document.getElementById('inventorylist').innerHTML = `<div>Inventory Contains no items<br><img class="emptyInventory" src="../img/core/outofstock.PNG"></div>`;
+
+	} 
+}
 //function to add item to database
 function addItem(){
 
@@ -57,5 +62,4 @@ function addItem(){
 	}
 
 	addItemToDatabase(item);
-
 }

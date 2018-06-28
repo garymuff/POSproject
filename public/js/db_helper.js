@@ -27,8 +27,7 @@ async function addItemToDatabase(item){
 	.done(function(msg){ 
 		return msg;
 	}).fail(function(xhr, status, error) {
-    	alert("Server error");
+    	alert("Server error: " + error);
     });
-
     return response;
 }
