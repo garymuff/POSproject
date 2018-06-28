@@ -5,11 +5,10 @@
 		<link rel="stylesheet" type="text/css" href="./style/index.css">
 		<link rel="stylesheet" type="text/css" href="./style/header.css">
 		<title>OpenPOS</title>
-		<script type="text/javascript" src="./js/index.js"></script>
 		<script type="text/javascript" src="./js/lib/jquery-3.3.1.min.js"></script>
 		<script type="text/javascript" src="./js/lib/jquery.cookie.js"></script>
-
-
+		<script type="text/javascript" src="./js/db_helper.js"></script>
+		<script type="text/javascript" src="./js/index.js"></script>
 	</head>
 	<body>
 		<div class="header">
@@ -29,13 +28,13 @@
 							</a>
 						</div>
 						<div class="link" id="inventorylink">
-							<a class="" href="./inventory.html">
+							<a class="" href="/inventory">
 								<img class="menulinks" alt="Inventory" src="./img/core/icons/inventory.png">
 								<div class="menulinktext">Inventory</div>
 							</a>
 						</div>
 						<div class="link" id="orderslink">
-							<a class="" href="./orders.html">
+							<a class="" href="/orders">
 								<img class="menulinks" alt="Orders" src="./img/core/icons/drawer.png">
 								<div class="menulinktext">Orders</div>
 							</a>
@@ -143,11 +142,8 @@
 						<!-- Beginning of Checkout Button -->
 					<div class="checkoutbuttoncontainer">
 						<button class="disablebutton" id="checkoutbutton" type="submit"> Checkout </button>
-						<button class="cashbutton disablebutton" id="cashbutton" type="button"> Cash </button>
-						<button class="cardbutton disablebutton" id="cardbutton" type="button"> Credit/Debit </button>
 					</div>
 					<!-- End of Checkout Button -->	
-
 					</div>
 				</div>	
 			</div>
@@ -166,30 +162,12 @@
 				<div class="modaltotalvalue" id="modaltotalvalue">$0.0</div>
 			</div>
 
-			<!-- cash textbox -->
-			<div class="cashpayment" id='cashpaymentid' style="display: none;">
-				<div>
-					<form onsubmit="checkout();return false">
-						<input type="cashtext" id="cashtextid" name="cashpaid" placeholder= "0.00" required> 
-						<button type="submit" id="enterbuttonid"> Enter </button>
-					</form>
-					<label for="dollarsign" class="static-value">$</label><br>
-					<!-- <button class="backbutton"	id="backbuttonid" type="button"> Back </button> -->
-				</div>
-			</div>
-
-			<div class="donepayment" id='donepaymentid' style="display: none;">
-				<div>
-					<button class="donebutton" id="donebuttonid" type="button"> Done </button>
-				</div> 
-			</div>
-
 			<div class="co-modal-footer">
 				<!-- Beginning of Payment Buttons -->
 				<div class="paymentcontainer">
-					<!-- <button class="cashbutton" id="cashbutton" type="button" > 
+					<button class="cashbutton" id="cashbutton" type="button" > 
 						Cash
-					</button> -->
+					</button>
 					<!-- <button class="cardbutton" id="cardbutton" type="button">
 					 	Credit/Debit 
 					</button> -->

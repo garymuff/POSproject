@@ -1,64 +1,22 @@
-window.onload = function(){ 
-	document.getElementById('necklace1').onclick = function() {
-		modal.style.display = "block";
-	}
-	document.getElementById('necklace2').onclick = function() {
-		modal.style.display = "block";
-	}
-	document.getElementById('necklace3').onclick = function() {
-		modal.style.display = "block";
-	}
-	document.getElementById('necklace4').onclick = function() {
-		modal.style.display = "block";
-	}
-	document.getElementById('necklace5').onclick = function() {
-		modal.style.display = "block";
-	}
-	document.getElementById('bracelet1').onclick = function() {
-		modal.style.display = "block";
-	}
-	document.getElementById('bracelet2').onclick = function() {
-		modal.style.display = "block";
-	}
-	document.getElementById('bracelet3').onclick = function() {
-		modal.style.display = "block";
-	}
-	document.getElementById('bracelet4').onclick = function() {
-		modal.style.display = "block";
-	}
-	document.getElementById('bracelet5').onclick = function() {
-		modal.style.display = "block";
-	}
-	document.getElementById('ring1').onclick = function() {
-		modal.style.display = "block";
-	}
-	document.getElementById('ring2').onclick = function() {
-		modal.style.display = "block";
-	}
-	document.getElementById('ring3').onclick = function() {
-		modal.style.display = "block";
-	}
-	document.getElementById('ring4').onclick = function() {
-		modal.style.display = "block";
-	}
-	document.getElementById('ring5').onclick = function() {
-		modal.style.display = "block";
-	}
-	document.getElementById('other1').onclick = function() {
-		modal.style.display = "block";
-	}
-	document.getElementById('other2').onclick = function() {
-		modal.style.display = "block";
-	}
-	document.getElementById('other3').onclick = function() {
-		modal.style.display = "block";
-	}
-	document.getElementById('other4').onclick = function() {
-		modal.style.display = "block";
-	}
-	document.getElementById('other5').onclick = function() {
-		modal.style.display = "block";
-	}
+window.onload = async function(){
+	const inventory = await getInventoryFromDatabase();
+	console.log(inventory);
+	if(inventory.length !== 0){
+		for(var i = 0; i < inventory.length; i++){
+			const item = inventory[i];
+			const sku = item.sku;
+			document.getElementById('inventorylist').innerHTML += `<button class=\"itembtn" id="${sku}"></button>`;
+			$(document).on('click',`#${sku}`,function(){
+			 	updateModal(item);
+				document.getElementById('myModal').style.display = "block";
+			});
+		}
+	} else {
+		//no inventory found error
+		document.getElementById('inventorylist').innerHTML = `<div>Inventory Contains no items<br><img class="emptyInventory" src="../img/core/outofstock.PNG"></div>`;
+
+	} 
+
 //Get modal
 	var modal = document.getElementById('myModal');
 //Get btn to open modal
@@ -79,7 +37,10 @@ window.onload = function(){
 			modal.style.display = "none";
 		}
 	}
+}
 
-
-	
+function updateModal(item) {
+	document.getElementById('productName').innerHTML = item.name;
+	document.getElementById('priceAndQTY').innerHTML = `<p>Price: $${item.price}<br>Quantity: ${item.quantity}</p>`;
+	document.getElementById('productSKU').innerHTML = `SKU: ${item.sku}`;
 }
