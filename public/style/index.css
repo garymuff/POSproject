@@ -356,12 +356,6 @@ div.price{
 	margin: 10px;
 }
 
-.checkoutbuttoncontainer {
-	margin-top: 25px;
-    height: 50px;
-	text-align: center;
-}
-
 /*Checkout Button*/
 .checkoutbutton {
 	border-radius: 0.25em;
@@ -378,20 +372,22 @@ div.price{
 }
 
 .paymentcontainer {
-	
+	margin-top: 25px;
+    height: 50px;
+	text-align: center;
 }
 
 /*Cash Button*/
 .cashbutton {
 	border-radius: 0.25em;
 	background: linear-gradient(to top, #006600 0%, #00cc00 100%);
-	width: 48%;
-	margin: 2px;
+	width: 49%;
+	margin-right: 1%;
     color: white;
     padding: 14px 20px;
     text-align: center;
     display: inline-block;
-    border: 1px solid gray;
+    border: none;
     cursor: pointer;
     font-size: 16px;
 }
@@ -401,13 +397,13 @@ div.price{
 	border-radius: 0.25em;
 	background: linear-gradient(to top, #0000ff 0%, #3399ff 100%);
 	float: right;
-	width: 48%;
-	margin: 2px;
+	width: 49%;
+	margin-left: 1%;
     color: white;
     padding: 14px 20px;
     text-align: center;
     display: inline-block;
-    border: 1px solid gray;
+    border: none;
     cursor: pointer;
     font-size: 16px;
 }
