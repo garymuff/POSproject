@@ -356,12 +356,6 @@ div.price{
 	margin: 10px;
 }
 
-.checkoutbuttoncontainer {
-	margin-top: 25px;
-    height: 50px;
-	text-align: center;
-}
-
 /*Checkout Button*/
 .checkoutbutton {
 	border-radius: 0.25em;
@@ -378,7 +372,9 @@ div.price{
 }
 
 .paymentcontainer {
-	
+	margin-top: 25px;
+    height: 50px;
+	text-align: center;
 }
 
 /*Cash Button*/

@@ -159,12 +159,8 @@ window.onload = function(){
 	//Begin javascript for checkout popup
 
 	document.getElementById('checkoutbutton').onclick = function() {
-		updateTotal('modaltotalvalue');
-		modal.style.display = "block";
-		$("#cashbutton").removeClass("disablebutton");
-		$("#cashbutton").addClass("cashbutton");
-		document.getElementById('modaltotallabel').innerHTML = "Total: ";
-
+		hideCheckoutButton();		
+		showPaymentOptions();
 	}
 
 	document.getElementById('cashbutton').onclick = function() {
@@ -172,6 +168,8 @@ window.onload = function(){
 		cart = getCart();
 		restoreCart();
 		paymentSuccessful();
+		hideCheckoutButton();
+		hidePaymentOptions();
 	}
 
 	//Get modal
@@ -196,6 +194,30 @@ window.onload = function(){
 	
 };
 
+// function to hide checkout button
+function hideCheckoutButton(){
+	$("#checkoutbutton").addClass("disablebutton");
+	$("#checkoutbutton").removeClass("checkoutbutton");
+}
+// function to reveal checkout button
+function showCheckoutButton(){
+	$("#checkoutbutton").addClass("checkoutbutton");
+	$("#checkoutbutton").removeClass("disablebutton");
+}
+// function to hide cash and credit buttons
+function hidePaymentOptions(){
+	$("#cashbutton").removeClass("cashbutton");
+	$("#cashbutton").addClass("disablebutton");
+	$("#cardbutton").removeClass("cardbutton");
+	$("#cardbutton").addClass("disablebutton");
+}
+// function to reveal cash and credit buttons
+function showPaymentOptions(){
+	$("#cashbutton").removeClass("disablebutton");
+	$("#cashbutton").addClass("cashbutton");
+	$("#cardbutton").removeClass("disablebutton");
+	$("#cardbutton").addClass("cardbutton");
+}
 //function to display payment successfull message
 function paymentSuccessful(){
 	document.getElementById('modaltotallabel').innerHTML = "Payment Successful!";
