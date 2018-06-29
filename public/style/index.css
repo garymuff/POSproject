@@ -481,6 +481,49 @@ button:hover {
 	opacity: 0.8;
 }
 
+input[type=number] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-style: normal;
+}
+
+input:placeholder-shown {
+	font-style: italic;
+}
+
+input:focus::-webkit-input-placeholder {
+    color: transparent;
+}
+
+.static-value{
+	position:absolute;
+	left:10px;
+	font-weight:bold;
+	font-size:16px;
+	color:#444;
+	top:131px;
+}
+
+.enterbutton {
+	position: center;
+	border-radius: 0.25em;
+	background: linear-gradient(to top, #006600 0%, #00cc00 100%);
+	width: 48%;
+	margin: 2px;
+    /*color: white;*/
+    padding: 14px 20px;
+    text-align: center;
+    display: inline-block;
+    border: 1px solid gray;
+    cursor: pointer;
+    font-size: 16px;
+}
+
 /*Special style settings for smaller screens*/
 @media only screen and (max-width: 768px) {
 	div.poscontainer {
