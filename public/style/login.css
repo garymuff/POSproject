@@ -7,12 +7,29 @@ body{
     height: 100%;
 }
 
-.logo {
 
+.error-container { 
+    background: linear-gradient(to bottom, #cc0000 0%, #990000 100%);
+    opacity: 0.9;
+    padding: 16px;
+    /*border: 3px solid #ff5050;*/
+    position: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    top: 50%;
+    width: 50%;
+    border-radius: 0.25em;
+}
+
+.errormsg {
+    color: white;
+    /*text-shadow: -1px 0 gray, 0 1px gray, 1px 0 gray, 0 -1px gray;*/
 }
 
 .login-container {
-	background-color: #C19972;
+	/*background-color: #C19972;*/
+    background: linear-gradient(to bottom, #ffcc99 0%, #c19972 100%);
 	padding: 16px;
 	border: 3px solid gray;
 	position: center;
@@ -20,6 +37,7 @@ body{
 	margin-right: auto;
     top: 50%;
     width: 50%;
+    border-radius: 0.25em;
    }
 
 input[type=text], input[type=password] {
