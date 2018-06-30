@@ -42,12 +42,17 @@ server.get('/', (req, res) => {
 });
 // Login
 server.get('/login', (req, res) => {
-  req.logout();
-  res.sendFile(path.join(__dirname, '../public/login.html'))
+  console.log(req.query);
+  if(req.query.error === 'unauthorized'){
+    res.sendFile(path.join(__dirname, '../public/login_error.html'))
+  } else {
+    res.sendFile(path.join(__dirname, '../public/login.html'))
+  }
+  
 });
 server.post('/login',
   passport.authenticate('local', 
-    { failureRedirect: '/login', successRedirect: '/', session: true }));
+    { failureRedirect: '/login?error=unauthorized', successRedirect: '/', session: true }));
 // Logout
 server.get('/logout', (req, res) =>{
     req.logout();
