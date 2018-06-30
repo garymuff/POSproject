@@ -86,6 +86,8 @@ input:placeholder-shown {
 	padding: 0;
 	border: 1px solid #ccc;
 	width: 50%;
+	animation-name: animatetop;
+    animation-duration: 0.4s
 }
 
 .modal-header {
@@ -110,6 +112,12 @@ input:placeholder-shown {
 	font-size: 24px;
 	font-weight: bold;
 	cursor: pointer;
+}
+
+/* Add Animation */
+@keyframes animatetop {
+    from {top: -300px; opacity: 0}
+    to {top: 0; opacity: 1}
 }
 
 .emptyInventory {
