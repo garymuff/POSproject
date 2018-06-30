@@ -41,6 +41,19 @@ input:placeholder-shown {
 	font-style: italic;
 }
 
+.addbutton {
+  border-radius: 0.25em;
+  background: linear-gradient(to bottom, #d3d3d3 0%, #808080 100%); width: 100%;
+  margin: auto;
+  color: white;
+  padding: 14px 20px;
+  text-align: center;
+  display: inline-block;
+  border: none;
+  margin-right: 4px 2px;
+  cursor: pointer;
+  font-size: 16px;
+}
 .btn {
     background-color: #C19972;
     border: none;
@@ -133,6 +146,4 @@ input:placeholder-shown {
 	.emptyInventory {
 		width: 412px;
 	}
-
-
 }
