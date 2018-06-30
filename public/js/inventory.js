@@ -1,28 +1,8 @@
 window.onload = async function(){
-
+	initItemModal();
 	refreshInventory();
-
-//Get modal
-	var modal = document.getElementById('myModal');
-//Get btn to open modal
-	//var btn = document.getElementById('necklace1');
-//Get span element to close modal
-	var span = document.getElementsByClassName("close")[0];
-//When user clicks btn, open modal
-	/*btn.onclick = function() {
-		modal.style.display = "block";
-	}*/
-//When user clicks x, close modal
-	span.onclick = function() {
-		modal.style.display = "none";
-	}
-//When user clicks outside modal, close modal
-	window.onclick = function(event) {
-		if(event.target == modal) {
-			modal.style.display = "none";
-		}
-	}
 }
+
 // Function to update values of the modal from the item attributes
 function updateModal(item) {
 	document.getElementById('productName').innerHTML = item.name;
@@ -30,6 +10,22 @@ function updateModal(item) {
 	document.getElementById('productSKU').innerHTML = `SKU: ${item.sku}`;
 }
 
+function initItemModal(){
+	//Get modal
+	var modal = document.getElementById('itemmodal');
+	//Get span element to close modal
+	var span = document.getElementsByClassName("close")[0];
+	//When user clicks x, close modal
+	span.onclick = function() {
+		modal.style.display = "none";
+	}
+	//When user clicks outside modal, close modal
+	window.onclick = function(event) {
+		if(event.target == modal) {
+			modal.style.display = "none";
+		}
+	}
+}
 async function refreshInventory(){
 	const inventory = await getInventoryFromDatabase();
 	console.log(inventory);
@@ -41,7 +37,7 @@ async function refreshInventory(){
 			document.getElementById('inventorylist').innerHTML += `<button class=\"itembtn" id="${sku}"></button>`;
 			$(document).on('click',`#${sku}`,function(){
 			 	updateModal(item);
-				document.getElementById('myModal').style.display = "block";
+				document.getElementById('itemmodal').style.display = "block";
 			});
 		}
 	} else {
@@ -51,7 +47,7 @@ async function refreshInventory(){
 	} 
 }
 //function to add item to database
-function addItem(){
+async function addItem(){
 
 	const item = {
 		sku: document.getElementById('skufield').value,
@@ -61,5 +57,6 @@ function addItem(){
 		quantity: document.getElementById('quantityfield').value,
 	}
 
-	addItemToDatabase(item);
+	await addItemToDatabase(item);
+	await refreshInventory();
 }
