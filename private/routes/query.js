@@ -6,8 +6,8 @@ router.post('/sku', async (req,res) => {
 	const sku = req.body.sku;
   	const sql = `SELECT * FROM inventory WHERE sku ='${sku}';`; 
   	try{
-		const query = await db.query(sql);
-		res.send(query.rows[0])
+    	const query = await db.query(sql);
+    	res.send(query.rows[0])
   	} catch(err){
   		console.log("query.js", err);
   	}
@@ -16,11 +16,22 @@ router.post('/sku', async (req,res) => {
 router.post('/inventory', async (req,res) => {
   	const sql = `SELECT * FROM inventory;`; 
   	try{
-		const query = await db.query(sql);
-		res.send(query.rows)
+  		const query = await db.query(sql);
+  		res.send(query.rows)
   	} catch(err){
   		console.log("query.js", err);
   	}
+});
+
+router.post('/add', async (req,res) => {
+    const item = req.body;
+    const sql = `INSERT INTO inventory VALUES('${item.sku}', '${item.name}', '${item.price}', '${item.quantity}');`; 
+    try{
+      const query = await db.query(sql);
+      res.send(query.rows)
+    } catch(err){
+      console.log("query.js", err);
+    }
 });
 
 module.exports = router;

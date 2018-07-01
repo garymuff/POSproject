@@ -9,16 +9,17 @@
 	<script type="text/javascript" src="./js/lib/jquery.cookie.js"></script>
 	<script type="text/javascript" src="./js/db_helper.js"></script>
 	<script type="text/javascript" src="./js/inventory.js"></script>
+	<script type="text/javascript" src="./js/bootstrap.min.js"></script>
 </head>
 <body style="background-image: url('./img/core/background.jpg')">
 	<div class="header">
 		<div class="headerwrapper">
-		<!-- Image is property of Shahira Jewelry Design, placement is for demo purposes only!
+		<!-- Image is property of Sahira Jewelry Design, placement is for demo purposes only!
 			Reference: https://www.sahirajewelrydesign.com/ --> 
 			<div class="logowrapper">
 				<a href="/"><img id="logo" src="./img/core/logo.png"></a>
 			</div>
-		<!-- Beginning of Menu Bar Container - Gary --> 
+		<!-- Beginning of Menu Bar Container --> 
 				<div class="menucontainer">
 					<div class="menuwrapper headerboxdesign">
 						<div class="link" id="homelink">
@@ -47,9 +48,10 @@
 						</div>
 					</div>
 				</div>
-			<!-- End of Menu Bar Container - Gary --> 
+			<!-- End of Menu Bar Container --> 
 		</div>
 	</div>
+	
 	<div class="inventorycontainer">
 		<h2 style="color: #C19972; text-align: left;">Inventory</h2>
 		<div class="categorybtns">
@@ -57,29 +59,52 @@
 			<button class="btn">Necklaces</button>
 			<button class="btn">Bracelets</button>
 			<button class="btn">Rings</button>
+			<button type="button" class="btn" data-toggle="modal" data-target="#additemmodal">+</button>
 		</div>
 
 		<div class="inventory" id="inventorylist">
 			<!-- items are dynamically added to this DIV -->
 		</div>
 	</div>
-	<!--The Modal-->
-		<div id="myModal" class="modal" style="display: none;">
-			<!--Modal Content-->
-			<div class="modal-content">
-				<div class="modal-header">
-					<span class="close">&times;</span>
-					<h2 id="productName">Jewelry</h2>
-				</div>
-				<div class="modal-body" id="priceAndQTY">
-					<p>Price: $99.99 
-						<br>Quantity: 20 
-					</p>
-				</div>
-				<div class="modal-footer">
-					<h4 id="productSKU">SKU: 111111</h4>
-				</div>
+	<!-- Item Modal -->
+	<div id="itemmodal" class="modal">
+	  <div class="modal-content">
+	    <div class="modal-header">
+				<span class="close">&times;</span>
+				<h2 id="productName">Jewelry</h2>
 			</div>
-		</div>
-	</body>
+			<div class="modal-body" id="priceAndQTY">
+				<p>Price: $99.99 
+					<br>Quantity: 20 
+				</p>
+			</div>
+			<div class="modal-footer">
+				<h4 id="productSKU">SKU: 111111</h4>
+			</div>
+	  </div>
+	</div>
+	<!-- End Item Modal -->
+	<!-- Add Item Modal -->
+	<div id="additemmodal" class="modal">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal">&times;</button>
+	        <h4 class="modal-title">Enter Item</h4>
+	      </div>
+	      <div class="modal-body">
+    			<form onsubmit="addItem(); return false">
+    				<input type="text" id="skufield" minLength="6" maxlength="6" placeholder="SKU" pattern="\d*"  required> <br>
+    				<input type="text" id="namefield" placeholder="Name" pattern="^[A-Za-z -]+$" required> <br>
+    				<input type="text" id="categoryfield" placeholder="Category" required> <br>
+    				<input type="number" id="pricefield" step="0.01" min="1" name="price" placeholder="Price" required> <br>
+    				<input type="number" id="quantityfield" min="1" name="quantity" placeholder="Quantity" required> <br>
+            <button type="submit" class="addbutton">Add</button>
+    			</form>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	<!-- End Add Item Model -->
+</body>
 </html>

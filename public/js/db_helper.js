@@ -20,3 +20,14 @@ async function getInventoryFromDatabase(){
 
     return response;
 }
+
+// function to add item to inventory
+async function addItemToDatabase(item){
+	const response = await $.post("/query/add", item)
+	.done(function(msg){ 
+		return msg;
+	}).fail(function(xhr, status, error) {
+    	alert("Server error: " + error);
+    });
+    return response;
+}
