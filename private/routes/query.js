@@ -9,7 +9,8 @@ router.post('/sku', async (req,res) => {
     	const query = await db.query(sql);
     	res.send(query.rows[0])
   	} catch(err){
-  		console.log("query.js", err);
+  		res.status(400);
+      res.send('error');
   	}
 });
 
@@ -19,7 +20,8 @@ router.post('/inventory', async (req,res) => {
   		const query = await db.query(sql);
   		res.send(query.rows)
   	} catch(err){
-  		console.log("query.js", err);
+  		res.status(400);
+      res.send('error');
   	}
 });
 
@@ -30,7 +32,8 @@ router.post('/add', async (req,res) => {
       const query = await db.query(sql);
       res.send(query.rows)
     } catch(err){
-      console.log("query.js", err);
+      res.status(400);
+      res.send('error');
     }
 });
 

@@ -4,6 +4,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="./style/header.css">
 	<link rel="stylesheet" type="text/css" href="./style/inventory.css">
+  <link rel="stylesheet" type="text/css" href="./style/bootstrap.min.css">
 	<title>OpenPOS - Inventory</title>
 	<script type="text/javascript" src="./js/lib/jquery-3.3.1.min.js"></script>
 	<script type="text/javascript" src="./js/lib/jquery.cookie.js"></script>
@@ -54,7 +55,15 @@
 	
 	<div class="inventorycontainer">
 		<h2 style="color: #C19972; text-align: left;">Inventory</h2>
-		<div class="categorybtns">
+		<div class="alert alert-success alert-dismissible collapse" id="success">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+      <strong>Success!</strong> Item added to inventory.
+    </div>
+    <div class="alert alert-danger alert-dismissible collapse" id="error">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+      <strong>Failure!</strong> Item cannot be added to inventory.
+    </div>
+    <div class="categorybtns">
 			<button class="btn">Show All</button>
 			<button class="btn">Necklaces</button>
 			<button class="btn">Bracelets</button>
@@ -68,20 +77,22 @@
 	</div>
 	<!-- Item Modal -->
 	<div id="itemmodal" class="modal">
-	  <div class="modal-content">
-	    <div class="modal-header">
-				<span class="close">&times;</span>
-				<h2 id="productName">Jewelry</h2>
-			</div>
-			<div class="modal-body" id="priceAndQTY">
-				<p>Price: $99.99 
-					<br>Quantity: 20 
-				</p>
-			</div>
-			<div class="modal-footer">
-				<h4 id="productSKU">SKU: 111111</h4>
-			</div>
-	  </div>
+	  <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="productName">Jewelry</h2>
+          <span class="close">&times;</span>
+        </div>
+        <div class="modal-body" id="priceAndQTY">
+          <p>Price: $99.99 
+            <br>Quantity: 20 
+          </p>
+        </div>
+        <div class="modal-footer">
+          <h4 id="productSKU">SKU: 111111</h4>
+        </div>
+      </div>
+    </div>
 	</div>
 	<!-- End Item Modal -->
 	<!-- Add Item Modal -->
@@ -89,8 +100,8 @@
 	  <div class="modal-dialog">
 	    <div class="modal-content">
 	      <div class="modal-header">
+          <h4 class="modal-title">Enter Item</h4>
 	        <button type="button" class="close" data-dismiss="modal">&times;</button>
-	        <h4 class="modal-title">Enter Item</h4>
 	      </div>
 	      <div class="modal-body">
     			<form onsubmit="addItem(); return false">
