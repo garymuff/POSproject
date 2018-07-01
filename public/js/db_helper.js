@@ -4,7 +4,7 @@ async function getSkuFromDatabase(sku){
 	.done(function(msg){ 
 		return msg;
 	}).fail(function(xhr, status, error) {
-    	alert("Server error");
+		console.log(error);
     });
 
     return response;
@@ -15,7 +15,7 @@ async function getInventoryFromDatabase(){
 	.done(function(msg){ 
 		return msg;
 	}).fail(function(xhr, status, error) {
-    	alert("Server error");
+    	console.log(error);
     });
 
     return response;
@@ -27,7 +27,8 @@ async function addItemToDatabase(item){
 	.done(function(msg){ 
 		return msg;
 	}).fail(function(xhr, status, error) {
-    	alert("Server error: " + error);
+    	console.log(error);
     });
+	
     return response;
 }

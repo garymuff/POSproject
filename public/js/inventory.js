@@ -57,6 +57,26 @@ async function addItem(){
 		quantity: document.getElementById('quantityfield').value,
 	}
 
-	await addItemToDatabase(item);
-	await refreshInventory();
+	try{
+		await addItemToDatabase(item);
+		await refreshInventory();
+		showSuccessMessage();
+	} catch(err){
+		showErrorMessage(err);
+	}
+	
+}
+
+function showSuccessMessage(){
+	$("#error").hide();
+	$("#additemmodal").modal('toggle');
+	$("#success").show();
+
+}
+
+function showErrorMessage(message){
+	console.log(error);
+	$("#success").hide();
+	$("#additemmodal").modal('toggle');
+	$("#error").show();
 }
