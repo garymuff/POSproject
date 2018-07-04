@@ -15,6 +15,7 @@ passport.deserializeUser(passportConfig.deserializeUser);
 const home = require('./routes/home');
 const inventory = require('./routes/inventory');
 const query = require('./routes/query');
+const orders = require('./routes/orders');
 const health = require('./routes/health');
 // Bind routes
 const server = express();
@@ -28,6 +29,7 @@ server.use(passport.initialize());
 server.use(passport.session());
 server.use('/home', home);
 server.use('/inventory', inventory);
+server.use('/orders', orders);
 server.use('/query', query);
 server.use('/health', health);
 // GET
