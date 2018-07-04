@@ -1,0 +1,30 @@
+
+html,
+body {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	color: black;
+	background-image: url('../img/core/background.jpg');
+	font-family: 'Oswald', sans-serif;
+}
+div.orderscontainer {
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+}
+.emptyOrders {
+		width: 100%;
+		margin-bottom: 50px;
+}
+/*Special style settings for smaller screens*/
+@media only screen and (max-width: 768px) {
+	div.orderscontainer {
+		padding-top: 75px;
+		width: 412px;
+	}
+	.emptyOrders {
+		width: 412px;
+	}
+}
