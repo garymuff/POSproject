@@ -66,27 +66,27 @@
 						</div>
 					</div>
 					<!-- Beginning of NumberPad - Gary --> 
-					<div class="nptbwrap">
-						<div class="numberpad boxdesign">
+					<div class="nptbwrap" id="nptbwrap">
+						<div class="numberpad boxdesign" id="numberpad">
 							<div class="nprow"> 
-								<div class="buttoncontainer buttonmargin disabletextselect" id="seven">7</div>
-								<div class="buttoncontainer buttonmargin disabletextselect" id="eight">8</div>
-								<div class="buttoncontainer disabletextselect" id="nine">9</div>
+								<div class="buttoncontainer buttonmargin disabletextselect" id="seven" type="button">7</div>
+								<div class="buttoncontainer buttonmargin disabletextselect" id="eight" type="button">8</div>
+								<div class="buttoncontainer disabletextselect" id="nine" type="button">9</div>
 							</div> 
 							<div class="nprow"> 
-								<div class="buttoncontainer buttonmargin disabletextselect" id="four">4</div>
-								<div class="buttoncontainer buttonmargin disabletextselect" id="five">5</div>
-								<div class="buttoncontainer disabletextselect" id="six">6</div>
+								<div class="buttoncontainer buttonmargin disabletextselect" id="four" type="button">4</div>
+								<div class="buttoncontainer buttonmargin disabletextselect" id="five" type="button">5</div>
+								<div class="buttoncontainer disabletextselect" id="six" type="button">6</div>
 							</div> 
 							<div class="nprow"> 
-								<div class="buttoncontainer buttonmargin disabletextselect" id="one">1</div>
-								<div class="buttoncontainer buttonmargin disabletextselect" id="two">2</div>
-								<div class="buttoncontainer disabletextselect" id="three">3</div>
+								<div class="buttoncontainer buttonmargin disabletextselect" id="one" type="button">1</div>
+								<div class="buttoncontainer buttonmargin disabletextselect" id="two" type="button">2</div>
+								<div class="buttoncontainer disabletextselect" id="three" type="button">3</div>
 							</div> 
 							<div class="nprow"> 
-								<div class="buttoncontainer buttonmargin disabletextselect del disabledbutton" id="del">&cross;</div>
-								<div class="buttoncontainer buttonmargin disabletextselect" id="zero">0</div>
-								<div class="buttoncontainer disabletextselect enter disabledbutton" id="enter">&check;</div>
+								<div class="buttoncontainer buttonmargin disabletextselect del disabledbutton" id="del" type="button">&cross;</div>
+								<div class="buttoncontainer buttonmargin disabletextselect" id="zero" type="button">0</div>
+								<div class="buttoncontainer disabletextselect enter disabledbutton" id="enter" type="button">&check;</div>
 							</div> 
 							<!-- End of NumberPad -->
 						</div>
@@ -139,14 +139,11 @@
 						<!-- End of total -->
 					<!-- Beginning of Payment Buttons -->
 					<div class="paymentcontainer">
-						<button class="disablebutton" id="checkoutbutton" type="submit"> Checkout 
-						</button>
-						<button class="cashbutton disablebutton" id="cashbutton" type="button" > 
-							Cash
-						</button>
-						<button class="cardbutton disablebutton" id="cardbutton" type="button">
-						 	Credit/Debit 
-						</button>
+						<button class="disablebutton" id="checkoutbutton" type="submit"> Checkout </button>
+						<!-- <button class="cashbutton disablebutton" id="cashbutton" type="button"> Cash </button> -->
+						<!-- <button class="cardbutton disablebutton" id="cardbutton" type="button"> Credit/Debit </button> -->
+						<!-- <button class="grayoutbutton disablebutton disallowbutton" id="confirmbutton" type="button"> Confirm </button> -->
+						<!-- <button class="cancelbutton disablebutton" id="cancelbutton" type="button"> Cancel </button> -->
 					</div>
 					<!-- End of Checkout Button -->	
 					</div>
@@ -165,6 +162,27 @@
 			<div class="co-modal-body">
 				<div class="modaltotallabel" id="modaltotallabel">Pay a total of: </div>
 				<div class="modaltotalvalue" id="modaltotalvalue">$0.0</div>
+			</div>
+
+			<div class="cashpayment" id='cashpaymentid' style="display: none;">
+ 				<div>
+ 					<form onsubmit="checkout();return false">
+						<input type="number" id="cashtextid" name="cashpaid" placeholder= "0.00" required> 
+						<button type="submit" id="enterbuttonid" class="enterbutton"> Enter </button>
+					</form>
+ 					<label for="dollarsign" class="static-value">$</label><br>
+ 				</div>
+ 			</div>
+
+			<div class="co-modal-footer">
+				<!-- Beginning of Payment Buttons -->
+				<div class="paymentcontainer">
+					<button class="cashbutton" id="cashbutton" type="button" > Cash </button>
+					<button class="cardbutton" id="cardbutton" type="button"> Credit/Debit </button>
+					<button class="grayoutbutton disablebutton disallowbutton" id="confirmbutton" type="button"> Confirm </button>
+					<button class="cancelbutton disablebutton" id="cancelbutton" type="button"> Cancel </button>
+				</div>
+				<!-- End of Payment Buttons -->	
 			</div>
 			<!-- End of Modal Content -->
 		</div>

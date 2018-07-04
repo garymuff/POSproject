@@ -68,9 +68,8 @@ div.boxdesign{
 	border-color: #404040; 
 	border-width: 3px; 
 	border-style: solid;
-	border-radius: 0.25em;
-	background: radial-gradient(circle, rgb(241, 213, 159) 30%, rgb(255, 231, 175) 54%, rgb(255, 228, 171) 57%, rgb(243, 220, 169) 86%, rgb(222, 200, 155) 100%);
-}
+	border-radius: 10px;
+	background-color: #C19972;}
 
 /*Numberpad Toolbox wrapper*/
 div.nptbwrap {
@@ -84,7 +83,7 @@ div.nptbwrap {
 	text-align: center;
     padding: 5px 5px;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 10px;
     box-sizing: border-box;
     font-size: 140%;
 	font-family: 'Oswald', sans-serif;
@@ -147,7 +146,7 @@ div.buttoncontainer {
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	cursor:default; 
 	color: #404040;
-	background: radial-gradient(circle, rgba(255,241,209,1) 4%, rgba(255,239,202,1) 22%, rgba(244,223,180,1) 96%, rgba(235,219,185,1) 99%);
+	background-color: #C19972;
 }
 
 div.buttonmargin {
@@ -170,7 +169,7 @@ div.toolbuttoncontainer:hover, div.buttoncontainer:hover {
 
 /*Special effects for active for toolbox and buttoncontainer*/
 .active, div.smallbuttoncontainer:active, div.toolbuttoncontainer:active, div.buttoncontainer:active, #enter:active, #del:active {
-	background: rgba(119, 110, 86, 0.5);
+	background-color: #C19972;
 	box-shadow: none;
 	color: gray;
 }
@@ -227,7 +226,7 @@ div.smallbuttoncontainer {
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	cursor: default; 
 	font-size: 40px;
-	background: radial-gradient(circle, rgba(255,241,209,1) 4%, rgba(255,239,202,1) 22%, rgba(244,223,180,1) 96%, rgba(235,219,185,1) 99%);
+    background-color: #C19972;
 }
 
 div.qtyinput{
@@ -294,6 +293,17 @@ div.ledger {
 	background-color: white;
 	margin:auto;
 	overflow-y: scroll;
+	background-color: #d3d3d3;
+
+}
+
+.item {
+	height: 40px;
+ 	box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.3);
+	margin-bottom: 5px;
+	font-size: 20px;
+	background-color: white;
+	padding-top: 7px;
 }
 
 /*DIV class to float labels left*/
@@ -336,9 +346,9 @@ div.price{
 .totalfooter{
 	position: absolute;
 	bottom: 0px;
-	width: 100%;
-	background: radial-gradient(circle, rgba(255,241,209,1) 4%, rgba(255,239,202,1) 22%, rgba(244,223,180,1) 96%, rgba(235,219,185,1) 99%);
-	color: black;
+	left: 1px;
+	width: 99%;
+	background-color: #C19972;	color: black;
 	margin: auto;
 }
 
@@ -358,7 +368,7 @@ div.price{
 
 /*Checkout Button*/
 .checkoutbutton {
-	border-radius: 0.25em;
+	border-radius: 5px 5px 5px 5px;
 	background: linear-gradient(to bottom, #d3d3d3 0%, #808080 100%);	width: 100%;
 	margin: auto;
     color: white;
@@ -379,7 +389,7 @@ div.price{
 
 /*Cash Button*/
 .cashbutton {
-	border-radius: 0.25em;
+	border-radius: 5px 5px 5px 5px;
 	background: linear-gradient(to top, #006600 0%, #00cc00 100%);
 	width: 49%;
 	margin-right: 1%;
@@ -394,7 +404,7 @@ div.price{
 
 /*Card Button*/
 .cardbutton {
-	border-radius: 0.25em;
+	border-radius: 5px 5px 5px 5px;
 	background: linear-gradient(to top, #0000ff 0%, #3399ff 100%);
 	float: right;
 	width: 49%;
@@ -507,7 +517,7 @@ input:focus::-webkit-input-placeholder {
 
 .enterbutton {
 	position: center;
-	border-radius: 0.25em;
+	border-radius: 5px 5px 5px 5px;
 	background: linear-gradient(to top, #006600 0%, #00cc00 100%);
 	width: 48%;
 	margin: 2px;
