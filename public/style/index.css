@@ -418,6 +418,37 @@ div.price{
     font-size: 16px;
 }
 
+/*Cash Button*/
+.confirmbutton {
+	border-radius: 0.25em;
+	background: linear-gradient(to top, #006600 0%, #00cc00 100%);
+	width: 49%;
+	margin-right: 1%;
+    color: white;
+    padding: 14px 20px;
+    text-align: center;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/*Card Button*/
+.cancelbutton {
+	border-radius: 0.25em;
+	background: linear-gradient(to top, #0000ff 0%, #3399ff 100%);
+	float: right;
+	width: 49%;
+	margin-left: 1%;
+    color: white;
+    padding: 14px 20px;
+    text-align: center;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
 .disablebutton {
     display: none;
 }

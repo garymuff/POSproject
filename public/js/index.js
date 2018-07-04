@@ -113,22 +113,31 @@ window.onload = function(){
 		if (ismaxlength(display)){
 			const item = await getSkuFromDatabase(display.value);
 			if(item !== ''){
-				item.quantity = getQuantity();
-				addItemToCart(item);
-				clearDisplay(display);
-				cart.push(item);
-				saveToCookie(cart);
-				updateTotal('totalvalue');
+				if(parseInt(item.quantity) > parseInt(getQuantity())){
+					item.quantity = getQuantity();
+					addItemToCart(item);
+					clearDisplay(display);
+					cart.push(item);
+					saveToCookie(cart);
+					updateTotal('totalvalue');
+				} else {
+					console.log("error");
+					document.getElementById("npderror").innerHTML = "Quantity exceeds stock";
+					document.getElementById("npderror").style.display = "inline";
+					$("#npderror").fadeOut(2800);
+					clearDisplay(display);
+				}
+				
 			} else {
 				document.getElementById("npderror").innerHTML = "SKU out of stock";
 				document.getElementById("npderror").style.display = "inline";
-				$("#npderror").fadeOut(1500);
+				$("#npderror").fadeOut(2800);
 				clearDisplay(display);
 			}
 		} else{
 			document.getElementById("npderror").innerHTML = "Error: Enter " + SKUlength + " Digit SKU";
 			document.getElementById("npderror").style.display = "inline";
-			$("#npderror").fadeOut(1500);
+			$("#npderror").fadeOut(2800);
 		}
 		//run the backspace display function to show/hide backspace
 		bsdiplay();
@@ -164,12 +173,23 @@ window.onload = function(){
 	}
 
 	document.getElementById('cashbutton').onclick = function() {
-		clearCart();
-		cart = getCart();
-		restoreCart();
 		paymentSuccessful();
 		hideCheckoutButton();
 		hidePaymentOptions();
+		showConfirmOptions();
+	}
+
+	document.getElementById('confirmbutton').onclick = function() {
+		clearCart();
+		cart = getCart();
+		restoreCart();
+
+		hideConfirmOptions();
+	}
+
+	document.getElementById('cancelbutton').onclick = function() {
+		hideConfirmOptions();
+		showPaymentOptions();
 	}
 
 	//Get modal
@@ -194,6 +214,8 @@ window.onload = function(){
 	
 };
 
+// onclick function for enter button
+function changeDue(){}
 // function to hide checkout button
 function hideCheckoutButton(){
 	$("#checkoutbutton").addClass("disablebutton");
@@ -217,6 +239,21 @@ function showPaymentOptions(){
 	$("#cashbutton").addClass("cashbutton");
 	$("#cardbutton").removeClass("disablebutton");
 	$("#cardbutton").addClass("cardbutton");
+}
+
+// function to hide cash and credit buttons
+function hideConfirmOptions(){
+	$("#confirmbutton").removeClass("cashbutton");
+	$("#confirmbutton").addClass("disablebutton");
+	$("#cancelbutton").removeClass("cardbutton");
+	$("#cancelbutton").addClass("disablebutton");
+}
+// function to reveal cash and credit buttons
+function showConfirmOptions(){
+	$("#confirmbutton").removeClass("disablebutton");
+	$("#confirmbutton").addClass("cashbutton");
+	$("#cancelbutton").removeClass("disablebutton");
+	$("#cancelbutton").addClass("cardbutton");
 }
 //function to display payment successfull message
 function paymentSuccessful(){
