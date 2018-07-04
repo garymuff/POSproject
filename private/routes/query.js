@@ -33,19 +33,19 @@ router.post('/add', async (req,res) => {
       res.send(query.rows)
     } catch(err){
       res.status(400);
-      res.send('error');
+      res.send('Cannot add item. SKU already in use.');
     }
 });
 
 router.post('/remove', async (req,res) => {
     const item = req.body;
-    const sql = `INSERT INTO inventory VALUES('${item.sku}', '${item.name}', '${item.price}', '${item.quantity}');`; 
+    const sql = `DELETE FROM inventory WHERE sku = ${item.sku};`; 
     try{
       const query = await db.query(sql);
       res.send(query.rows)
     } catch(err){
       res.status(400);
-      res.send('error');
+      res.send('Cannot remove item. Contact server administrator.');
     }
 });
 

@@ -22,7 +22,18 @@ function initItemModal(){
 async function refreshInventory(){
 	const inventory = await getInventoryFromDatabase();
 	console.log(inventory);
-	document.getElementById('inventorylist').innerHTML = ``;
+	document.getElementById('inventorylist').innerHTML = 
+			`<div class="itemcard">
+			  <img src="./img/inventory/backdrop.png"/>
+			  <div id="addcardtitle">
+			      <h1 style="font-size: 5em;">+</h1>
+			  </div>
+			  <div class="itemcardinfo" onclick="toggleModal()">
+			  	<div class="addcarddetail">
+		        	Add New Item
+		      	</div>
+			  </div>
+			</div>`;
 	if(inventory.length !== 0){
 		for(var i = 0; i < inventory.length; i++){
 			const item = inventory[i];
@@ -34,7 +45,7 @@ async function refreshInventory(){
 			  </div>
 			  <div class="itemcardinfo">
 			      <div class="itemcardbuttons">
-			        <button id="itemcarddelete">X</button>
+			        <button class="itemcarddelete" id="${item.sku}">X</button>
 			      </div>
 			      <div class="itemcarddetails">
 			        <p>
@@ -71,30 +82,40 @@ async function addItem(){
 	try{
 		await addItemToDatabase(item);
 		await refreshInventory();
-		showSuccessMessage();
+		showSuccessMessage("Success!: Item added successfully");
+		toggleModal();
 	} catch(err){
-		showErrorMessage(err);
+		showErrorMessage("Error!: " + err.responseText);
+		toggleModal();
 	}
 }
 
 async function removeItem(item){
 	try {
 		await removeItemFromDatabase(item);
+		showSuccessMessage("Success!: Item removed successfully");
+		refreshInventory();
 	} catch(err) {
-
+		showErrorMessage("Error!: " + err.responseText);
 	}
 }
 
-function showSuccessMessage(){
+function showSuccessMessage(message){
 	$("#error").hide();
-	$("#additemmodal").modal('toggle');
-	$("#success").show();
-
+	$("#success").text(message);
+	$("#success").fadeTo(2000, 500).slideUp(500, function(){
+    	$("#success").slideUp(500);
+	});
 }
 
 function showErrorMessage(message){
-	console.log(error);
 	$("#success").hide();
+	$("#error").text(message);
+	$("#error").fadeTo(2000, 500).slideUp(500, function(){
+    	$("#error").slideUp(500);
+	});
+}
+
+function toggleModal(){
 	$("#additemmodal").modal('toggle');
-	$("#error").show();
 }
