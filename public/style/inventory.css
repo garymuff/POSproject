@@ -102,6 +102,7 @@ input:placeholder-shown {
 }
 
 .itemcardtitle {
+    word-wrap: break-word;
     width: 100%;
     background-color: #C19972;
     color: black;
@@ -123,7 +124,6 @@ input:placeholder-shown {
 }
 
 .addcarddetail {
-  /*background-color: red;*/
   height: 100%;
   padding-top: 70px;
   font-size: x-large;

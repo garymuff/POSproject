@@ -102,7 +102,7 @@
 	      <div class="modal-body">
     			<form onsubmit="addItem(); return false">
     				<input type="text" id="skufield" minLength="6" maxlength="6" placeholder="SKU" pattern="\d*"  required> <br>
-    				<input type="text" id="namefield" placeholder="Name" pattern="^[A-Za-z -]+$" required> <br>
+    				<input type="text" id="namefield" maxlength="15" placeholder="Name" pattern="^[A-Za-z -]+$" required> <br>
     				<input type="text" id="categoryfield" placeholder="Category" required> <br>
     				<input type="number" id="pricefield" step="0.01" min="1" name="price" placeholder="Price" required> <br>
     				<input type="number" id="quantityfield" min="1" name="quantity" placeholder="Quantity" required> <br>
