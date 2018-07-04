@@ -1,15 +1,13 @@
 
 //made variable to globally change SKU length
 var SKUlength = 6;
+//Load cart from cookie if it exists
+var cart = getCart();
 
 window.onload = function(){ 
-
-
-	//Load cart from cookie if it exists
-	var cart = getCart();
 	restoreCart();
 	//run the backspace display function to show/hide backspace
-	bsdiplay();
+	bsDisplay();
 	//Backspace button functionality
 	document.getElementById("backspace").onclick = function() {
 		var bs = document.getElementById("numberpaddisplay");
@@ -17,7 +15,7 @@ window.onload = function(){
 			bs.value = bs.value.substring(0, bs.value.length - 1);
 		}
 		//run the backspace display function to show/hide backspace
-		bsdiplay();
+		bsDisplay();
 	};
 
 	// Begin code for numpad button click
@@ -27,7 +25,7 @@ window.onload = function(){
 			add.value += '0';
 		}
 		//run the backspace display function to show/hide backspace
-		bsdiplay();
+		bsDisplay();
 	};
 	document.getElementById("one").onclick = function() {
 		var add = document.getElementById("numberpaddisplay");
@@ -35,7 +33,7 @@ window.onload = function(){
 			add.value += '1';
 		}
 		//run the backspace display function to show/hide backspace
-		bsdiplay();
+		bsDisplay();
 	};
 	document.getElementById("two").onclick = function() {
 		var add = document.getElementById("numberpaddisplay");
@@ -43,7 +41,7 @@ window.onload = function(){
 			add.value += '2';
 		}
 		//run the backspace display function to show/hide backspace
-		bsdiplay();
+		bsDisplay();
 	};
 	document.getElementById("three").onclick = function() {
 		var add = document.getElementById("numberpaddisplay");
@@ -51,7 +49,7 @@ window.onload = function(){
 			add.value += '3';
 		}
 		//run the backspace display function to show/hide backspace
-		bsdiplay();
+		bsDisplay();
 	};
 	document.getElementById("four").onclick = function() {
 		var add = document.getElementById("numberpaddisplay");
@@ -59,7 +57,7 @@ window.onload = function(){
 			add.value += '4';
 		}
 		//run the backspace display function to show/hide backspace
-		bsdiplay();
+		bsDisplay();
 	};
 	document.getElementById("five").onclick = function() {
 		var add = document.getElementById("numberpaddisplay");
@@ -67,7 +65,7 @@ window.onload = function(){
 			add.value += '5';
 		}
 		//run the backspace display function to show/hide backspace
-		bsdiplay();
+		bsDisplay();
 	};
 	document.getElementById("six").onclick = function() {
 		var add = document.getElementById("numberpaddisplay");
@@ -75,7 +73,7 @@ window.onload = function(){
 			add.value += '6';
 		}
 		//run the backspace display function to show/hide backspace
-		bsdiplay();
+		bsDisplay();
 	};
 	document.getElementById("seven").onclick = function() {
 		var add = document.getElementById("numberpaddisplay");
@@ -83,7 +81,7 @@ window.onload = function(){
 			add.value += '7';
 		}
 		//run the backspace display function to show/hide backspace
-		bsdiplay();
+		bsDisplay();
 	};
 	document.getElementById("eight").onclick = function() {
 		var add = document.getElementById("numberpaddisplay");
@@ -91,7 +89,7 @@ window.onload = function(){
 			add.value += '8';
 		}
 		//run the backspace display function to show/hide backspace
-		bsdiplay();
+		bsDisplay();
 	};
 	document.getElementById("nine").onclick = function() {
 		var add = document.getElementById("numberpaddisplay");
@@ -99,40 +97,17 @@ window.onload = function(){
 			add.value += '9';
 		}
 		//run the backspace display function to show/hide backspace
-		bsdiplay();
+		bsDisplay();
 	};
 	document.getElementById("del").onclick = function() {
 		var del = document.getElementById("numberpaddisplay");
 		del.value = "";
 		//run the backspace display function to show/hide backspace
-		bsdiplay();
+		bsDisplay();
 		qtyReset();
 	};
 	document.getElementById("enter").onclick = async function() {
-		var display = document.getElementById("numberpaddisplay");
-		if (ismaxlength(display)){
-			const item = await getSkuFromDatabase(display.value);
-			if(item !== ''){
-				item.quantity = getQuantity();
-				addItemToCart(item);
-				clearDisplay(display);
-				cart.push(item);
-				saveToCookie(cart);
-				updateTotal('totalvalue');
-			} else {
-				document.getElementById("npderror").innerHTML = "SKU out of stock";
-				document.getElementById("npderror").style.display = "inline";
-				$("#npderror").fadeOut(1500);
-				clearDisplay(display);
-			}
-		} else{
-			document.getElementById("npderror").innerHTML = "Error: Enter " + SKUlength + " Digit SKU";
-			document.getElementById("npderror").style.display = "inline";
-			$("#npderror").fadeOut(1500);
-		}
-		//run the backspace display function to show/hide backspace
-		bsdiplay();
-		qtyReset();
+		await validateItem(cart);
 	};
 	//End code for numpad button click
 
@@ -164,12 +139,23 @@ window.onload = function(){
 	}
 
 	document.getElementById('cashbutton').onclick = function() {
-		clearCart();
-		cart = getCart();
-		restoreCart();
 		paymentSuccessful();
 		hideCheckoutButton();
 		hidePaymentOptions();
+		showConfirmOptions();
+	}
+
+	document.getElementById('confirmbutton').onclick = function() {
+		clearCart();
+		cart = getCart();
+		restoreCart();
+
+		hideConfirmOptions();
+	}
+
+	document.getElementById('cancelbutton').onclick = function() {
+		hideConfirmOptions();
+		showPaymentOptions();
 	}
 
 	//Get modal
@@ -193,7 +179,45 @@ window.onload = function(){
 	//End code for checkout popup
 	
 };
+// function to validate entered item skus
+async function validateItem(){
+	var display = document.getElementById("numberpaddisplay");
+		if (ismaxlength(display)){
+			const item = await getSkuFromDatabase(display.value);
+			if(item !== ''){
+				if(parseInt(item.quantity) >= parseInt(getQuantity(item.sku))){
+					item.quantity = getQuantity();
+					addItemToCart(item);
+					clearDisplay(display);
+					cart.push(item);
+					saveToCookie(cart);
+					updateTotal('totalvalue');
+				} else {
+					console.log("error");
+					document.getElementById("npderror").innerHTML = "Quantity exceeds stock";
+					document.getElementById("npderror").style.display = "inline";
+					$("#npderror").fadeOut(2800);
+					clearDisplay(display);
+				}
+				
+			} else {
+				document.getElementById("npderror").innerHTML = "SKU out of stock";
+				document.getElementById("npderror").style.display = "inline";
+				$("#npderror").fadeOut(2800);
+				clearDisplay(display);
+			}
+		} else{
+			document.getElementById("npderror").innerHTML = "Error: Enter " + SKUlength + " Digit SKU";
+			document.getElementById("npderror").style.display = "inline";
+			$("#npderror").fadeOut(2800);
+		}
+		//run the backspace display function to show/hide backspace
+		bsDisplay();
+		qtyReset();
+}
 
+// onclick function for enter button
+function changeDue(){}
 // function to hide checkout button
 function hideCheckoutButton(){
 	$("#checkoutbutton").addClass("disablebutton");
@@ -217,6 +241,21 @@ function showPaymentOptions(){
 	$("#cashbutton").addClass("cashbutton");
 	$("#cardbutton").removeClass("disablebutton");
 	$("#cardbutton").addClass("cardbutton");
+}
+
+// function to hide cash and credit buttons
+function hideConfirmOptions(){
+	$("#confirmbutton").removeClass("cashbutton");
+	$("#confirmbutton").addClass("disablebutton");
+	$("#cancelbutton").removeClass("cardbutton");
+	$("#cancelbutton").addClass("disablebutton");
+}
+// function to reveal cash and credit buttons
+function showConfirmOptions(){
+	$("#confirmbutton").removeClass("disablebutton");
+	$("#confirmbutton").addClass("cashbutton");
+	$("#cancelbutton").removeClass("disablebutton");
+	$("#cancelbutton").addClass("cardbutton");
 }
 //function to display payment successfull message
 function paymentSuccessful(){
@@ -251,7 +290,7 @@ function isEmpty(input) {
 	}
 };
 
-function bsdiplay() {
+function bsDisplay() {
 	input = document.getElementById("numberpaddisplay").value
 	if (input.length == 0){
 		document.getElementById("backspace").style.display = "none";
@@ -298,8 +337,11 @@ function updateTotal(element){
 	document.getElementById(element).innerHTML = '$' + total.toFixed(2);
 }
 // Gets quantity from quantity ticker thingy
-function getQuantity(){
-	return document.getElementById("qtyinput").value;
+function getQuantity(sku){
+	const quantityFromTicker = document.getElementById("qtyinput").value;
+	const quantityFromCart = getItemQuantity(sku);
+	const quantity = parseInt(quantityFromTicker) + quantityFromCart;
+	return quantity;
 }
 
 function addItemToCart(item){
@@ -308,6 +350,19 @@ function addItemToCart(item){
 	$("#checkoutbutton").addClass("checkoutbutton");
 };
 
+function getItemQuantity(sku){
+	const cart = getCart();
+	console.log(cart);
+	var quantity = 0;
+	
+	for(var i=0; i<cart.length; i++){
+		if(cart[i].sku === sku){
+			quantity += cart[i].quantity;
+		}
+	}
+	console.log(quantity);
+	return quantity;
+}
 // Restore cart from cookie
 function restoreCart(){
 	var cookie = getCart();

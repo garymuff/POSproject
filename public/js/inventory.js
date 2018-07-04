@@ -62,11 +62,7 @@ async function refreshInventory(){
 			 	removeItem(item);
 			});
 		}
-	} else {
-		//no inventory found error
-		document.getElementById('inventorylist').innerHTML += `<div>Inventory Contains no items<br><img class="emptyInventory" src="../img/core/outofstock.png"></div>`;
-
-	} 
+	}
 }
 //function to add item to database
 async function addItem(){
