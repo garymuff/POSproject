@@ -7,6 +7,12 @@ body{
     height: 100%;
 }
 
+.center{
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    width: 50%;
+}
 
 .error-container { 
     background: linear-gradient(to bottom, #cc0000 0%, #990000 100%);
@@ -39,6 +45,12 @@ body{
     width: 50%;
     border-radius: 0.25em;
    }
+
+#error {
+    width: 50%;
+    position: relative;
+    text-align: center;
+}
 
 input[type=text], input[type=password] {
     width: 100%;
