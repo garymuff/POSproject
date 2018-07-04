@@ -7,18 +7,29 @@ body {
 	padding: 0;
 	color: black;
 	background-image: url('../img/core/background.jpg');
-	font-family: 'Oswald', sans-serif;
+  font-family: 'Oswald', sans-serif;
 }
 div.inventorycontainer {
 	width: 80%;
 	margin-left: auto;
 	margin-right: auto;
+  background-color: #C19972;
+  opacity: .85;
+  border-radius: 5px 5px 5px 5px;
+}
+
+#inventorytitle{
+  padding: 10px;
+  color: black;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .grid {
   display: flex;
   flex-wrap: wrap;
   margin: auto;
+  align-items: center;
+  justify-content: center;
 }
 
 .additemcontainer {
@@ -82,7 +93,6 @@ input:placeholder-shown {
   height: 250px;
   margin: 10px;
   border-radius: 15px;
-  padding: 1.5rem;
   background: white;
   position: relative;
   display: flex;
@@ -100,6 +110,36 @@ input:placeholder-shown {
     left: 0%;
     text-align: center;
     font-size: large;
+}
+
+.itemcardinfo {
+  width: 100%;
+  height: 100%;
+}
+
+.itemcardbuttons {
+  /*background-color: red;*/
+  width: 100%;
+  height: 30%;
+  text-align: center;
+  padding: .5rem;
+}
+
+.itemcarddetails {
+  padding-top: 3rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+#itemcarddelete{
+  width: 60px;
+  height: 30px;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 12px;
+  border-radius: 15px;
+  color: white;
+  background: linear-gradient(to bottom, #d3d3d3 0%, #808080 100%);
 }
 
 .itemcard:hover {
@@ -124,7 +164,7 @@ input:placeholder-shown {
   height: 100%;
   border-radius: 15px;
   background: rgba(0, 0, 0, 0.6);
-  z-index: 2;
+  z-index: 3;
   transition: 0.5s;
   opacity: 0;
 }
@@ -163,8 +203,10 @@ input:placeholder-shown {
   background: white;
   color: black;
   font-weight: bold;
+  font-size: small;
   cursor: pointer;
   transition: 0.4s ease;
+  float: right;
 }
 
 

@@ -3,13 +3,6 @@ window.onload = async function(){
 	refreshInventory();
 }
 
-// Function to update values of the modal from the item attributes
-function updateModal(item) {
-	document.getElementById('productName').innerHTML = item.name;
-	document.getElementById('priceAndQTY').innerHTML = `<p>Price: $${item.price}<br>Quantity: ${item.quantity}</p>`;
-	document.getElementById('productSKU').innerHTML = `SKU: ${item.sku}`;
-}
-
 function initItemModal(){
 	//Get modal
 	var modal = document.getElementById('itemmodal');
@@ -35,28 +28,32 @@ async function refreshInventory(){
 			const item = inventory[i];
 			document.getElementById('inventorylist').innerHTML += 
 			`<div class="itemcard">
-    			<img src="./img/inventory/ring.jpg"/>
-    			<div class="itemcardtitle">
-      				<h1>${item.name}</h1>
-    			</div>
-    			<div class="itemcardinfo">
-      				<p>
-        				<strong>
-	        				SKU: ${item.sku} </br>
-	        				Price: $${item.price} </br>
-	        				Quantity: ${item.quantity}
-        				</strong>
-      				</p>
-  				</div>
-    		</div>`;
-			$(document).on('click',`#${item.sku}`,function(){
-			 	updateModal(item);
-				document.getElementById('itemmodal').style.display = "block";
+			  <img src="./img/inventory/backdrop.png"/>
+			  <div class="itemcardtitle">
+			      <h1>${item.name}</h1>
+			  </div>
+			  <div class="itemcardinfo">
+			      <div class="itemcardbuttons">
+			        <button id="itemcarddelete">X</button>
+			      </div>
+			      <div class="itemcarddetails">
+			        <p>
+			          <strong>
+			            SKU: ${item.sku} </br>
+			            Price: $${item.price} </br>
+			            Quantity: ${item.quantity}
+			          </strong>
+			        </p>
+			      </div>
+			  </div>
+			</div>`;
+			$(document).on('click',`#${item.sku}`, function(){
+			 	removeItem(item);
 			});
 		}
 	} else {
 		//no inventory found error
-		document.getElementById('inventorylist').innerHTML = `<div>Inventory Contains no items<br><img class="emptyInventory" src="../img/core/outofstock.png"></div>`;
+		document.getElementById('inventorylist').innerHTML += `<div>Inventory Contains no items<br><img class="emptyInventory" src="../img/core/outofstock.png"></div>`;
 
 	} 
 }
@@ -78,7 +75,14 @@ async function addItem(){
 	} catch(err){
 		showErrorMessage(err);
 	}
-	
+}
+
+async function removeItem(item){
+	try {
+		await removeItemFromDatabase(item);
+	} catch(err) {
+
+	}
 }
 
 function showSuccessMessage(){

@@ -5,6 +5,7 @@
 	<link rel="stylesheet" type="text/css" href="./style/header.css">
 	<link rel="stylesheet" type="text/css" href="./style/inventory.css">
  	<link rel="stylesheet" type="text/css" href="./style/bootstrap.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:700" rel="stylesheet">
 	<title>OpenPOS - Inventory</title>
 	<script type="text/javascript" src="./js/lib/jquery-3.3.1.min.js"></script>
 	<script type="text/javascript" src="./js/lib/jquery.cookie.js"></script>
@@ -54,18 +55,17 @@
 	</div>
 	
 	<div class="inventorycontainer">
-		<h2 style="color: #C19972; text-align: left;">Inventory</h2>
+		<h1 id="inventorytitle"> Inventory </h1>
 		<div class="alert alert-success alert-dismissible collapse" id="success">
-    <button type="button" class="close" data-dismiss="alert">&times;</button>
-      <strong>Success!</strong> Item added to inventory.
-    </div>
-    <div class="alert alert-danger alert-dismissible collapse" id="error">
-    <button type="button" class="close" data-dismiss="alert">&times;</button>
-      <strong>Failure!</strong> Item cannot be added to inventory.
-    </div>
-    <div class="categorybtns">
-			<button type="button" class="addbutton" data-toggle="modal" data-target="#additemmodal">Add Item</button>
-      <button type="button" class="addbutton" data-toggle="modal" data-target="#additemmodal">Remove Item</button>
+    		<button type="button" class="close" data-dismiss="alert">&times;</button>
+      		<strong>Success!</strong> Item added to inventory.
+   		 </div>
+    	<div class="alert alert-danger alert-dismissible collapse" id="error">
+    		<button type="button" class="close" data-dismiss="alert">&times;</button>
+     		 <strong>Failure!</strong> Item cannot be added to inventory.
+    	</div>
+    	<div class="categorybtns">
+			<!-- <button type="button" class="addbutton" data-toggle="modal" data-target="#additemmodal">Add Item</button> -->
 		</div>
 		<div class="inventory grid" id="inventorylist">
 			<!-- items are dynamically added to this DIV -->
