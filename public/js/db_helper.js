@@ -32,3 +32,15 @@ async function addItemToDatabase(item){
 	
     return response;
 }
+
+// function to add item to inventory
+async function removeItemFromDatabase(item){
+	const response = await $.post("/query/remove", item)
+	.done(function(msg){ 
+		return msg;
+	}).fail(function(xhr, status, error) {
+    	console.log(error);
+    });
+	
+    return response;
+}
