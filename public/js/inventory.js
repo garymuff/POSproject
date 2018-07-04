@@ -33,16 +33,30 @@ async function refreshInventory(){
 	if(inventory.length !== 0){
 		for(var i = 0; i < inventory.length; i++){
 			const item = inventory[i];
-			const sku = item.sku;
-			document.getElementById('inventorylist').innerHTML += `<button class=\"itembtn" id="${sku}"></button>`;
-			$(document).on('click',`#${sku}`,function(){
+			document.getElementById('inventorylist').innerHTML += 
+			`<div class="itemcard">
+    			<img src="./img/inventory/ring.jpg"/>
+    			<div class="itemcardtitle">
+      				<h1>${item.name}</h1>
+    			</div>
+    			<div class="itemcardinfo">
+      				<p>
+        				<strong>
+	        				SKU: ${item.sku} </br>
+	        				Price: $${item.price} </br>
+	        				Quantity: ${item.quantity}
+        				</strong>
+      				</p>
+  				</div>
+    		</div>`;
+			$(document).on('click',`#${item.sku}`,function(){
 			 	updateModal(item);
 				document.getElementById('itemmodal').style.display = "block";
 			});
 		}
 	} else {
 		//no inventory found error
-		document.getElementById('inventorylist').innerHTML = `<div>Inventory Contains no items<br><img class="emptyInventory" src="../img/core/outofstock.PNG"></div>`;
+		document.getElementById('inventorylist').innerHTML = `<div>Inventory Contains no items<br><img class="emptyInventory" src="../img/core/outofstock.png"></div>`;
 
 	} 
 }
