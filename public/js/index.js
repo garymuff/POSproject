@@ -202,7 +202,6 @@ async function validateItem(){
 					restoreCart();
 					updateTotal('totalvalue');
 				} else {
-					console.log("error");
 					document.getElementById("npderror").innerHTML = "Quantity exceeds stock";
 					document.getElementById("npderror").style.display = "inline";
 					$("#npderror").fadeOut(2800);
@@ -335,14 +334,12 @@ function getTotal(cart){
 	for(var i=0; i<cart.length; i++){
 		total+=parseFloat(cart[i].price * cart[i].quantity);
 	}
-	console.log(total);
 	return total;
 }
 // Updates total everytime you submit an item
 function updateTotal(element){
 	var cart = getCart();
 	var total = getTotal(cart);
-	console.log(element + " " + total);
 	document.getElementById(element).innerHTML = '$' + total.toFixed(2);
 }
 // Gets quantity from quantity ticker thingy
@@ -361,7 +358,6 @@ function addItemToCart(item){
 
 function getItemQuantity(sku){
 	const cart = getCart();
-	console.log(cart);
 	var quantity = 0;
 	
 	for(var i=0; i<cart.length; i++){
@@ -369,7 +365,6 @@ function getItemQuantity(sku){
 			quantity += cart[i].quantity;
 		}
 	}
-	console.log(quantity);
 	return quantity;
 }
 // Restore cart from cookie
