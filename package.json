@@ -17,14 +17,20 @@
   },
   "homepage": "https://github.com/garymuff/POSproject#readme",
   "dependencies": {
+    "bcrypt": "^2.0.1",
     "body-parser": "^1.18.3",
+    "connect-ensure-login": "^0.1.1",
     "express": "^4.16.3",
+    "express-session": "^1.15.6",
     "node-bcrypt": "0.0.1",
     "npm": "^6.1.0",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
     "pg": "^7.4.3",
+    "pug": "^2.0.3",
     "request": "^2.87.0",
-    "tape": "^4.9.0"
+    "stripe": "^6.2.1",
+    "tape": "^4.9.0",
+    "yargs": "^11.0.0"
   }
 }

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="./style/index.css">
+		<link rel="stylesheet" type="text/css" href="./style/header.css">
+		<title>OpenPOS</title>
+		<script src="https://js.stripe.com/v3/"></script>
+		<script type="text/javascript" src="./js/lib/jquery-3.3.1.min.js"></script>
+		<script type="text/javascript" src="./js/lib/jquery.cookie.js"></script>
+		<script type="text/javascript" src="./js/db_helper.js"></script>
+		<script type="text/javascript" src="./js/index.js"></script>
+	</head>
+	<body>
+		<div class="header">
+			<div class="headerwrapper">
+			<!-- Image is property of Shahira Jewelry Design, placement is for demo purposes only!
+					Reference: https://www.sahirajewelrydesign.com/ --> 
+				<div class="logowrapper">
+					<a href="/"><img id="logo" src="./img/core/logo.png"></a>
+				</div>
+			<!-- Beginning of Menu Bar Container - Gary --> 
+				<div class="menucontainer">
+					<div class="menuwrapper headerboxdesign">
+						<div class="link" id="homelink">
+							<a class="" href="/home">
+								<img class="menulinks" alt="Home" src="./img/core/icons/home.png">
+								<div class="menulinktext">Home</div>
+							</a>
+						</div>
+						<div class="link" id="inventorylink">
+							<a class="" href="/inventory">
+								<img class="menulinks" alt="Inventory" src="./img/core/icons/inventory.png">
+								<div class="menulinktext">Inventory</div>
+							</a>
+						</div>
+						<div class="link" id="orderslink">
+							<a class="" href="/orders">
+								<img class="menulinks" alt="Orders" src="./img/core/icons/drawer.png">
+								<div class="menulinktext">Orders</div>
+							</a>
+						</div>
+						<div class="link" id="logoutlink">
+							<a class="" href="/logout">
+								<img class="menulinks" alt="Log Out" src="./img/core/icons/exit.png">
+								<div class="menulinktext">Logout</div>
+							</a>
+						</div>
+					</div>
+				</div>
+				<!-- End of Menu Bar Container - Gary --> 
+			</div>
+		</div>
+		<div class="poscontainer disabletextselect">
+			<div class="selectioncontainer">
+				<!-- Beginning of NumberPad Container - Gary --> 
+				<div class="numberpadcontainer">
+					<div class="numdisplaywrap boxdesign">
+						<!-- numpad display error div -->
+						<div id="npderror">
+							Error
+						</div>
+						<!-- end - numpad display error div -->
+						<input type="text" id="numberpaddisplay" placeholder="Enter SKU" maxlength="6" readonly>
+						<div class="bscontainer" id="backspace">
+							<img id="bsimg" src="./img/core/icons/bs.png">
+						</div>
+					</div>
+					<!-- Beginning of NumberPad - Gary --> 
+					<div class="nptbwrap" id="nptbwrap">
+						<div class="numberpad boxdesign" id="numberpad">
+							<div class="nprow"> 
+								<div class="buttoncontainer buttonmargin disabletextselect" id="seven" type="button">7</div>
+								<div class="buttoncontainer buttonmargin disabletextselect" id="eight" type="button">8</div>
+								<div class="buttoncontainer disabletextselect" id="nine" type="button">9</div>
+							</div> 
+							<div class="nprow"> 
+								<div class="buttoncontainer buttonmargin disabletextselect" id="four" type="button">4</div>
+								<div class="buttoncontainer buttonmargin disabletextselect" id="five" type="button">5</div>
+								<div class="buttoncontainer disabletextselect" id="six" type="button">6</div>
+							</div> 
+							<div class="nprow"> 
+								<div class="buttoncontainer buttonmargin disabletextselect" id="one" type="button">1</div>
+								<div class="buttoncontainer buttonmargin disabletextselect" id="two" type="button">2</div>
+								<div class="buttoncontainer disabletextselect" id="three" type="button">3</div>
+							</div> 
+							<div class="nprow"> 
+								<div class="buttoncontainer buttonmargin disabletextselect del disabledbutton" id="del" type="button">&cross;</div>
+								<div class="buttoncontainer buttonmargin disabletextselect" id="zero" type="button">0</div>
+								<div class="buttoncontainer disabletextselect enter disabledbutton" id="enter" type="button">&check;</div>
+							</div> 
+							<!-- End of NumberPad -->
+						</div>
+						<div class="toolboxcontainer">
+							<!-- Beginning of Toolbox -->  
+							<div class="toolbox boxdesign">
+								<div class="tblabel">Tools</div>
+								<div class="toolbuttoncontainer active" id="SKU">SKU</div>
+							</div>
+							<div class="qtybox boxdesign">
+								<div class="tblabel">QTY</div>
+								<div class="smallbuttoncontainer" id="qtymore">&plus;</div>
+								<div class="qtyinput">
+									<input type="text" class="disabletextselect" id="qtyinput" value="1" maxlength="2" readonly>
+								</div>
+								<div class="smallbuttoncontainer disabledbutton" id="qtyless">&minus;</div>
+							</div>
+							<!-- End of Toolbox  -->
+						</div>
+					</div>
+				</div>
+			<!-- End of NumberPad Container - Gary --> 
+			</div>
+		<!-- End of selection container -->
+				<div class="dynamicreceiptcontainer">
+					<div class="dynamicreceiptwrap boxdesign">
+						<div class="drlabel">Receipt</div>
+						<hr>
+						<div class="itemrowlabels">
+							<div class="SKU labelleft">SKU</div>
+							<div class="qty labelleft">&nbsp;QTY</div>
+							<div class="name labelleft">&nbsp;Name</div>
+							<div class="price">Price</div>
+						</div>
+						<div class="ledger" id="ledger">
+							<!-- items are added here dynamically -->
+						</div>
+						<!-- Beginning of total -->
+						<div class="totalfootercontainer">
+							<div class="totalfooter">
+								<div class="totallabel">
+									Total
+								</div>
+								<div class="totalvalue" id="totalvalue">
+									$0.0
+								</div>
+							</div>
+							
+						</div>
+						<!-- End of total -->
+					<!-- Beginning of Payment Buttons -->
+					<div class="paymentcontainer">
+						<button class="disablebutton" id="checkoutbutton" type="submit"> Checkout </button>
+						<button class="cashbutton disablebutton" id="cashbutton" type="button"> Cash </button>
+						<button class="cardbutton disablebutton" id="cardbutton" type="button"> Credit/Debit </button>
+					</div>
+					<!-- End of Checkout Button -->	
+					</div>
+				</div>	
+			</div>
+			<div id="checkoutmodal" class="checkoutmodal">
+				<!--Modal Content-->
+				<div class="co-modal-content">
+					<div class="co-modal-header">
+						<span class="close">&times;</span>
+						<h2>Checkout</h2>
+					</div>
+					
+					<div class="co-modal-body">
+						<div class="modaltotallabel" id="modaltotallabel">Total: </div>
+						<div class="modaltotalvalue" id="modaltotalvalue">$0.0</div>
+						<div class="modalcashlabel" id="modalcashlabel">Enter Cash Amount: </div>
+						<form class="checkoutform" onsubmit="changeDue();return false">
+							<input type="number" min="0.00" step="0.01" id="cashtextid" name="cashpaid" placeholder= "0.00" required> 
+							<label for="dollarsign" class="static-value">$</label><br>
+							<button type="submit" id="enterbuttonid" class="enterbutton"> Confirm </button>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div id="cardcheckoutmodal" class="cardcheckoutmodal">
+				<!--Modal Content-->
+				<div class="co-modal-content">
+					<div class="co-modal-header">
+						<span class="close2">&times;</span>
+						<h2>Checkout</h2>
+					</div>
+					
+					<div class="co-modal-body">
+						<div class="modaltotallabel" id="modaltotallabel">Total: </div>
+						<div class="modaltotalvalue" id="cardmodaltotalvalue">$0.0</div>
+							<form id="payment-form">
+							  <div class="form-row">
+							    <label for="card-element">
+							      Credit or debit card
+							    </label>
+							    <div id="card-element">
+							      <!-- A Stripe Element will be inserted here. -->
+							    </div>
+
+							    <!-- Used to display form errors. -->
+							    <div id="card-errors" role="alert"></div>
+							  </div>
+							  <div class="flexwrapper">
+							</div>
+							</form>
+							<div class="flexwrapper">
+								<button class="stripe" id="stripebutton">Submit Payment</button>
+							</div>
+							
+					</div>
+				</div>
+			</div>
+	</body>
+</html>

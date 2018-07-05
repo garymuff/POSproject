@@ -3,12 +3,22 @@
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="./style/login.css">
+ 	<link rel="stylesheet" type="text/css" href="./style/bootstrap.min.css">
 	<title>Login - OpenPOS</title>
+	<script type="text/javascript" src="./js/bootstrap.min.js"></script>
 </head>
 <body>
 	<div class="logo">
 		<img src="./img/core/logo.png" alt="logo" class="center">
 	</div>
+
+	<!-- <div class="error-container">
+		<div class="errormsg"> Invalid username or password. Please try again. </div>
+	</div> -->
+
+	<div class="alert alert-danger alert-dismissible center" id="error">
+     		 <strong>Invalid username or password. Please try again.</strong>
+    </div>
 
 	<div class="login-container"> 
 		<form action="/login" method="post">
