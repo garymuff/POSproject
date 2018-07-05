@@ -9,7 +9,8 @@ body {
 	background-image: url('../img/core/background.jpg');
 	font-family: 'Oswald', sans-serif;
 }
-div.orderscontainer {
+div.transactioncontainer {
+	min-height: 100px;
 	width: 80%;
 	margin-left: auto;
 	margin-right: auto;
@@ -18,13 +19,45 @@ div.orderscontainer {
 		width: 100%;
 		margin-bottom: 50px;
 }
+
+#orderhistorytitle{
+	text-align: center;
+}
+
+.transaction {
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	margin: 10px;
+	height: 60px;
+ 	box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.3);
+	font-size: 20px;
+	background-color: white;
+	line-height: 60px;
+	text-align: center;
+	vertical-align: middle;
+
+}
+
+/*Date container*/
+div.Date {
+	width: 33%;
+}
+
+/*TransID container*/
+div.TransID {
+	width: 33%;
+}
+
+/*Product name container*/
+div.Total{
+	width: 33%;
+}
+
 /*Special style settings for smaller screens*/
 @media only screen and (max-width: 768px) {
-	div.orderscontainer {
-		padding-top: 75px;
-		width: 412px;
-	}
-	.emptyOrders {
-		width: 412px;
+	div.transactioncontainer {
+		margin-top: 25px;
+		width: 331.5px;
 	}
 }
