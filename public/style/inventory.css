@@ -14,8 +14,7 @@ div.inventorycontainer {
 	margin-left: auto;
 	margin-right: auto;
   background-color: #C19972;
-  opacity: .85;
-  border-radius: 5px 5px 5px 5px;
+  padding-bottom: 20px;
 }
 
 #inventorytitle{
@@ -92,6 +91,7 @@ input:placeholder-shown {
   width: 200px;
   height: 250px;
   margin: 10px;
+  margin-bottom: 20px;
   border-radius: 15px;
   background: white;
   position: relative;
@@ -220,7 +220,7 @@ input:placeholder-shown {
 
 .itemcarddelete{
   color: white;
-  background: linear-gradient(to bottom, #d3d3d3 0%, #808080 100%);
+  background: linear-gradient(to bottom, #ff0000 0%, #800000 100%);
 }
 
 
@@ -275,10 +275,8 @@ input:placeholder-shown {
 /*Special style settings for smaller screens*/
 @media only screen and (max-width: 768px) {
 	div.inventorycontainer {
-		padding-top: 75px;
-		width: 412px;
+		margin-top: 25px;
+    width: 331.5px;
 	}
-	.emptyInventory {
-		width: 412px;
-	}
+
 }
