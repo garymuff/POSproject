@@ -50,6 +50,18 @@ router.post('/addOrder', async (req,res) => {
     }
 });
 
+router.post('/update', async (req,res) => {
+    const item = req.body;
+    const sql = `UPDATE inventory SET quantity = (quantity - '${item.quantity}') WHERE sku = '${item.sku}'`; 
+    try{
+      const query = await db.query(sql);
+      res.send(query.rows)
+    } catch(err){
+      res.status(400);
+      res.send('Cannot add item. SKU already in use.');
+    }
+});
+
 router.post('/add', async (req,res) => {
     const item = req.body;
     const sql = `INSERT INTO inventory VALUES('${item.sku}', '${item.name}', '${item.price}', '${item.quantity}');`; 

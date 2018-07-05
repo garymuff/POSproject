@@ -10,7 +10,7 @@ async function refreshOrders(){
 		for(var i = 0; i < orders.length; i++){
 			const order = orders[i];
 			const id = order.id;
-			document.getElementById('orderlist').innerHTML += `<div class="order"><div class="id">${order.id}</div><div class="date">${order.datetime}</div><div class="total">${order.price}</div></div>`;
+			document.getElementById('orderlist').innerHTML += `<div class="order"><div class="id">${order.id}</div><div class="date">${order.datetime}</div><div class="total">$${order.price}</div></div>`;
 		}
 	} else {
 		//no order found error
