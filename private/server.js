@@ -17,6 +17,7 @@ const inventory = require('./routes/inventory');
 const query = require('./routes/query');
 const orders = require('./routes/orders');
 const health = require('./routes/health');
+const charge = require('./routes/charge');
 // Bind routes
 const server = express();
 server.use(function(req, res, next) {
@@ -32,6 +33,7 @@ server.use('/inventory', inventory);
 server.use('/orders', orders);
 server.use('/query', query);
 server.use('/health', health);
+server.use('/charge', charge);
 // GET
 server.get('/', (req, res) => {
   const user = req.user;

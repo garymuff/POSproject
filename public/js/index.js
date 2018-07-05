@@ -145,6 +145,11 @@ window.onload = function(){
 		updateTotal('modaltotalvalue');
 	}
 
+	document.getElementById('stripebutton').onclick = async function(){
+		await changeDue();
+		location.reload();
+	}
+
 	document.getElementById('cardbutton').onclick = function() {
 		document.getElementById("cardcheckoutmodal").style.display = "block";
 		updateTotal('cardmodaltotalvalue');
