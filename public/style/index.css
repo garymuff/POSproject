@@ -538,7 +538,7 @@ div.price{
 	float: bottom;
 }
 
-.close {
+.close, .close2 {
 	float: right;
 	font-size: 24px;
 	font-weight: bold;
