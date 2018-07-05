@@ -483,14 +483,12 @@ div.price{
 	border-style: solid;
 	border-radius: 10px;
 	width: 50%;
-	color: white;
 }
 
 .co-modal-header {
-	padding: 1px;
+	padding: 2px 16px;
 	background-color: gray;
 	color: white;
-	font-size: x-large;
 }
 
 .co-modal-body {
@@ -500,21 +498,14 @@ div.price{
 
 .modaltotallabel{
 	margin-left: 10px;
-	font-size: large;
+	font-size: x-large;
 	text-align: left;
-	float: left;
 }
 
 .modaltotalvalue{
 	margin-right: 10px;
-	font-size: large;
+	font-size: x-large;
 	text-align: right;
-}
-
-.modalcashlabel{
-	margin-left: 10px;
-	font-size: large;
-	text-align: left;
 }
 
 .co-modal-footer {
@@ -556,17 +547,15 @@ input:focus::-webkit-input-placeholder {
 
 .static-value{
 	position:absolute;
-	left:15px;
+	left:10px;
 	font-weight:bold;
 	font-size:16px;
 	color:#444;
-	top:184px;
+	top:131px;
 }
 
 #cashtextid {
 	margin: 5px;
-	float: right;
-	width: 100%;
 }
 
 .enterbutton {
