@@ -4,7 +4,6 @@
 /*Container for the header with graident behind logo for better visual appeal*/
 div.header {
 	width: 100%; 
-	height: 135px;
 	background: linear-gradient(to bottom, rgba(0, 0, 0, 1),rgba(20, 12, 8, .65));
 }
 

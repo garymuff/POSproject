@@ -14,8 +14,6 @@ div.inventorycontainer {
 	margin-left: auto;
 	margin-right: auto;
   background-color: #C19972;
-  opacity: .85;
-  border-radius: 5px 5px 5px 5px;
 }
 
 #inventorytitle{
@@ -264,8 +262,17 @@ input:placeholder-shown {
 
 .emptyInventory {
 		width: 100%;
+
 		margin-bottom: 50px;
+}
+
+div.menulinktext {
+  margin-top: -3px;
+  font-size: 85%;
 }
 /*Special style settings for smaller screens*/
 @media only screen and (max-width: 768px) {
+	div.inventorycontainer {
+		margin-top: 25px;
+	}
 }
