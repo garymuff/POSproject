@@ -220,7 +220,7 @@ input:placeholder-shown {
 
 .itemcarddelete{
   color: white;
-  background: linear-gradient(to bottom, #d3d3d3 0%, #808080 100%);
+  background: linear-gradient(to bottom, #ff0000 0%, #800000 100%);
 }
 
 
@@ -275,10 +275,7 @@ input:placeholder-shown {
 /*Special style settings for smaller screens*/
 @media only screen and (max-width: 768px) {
 	div.inventorycontainer {
-		padding-top: 75px;
-		width: 412px;
+		padding-top: 25px;
 	}
-	.emptyInventory {
-		width: 412px;
-	}
+
 }
