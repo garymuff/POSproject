@@ -145,69 +145,21 @@ window.onload = function(){
 		updateTotal('modaltotalvalue');
 	}
 
-	document.getElementById('cardbutton').onclick = function() {
-		document.getElementById("cardcheckoutmodal").style.display = "block";
-		updateTotal('cardmodaltotalvalue');
-		// Create a Stripe client.
-		var stripe = Stripe('pk_test_g6do5S237ekq10r65BnxO6S0');
-
-		// Create an instance of Elements.
-		var elements = stripe.elements();
-
-		// Custom styling can be passed to options when creating an Element.
-		// (Note that this demo uses a wider set of styles than the guide below.)
-		var style = {
-		  base: {
-		    color: '#32325d',
-		    lineHeight: '18px',
-		    fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
-		    fontSmoothing: 'antialiased',
-		    fontSize: '16px',
-		    '::placeholder': {
-		      color: '#aab7c4'
-		    }
-		  },
-		  invalid: {
-		    color: '#fa755a',
-		    iconColor: '#fa755a'
-		  }
-		};
-
-		// Create an instance of the card Element.
-		var card = elements.create('card', {style: style});
-
-		// Add an instance of the card Element into the `card-element` <div>.
-		card.mount('#card-element');
-	}
-
-
 	//Get modal
 	var modal = document.getElementById('checkoutmodal');
-	var cardmodal = document.getElementById('cardcheckoutmodal');
 	
 	//Get span element to close modal
 	var span = document.getElementsByClassName("close")[0];
-	var span2 = document.getElementsByClassName("close2")[0];
 	
 	//When user clicks x, close modal
 	span.onclick = function() {
 		modal.style.display = "none";
-		location.reload();
-	}
-
-	span2.onclick = function() {
-		cardmodal.style.display = "none";
-		location.reload();
 	}
 
 	//When user clicks outside modal, close modal
 	window.onclick = function(event) {
 		if(event.target == modal) {
 			modal.style.display = "none";
-			location.reload();
-		}
-		if(event.target == cardmodal) {
-			cardmodal.style.display = "none";
 			location.reload();
 		}
 	}
