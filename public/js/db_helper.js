@@ -20,6 +20,30 @@ async function getInventoryFromDatabase(){
 
     return response;
 }
+// function to get all order
+async function getOrdersFromDatabase(){
+	const response = await $.post("/query/orders")
+	.done(function(msg){ 
+		return msg;
+	}).fail(function(xhr, status, error) {
+    	console.log(error);
+    });
+    return response;
+}
+
+// function to add order to database
+async function addOrderToDatabase(total){
+	const price = {total: 0};
+	price.total = total;
+	
+	const response = await $.post("/query/addOrder", price)
+	.done(function(msg){ 
+		return msg;
+	}).fail(function(xhr, status, error) {
+    	console.log(error);
+    });
+    return response;
+}
 
 // function to add item to inventory
 async function addItemToDatabase(item){

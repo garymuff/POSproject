@@ -10,7 +10,7 @@ router.post('/sku', async (req,res) => {
     	res.send(query.rows[0])
   	} catch(err){
   		res.status(400);
-      res.send('error');
+      res.send('Cannot get SKU. Database error.');
   	}
 });
 
@@ -21,8 +21,33 @@ router.post('/inventory', async (req,res) => {
   		res.send(query.rows)
   	} catch(err){
   		res.status(400);
-      res.send('error');
+      res.send('Cannot get inventory. Database error.');
   	}
+});
+
+router.post('/orders', async (req,res) => {
+    const sql = `SELECT * FROM orders;`; 
+    try{
+      const query = await db.query(sql);
+      res.send(query.rows)
+    } catch(err){
+      res.status(400);
+      res.send('Cannot get orders. Database error.');
+    }
+});
+
+router.post('/addOrder', async (req,res) => {
+    const price = req.body;
+    console.log("PRICE: ", price.total);
+    const sql = `INSERT INTO orders VALUES(NEXTVAL('orders_id_seq'), NOW(), '${price.total}');`; 
+    try{
+      const query = await db.query(sql);
+      res.send(query.rows)
+    } catch(err){
+      res.status(400);
+      res.send('Cannot add order. Database error.');
+      console.log(err);
+    }
 });
 
 router.post('/add', async (req,res) => {
