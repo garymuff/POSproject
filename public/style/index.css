@@ -129,6 +129,12 @@ div.numberpad {
 	font-size: 150%;
 }
 
+.checkoutform {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
 /*DIV for button container for each button in number pad*/
 div.buttoncontainer {
     line-height: 75px;
@@ -467,13 +473,15 @@ div.price{
 	background-color: rgb(0,0,0,0.4);
 }
 
-
 .co-modal-content {
 	position: relative;
-	background-color: rgb(222, 200, 155);
+	background-color: #C19972;
 	margin: auto;
 	padding: 0;
-	border: 1px solid #ccc;
+	border-color: #404040; 
+	border-width: 3px; 
+	border-style: solid;
+	border-radius: 10px;
 	width: 50%;
 }
 
@@ -546,13 +554,17 @@ input:focus::-webkit-input-placeholder {
 	top:131px;
 }
 
+#cashtextid {
+	margin: 5px;
+}
+
 .enterbutton {
 	position: center;
 	border-radius: 5px 5px 5px 5px;
 	background: linear-gradient(to top, #006600 0%, #00cc00 100%);
 	width: 48%;
-	margin: 2px;
-    /*color: white;*/
+	margin: 5px;
+    color: white;
     padding: 14px 20px;
     text-align: center;
     display: inline-block;
@@ -563,6 +575,10 @@ input:focus::-webkit-input-placeholder {
 
 /*Special style settings for smaller screens*/
 @media only screen and (max-width: 768px) {
+	div.co-modal-content {
+		width: 90%;
+	}
+	
 	div.poscontainer {
 		padding-top: 95px;
 		width: 331.5px; 

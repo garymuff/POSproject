@@ -107,6 +107,7 @@ window.onload = function(){
 		qtyReset();
 	};
 	document.getElementById("enter").onclick = async function() {
+		hidePaymentOptions();
 		await validateItem(cart);
 	};
 	//End code for numpad button click
@@ -139,27 +140,13 @@ window.onload = function(){
 	}
 
 	document.getElementById('cashbutton').onclick = function() {
-		paymentSuccessful();
-		hideCheckoutButton();
-		hidePaymentOptions();
-		showConfirmOptions();
-	}
-
-	document.getElementById('confirmbutton').onclick = function() {
-		clearCart();
-		cart = getCart();
-		restoreCart();
-
-		hideConfirmOptions();
-	}
-
-	document.getElementById('cancelbutton').onclick = function() {
-		hideConfirmOptions();
-		showPaymentOptions();
+		document.getElementById("checkoutmodal").style.display = "block";
+		document.getElementById("cashtextid").min = getTotal(cart);
+		updateTotal('modaltotalvalue');
 	}
 
 	//Get modal
-	var modal = document.getElementById('checkoutModal');
+	var modal = document.getElementById('checkoutmodal');
 	
 	//Get span element to close modal
 	var span = document.getElementsByClassName("close")[0];
@@ -173,6 +160,7 @@ window.onload = function(){
 	window.onclick = function(event) {
 		if(event.target == modal) {
 			modal.style.display = "none";
+			location.reload();
 		}
 	}
 
@@ -225,7 +213,13 @@ async function validateItem(){
 }
 
 // onclick function for enter button
-function changeDue(){}
+function changeDue(){
+	paymentSuccessful();
+	hideCheckoutButton();
+	hidePaymentOptions();
+	clearCart();
+	restoreCart();
+}
 // function to hide checkout button
 function hideCheckoutButton(){
 	$("#checkoutbutton").addClass("disablebutton");
@@ -251,26 +245,15 @@ function showPaymentOptions(){
 	$("#cardbutton").addClass("cardbutton");
 }
 
-// function to hide cash and credit buttons
-function hideConfirmOptions(){
-	$("#confirmbutton").removeClass("cashbutton");
-	$("#confirmbutton").addClass("disablebutton");
-	$("#cancelbutton").removeClass("cardbutton");
-	$("#cancelbutton").addClass("disablebutton");
-}
-// function to reveal cash and credit buttons
-function showConfirmOptions(){
-	$("#confirmbutton").removeClass("disablebutton");
-	$("#confirmbutton").addClass("cashbutton");
-	$("#cancelbutton").removeClass("disablebutton");
-	$("#cancelbutton").addClass("cardbutton");
-}
 //function to display payment successfull message
 function paymentSuccessful(){
-	document.getElementById('modaltotallabel').innerHTML = "Payment Successful!";
-	document.getElementById('modaltotalvalue').innerHTML = '';
-	$("#cashbutton").removeClass("cashbutton");
-	$("#cashbutton").addClass("disablebutton");
+	const cash = document.getElementById('cashtextid').value;
+	const due = parseFloat(cash) - getTotal(cart);
+	document.getElementById('modaltotallabel').innerHTML = "Change Due:";
+	document.getElementById('modaltotalvalue').innerHTML = "$" + due.toFixed(2);
+	document.getElementById('modalcashlabel').innerHTML = '';
+	document.getElementById('cashtextid').style.display = 'none';
+	document.getElementById('enterbuttonid').style.display = 'none';
 }
 
 //function to clear numpad
@@ -334,13 +317,13 @@ function getTotal(cart){
 	for(var i=0; i<cart.length; i++){
 		total+=parseFloat(cart[i].price * cart[i].quantity);
 	}
-	return total;
+	return total.toFixed(2);
 }
 // Updates total everytime you submit an item
 function updateTotal(element){
 	var cart = getCart();
 	var total = getTotal(cart);
-	document.getElementById(element).innerHTML = '$' + total.toFixed(2);
+	document.getElementById(element).innerHTML = '$' + total;
 }
 // Gets quantity from quantity ticker thingy
 function getQuantity(sku){

@@ -142,51 +142,29 @@
 						<button class="disablebutton" id="checkoutbutton" type="submit"> Checkout </button>
 						<button class="cashbutton disablebutton" id="cashbutton" type="button"> Cash </button>
 						<button class="cardbutton disablebutton" id="cardbutton" type="button"> Credit/Debit </button>
-						<button class="grayoutbutton disablebutton disallowbutton" id="confirmbutton" type="button"> Confirm </button>
-						<button class="cancelbutton disablebutton" id="cancelbutton" type="button"> Cancel </button>
 					</div>
 					<!-- End of Checkout Button -->	
 					</div>
 				</div>	
 			</div>
-
-			<!--The Modal-->
-	<div id="checkoutModal" class="checkoutmodal" style="display: none;">
-		<!--Modal Content-->
-		<div class="co-modal-content">
-			<div class="co-modal-header">
-				<span class="close">&times;</span>
-				<h2>Checkout</h2>
-			</div>
-			
-			<div class="co-modal-body">
-				<div class="modaltotallabel" id="modaltotallabel">Pay a total of: </div>
-				<div class="modaltotalvalue" id="modaltotalvalue">$0.0</div>
-			</div>
-
-			<div class="cashpayment" id='cashpaymentid' style="display: none;">
- 				<div>
- 					<form onsubmit="checkout();return false">
-						<input type="number" id="cashtextid" name="cashpaid" placeholder= "0.00" required> 
-						<button type="submit" id="enterbuttonid" class="enterbutton"> Enter </button>
-					</form>
- 					<label for="dollarsign" class="static-value">$</label><br>
- 				</div>
- 			</div>
-
-			<div class="co-modal-footer">
-				<!-- Beginning of Payment Buttons -->
-				<div class="paymentcontainer">
-					<button class="cashbutton" id="cashbutton" type="button" > Cash </button>
-					<button class="cardbutton" id="cardbutton" type="button"> Credit/Debit </button>
-					<button class="grayoutbutton disablebutton disallowbutton" id="confirmbutton" type="button"> Confirm </button>
-					<button class="cancelbutton disablebutton" id="cancelbutton" type="button"> Cancel </button>
+			<div id="checkoutmodal" class="checkoutmodal" style="display: none;">
+				<!--Modal Content-->
+				<div class="co-modal-content">
+					<div class="co-modal-header">
+						<span class="close">&times;</span>
+						<h2>Checkout</h2>
+					</div>
+					
+					<div class="co-modal-body">
+						<div class="modaltotallabel" id="modaltotallabel">Total: </div>
+						<div class="modaltotalvalue" id="modaltotalvalue">$0.0</div>
+						<div class="modaltotallabel" id="modalcashlabel">Enter Cash Amount: </div>
+						<form class="checkoutform" onsubmit="changeDue();return false">
+							<input type="number" min="0.0" step="0.01" id="cashtextid" name="cashpaid" placeholder= "0.00" required> 
+							<button type="submit" id="enterbuttonid" class="enterbutton"> Confirm </button>
+						</form>
+					</div>
 				</div>
-				<!-- End of Payment Buttons -->	
 			</div>
-			<!-- End of Modal Content -->
-		</div>
-		<!-- End of The Modal-->
-	</div>
 	</body>
 </html>
