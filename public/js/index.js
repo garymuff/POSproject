@@ -218,8 +218,15 @@ async function changeDue(){
 	hideCheckoutButton();
 	hidePaymentOptions();
 	await addOrderToDatabase(getTotal(cart));
+	await updateEachQuantity(cart);
 	clearCart();
 	restoreCart();
+}
+
+async function updateEachQuantity(cart){
+	for(var i=0; i<cart.length; i++){
+		await updateQuantityInStock(cart[i]);
+	}
 }
 // function to hide checkout button
 function hideCheckoutButton(){
