@@ -45,7 +45,7 @@ async function refreshInventory(){
 			  </div>
 			  <div class="itemcardinfo">
 			      <div class="itemcardbuttons">
-			        <button class="itemcarddelete" id="${item.sku}">X</button>
+			        <button class="itemcarddelete" id="${item.sku}"><i class="fa fa-trash"></i></button>
 			      </div>
 			      <div class="itemcarddetails">
 			        <p>

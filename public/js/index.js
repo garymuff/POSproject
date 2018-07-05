@@ -179,6 +179,15 @@ window.onload = function(){
 	//End code for checkout popup
 	
 };
+
+function pushToCart(item){
+	const index = cart.findIndex((it => it.sku === item.sku));
+	if(index === -1){
+		cart.push(item);
+	} else {
+		cart[index].quantity += item.quantity;
+	}
+}	
 // function to validate entered item skus
 async function validateItem(){
 	var display = document.getElementById("numberpaddisplay");
@@ -187,13 +196,12 @@ async function validateItem(){
 			if(item !== ''){
 				if(parseInt(item.quantity) >= parseInt(getQuantity(item.sku))){
 					item.quantity = getQuantity();
-					addItemToCart(item);
 					clearDisplay(display);
-					cart.push(item);
+					pushToCart(item);
 					saveToCookie(cart);
+					restoreCart();
 					updateTotal('totalvalue');
 				} else {
-					console.log("error");
 					document.getElementById("npderror").innerHTML = "Quantity exceeds stock";
 					document.getElementById("npderror").style.display = "inline";
 					$("#npderror").fadeOut(2800);
@@ -326,14 +334,12 @@ function getTotal(cart){
 	for(var i=0; i<cart.length; i++){
 		total+=parseFloat(cart[i].price * cart[i].quantity);
 	}
-	console.log(total);
 	return total;
 }
 // Updates total everytime you submit an item
 function updateTotal(element){
 	var cart = getCart();
 	var total = getTotal(cart);
-	console.log(element + " " + total);
 	document.getElementById(element).innerHTML = '$' + total.toFixed(2);
 }
 // Gets quantity from quantity ticker thingy
@@ -352,7 +358,6 @@ function addItemToCart(item){
 
 function getItemQuantity(sku){
 	const cart = getCart();
-	console.log(cart);
 	var quantity = 0;
 	
 	for(var i=0; i<cart.length; i++){
@@ -360,11 +365,11 @@ function getItemQuantity(sku){
 			quantity += cart[i].quantity;
 		}
 	}
-	console.log(quantity);
 	return quantity;
 }
 // Restore cart from cookie
 function restoreCart(){
+	document.getElementById("ledger").innerHTML = "";
 	var cookie = getCart();
 	for(var i=0; i<cookie.length; i++){
 		addItemToCart(cookie[i]);

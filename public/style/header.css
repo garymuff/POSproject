@@ -93,6 +93,7 @@ div.headerboxdesign{
 	div.headerwrapper {
 		height:200px;
 		margin: 0 auto;
+		float: none;
 	}
 	div.logowrapper {
 		width: 331.5px;
