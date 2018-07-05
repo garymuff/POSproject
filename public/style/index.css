@@ -472,20 +472,6 @@ div.price{
 	height: 100%;
 	background-color: rgb(0,0,0,0.4);
 }
-/*Card*Checkout Modal*/
-.cardcheckoutmodal {
-	display: none;
-	position: fixed;
-	z-index: 1;
-	padding-top: 200px;
-	left: 0;
-	top: 0;
-	overflow: auto;
-	width: 100%;
-	min-width: 360px;
-	height: 100%;
-	background-color: rgb(0,0,0,0.4);
-}
 
 .co-modal-content {
 	position: relative;
@@ -543,6 +529,29 @@ div.price{
 	font-size: 24px;
 	font-weight: bold;
 	cursor: pointer;
+}
+
+button:hover {
+	opacity: 0.8;
+}
+
+input[type=number] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-style: normal;
+}
+
+input:placeholder-shown {
+	font-style: italic;
+}
+
+input:focus::-webkit-input-placeholder {
+    color: transparent;
 }
 
 .static-value{
@@ -621,81 +630,4 @@ div.disabledbutton {
 
 div.zerofix {
 	margin-left: 2px;
-}
-
-.StripeElement {
-  background-color: white;
-  padding: 10px 12px;
-  border-radius: 4px;
-  border: 1px solid transparent;
-  box-shadow: 0 1px 3px 0 #e6ebf1;
-  -webkit-transition: box-shadow 150ms ease;
-  transition: box-shadow 150ms ease;
-}
-
-.StripeElement--focus {
-  box-shadow: 0 1px 3px 0 #cfd7df;
-}
-
-.StripeElement--invalid {
-  border-color: #fa755a;
-}
-
-.StripeElement--webkit-autofill {
-  background-color: #fefde5 !important;
-}
-
-button.stripe {
-    border: none;
-    border-radius: 4px;
-    outline: none;
-    text-decoration: none;
-    color: #fff;
-    background: #32325d;
-    white-space: nowrap;
-    display: inline-block;
-    height: 40px;
-    line-height: 40px;
-    padding: 0 14px;
-    box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08);
-    border-radius: 4px;
-    font-size: 15px;
-    font-weight: 600;
-    letter-spacing: 0.025em;
-    text-decoration: none;
-    -webkit-transition: all 150ms ease;
-    transition: all 150ms ease;
-    margin-top:10px;
-	margin-bottom: 10px;
-
-}
-
-
-button:hover {
-	opacity: 0.8;
-}
-
-input[type=number] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-    font-size: 16px;
-    font-style: normal;
-}
-
-input:placeholder-shown {
-	font-style: italic;
-}
-
-input:focus::-webkit-input-placeholder {
-    color: transparent;
-}
-
-div.flexwrapper {
-	display: flex;
-	justify-content: center;
-	align-content: center;
 }
