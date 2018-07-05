@@ -213,10 +213,11 @@ async function validateItem(){
 }
 
 // onclick function for enter button
-function changeDue(){
+async function changeDue(){
 	paymentSuccessful();
 	hideCheckoutButton();
 	hidePaymentOptions();
+	await addOrderToDatabase(getTotal(cart));
 	clearCart();
 	restoreCart();
 }

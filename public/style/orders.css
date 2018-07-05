@@ -24,7 +24,7 @@ div.transactioncontainer {
 	text-align: center;
 }
 
-.transaction {
+.order {
 	display: flex;
 	justify-content: center;
 	align-content: center;
@@ -40,17 +40,17 @@ div.transactioncontainer {
 }
 
 /*Date container*/
-div.Date {
+div.date {
 	width: 33%;
 }
 
 /*TransID container*/
-div.TransID {
+div.id {
 	width: 33%;
 }
 
 /*Product name container*/
-div.Total{
+div.total{
 	width: 33%;
 }
 
